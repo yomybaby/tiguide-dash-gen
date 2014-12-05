@@ -1,12 +1,15 @@
 {
-  "name": "dash-d3-gen",
-  "description": "Dash D3 documentation generator",
-  "author": "Przemysław Kamiński",
+  "name": "dash-titanium-guide-gen",
+  "description": "Dash Titanium Guide documentation generator",
+  "author": "JongEun Lee",
   "version": "0.0.1",
   "dependencies": {
     "async": "~0.2.6",
+    "cheerio": "^0.18.0",
     "marked": "~0.2.8",
+    "mkdirp": "^0.5.0",
     "sequelize": "~1.6.0-beta4",
-    "sqlite3": "~2.1.5"
+    "sqlite3": "~2.1.5",
+    "wrench": "^1.5.8"
   }
 }

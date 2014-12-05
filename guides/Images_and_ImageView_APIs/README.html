@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Images and ImageView APIs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004912" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004912"><span>Edit</span></a>
+<h1>Images and ImageView APIs</h1>
+<div class="section section-2 " id="29004912_ImagesandImageViewAPIs-Objective">
+<h2 class="heading "><span>Objective</span></h2>
+<p>
+By now in this course, you've used images at least a few times. In this chapter, we'll dig a bit deeper into the ways you can add local and remote images to your apps as either background images or ImageViews.    </p>
+</div>
+<div class="section section-2 " id="29004912_ImagesandImageViewAPIs-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<p>
+You can display images in your apps in at least two ways: as instances of the ImageView object or as the background of another component. We'll look at both techniques as well as the options associated with each.    </p>
+<div class="section section-3 " id="29004912_ImagesandImageViewAPIs-Backgroundimages">
+<h3 class="heading "><span>Background images</span></h3>
+<p>
+You can specify an image be used as the background of another component, such as a view or button. By default, image will be scaled (stretched or squeezed) to fit the dimensions of the component. Any other content of that component will appear in front of the background image. For example, button text will appear over the top of the background.    </p>
+<p>
+When the background image is larger than the component, it will be squeezed to fit the component's dimensions. Both platforms handle that in essentially the same way, as you can see in the red images in the graphic below. But iOS and Android handle background images differently when they're smaller than the component. Look carefully at the following image. Overlaid on top, you see the original small PNG image that is used as the background if the view with the four Xs. In that view, on Android the background image is stretched to fit the width of the component. On iOS, a small portion of the left and right of the image remain un-stretched while the remainder is stretched to fill the width.    </p>
+<p>
+<img src="images/download/attachments/29004912/default_image_scaling.png" alt="images/download/attachments/29004912/default_image_scaling.png" class="confluence-embedded-image" width="500" />
+</p>
+<p>
+On iOS, you can control this &quot;small portion&quot; that remains unstretched. You do so by setting the <tt class=" ">backgroundLeftCap</tt> property. It works like this: End caps specify the portion of an image that should not be resized when an image is stretched. Resizing occurs only in the middle of the button, in the region between the end caps. The end caps themselves keep their original size and appearance. The value of this property specifies the size of the left end cap. The middle (stretchable) portion is assumed to be 1 pixel wide. The right end cap is therefore computed by adding the size of the left end cap and the middle portion together and then subtracting that value from the width of the image.    </p>
+<p>
+You can control vertical stretching in this way with the <tt class=" ">backgroundTopCap</tt> property. Again, that works on only iOS.    </p>
+<p>
+Android supports remote images as background images. On Android, you can set the <tt class=" ">backgroundImage</tt> property equal to a URL and the image will be displayed (assuming a network connection is available). That's not the case on iOS.    </p>
+</div>
+<div class="section section-3 " id="29004912_ImagesandImageViewAPIs-TheImageView">
+<h3 class="heading "><span>The ImageView</span></h3>
+<p>
+The <tt class=" ">ImageView</tt> is Titanium's component for representing an image file. You create one with the <tt class=" ">Ti.UI.createImageView()</tt> method. With this component, you have full control over dimensions, positioning, opacity, and more. The <tt class=" ">ImageView</tt> has a number of interesting methods, such as <tt class=" ">show()</tt> and <tt class=" ">hide()</tt>, <tt class=" ">start()</tt> and <tt class=" ">stop()</tt>, and <tt class=" ">toImage()</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var win = Ti.UI.createWindow({backgroundColor: </code><code class="string">'white'</code><code class="plain">});</code></div>
+<div class="line"><code class="plain">var myImage = Ti.UI.createImageView({</code></div>
+<div class="line"><code class="plain">	width:</code><code class="value">100</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">	height:</code><code class="value">100</code></div>
+<div class="line"><code class="plain">	image:</code><code class="string">'foo.png'</code><code class="plain"> </code><code class="comments">/* accepts URL, local path, or Ti.Filesystem.File */</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="comments">/*</code></div>
+<div class="line"><code class="comments">// this would work:</code></div>
+<div class="line"><code class="comments">myImage.image = 'http://example.com/foo.png'</code></div>
+<div class="line"><code class="comments">// set myImage.defaultImage = 'localFoo.png' to show an image while the remote one is loading</code></div>
+<div class="line"><code class="comments">// as would</code></div>
+<div class="line"><code class="comments">myImage.image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,'foo.png');</code></div>
+<div class="line"><code class="comments">*/</code></div>
+<div class="line"><code class="plain">win.add(myImage);</code></div>
+<div class="line"><code class="plain">win.open();</code></div>
+</div>
+</div> <p>
+If you specify a width and/or height property on the image, the image will be scaled to fit according to these considerations:    </p>
+<ul class=" "><li class=" "> <p>
+If the <tt class=" ">ImageView</tt>'s <tt class=" ">height</tt> and <tt class=" ">width</tt> are specified, the images will be scaled unproportionally to fit the dimensions.  The graphic's aspect ratio will NOT be maintained.    </p>
+</li><li class=" "> <p>
+If either the <tt class=" ">ImageView</tt>'s <tt class=" ">height</tt> or <tt class=" ">width</tt> are specified (not both), the image will be scaled to fit the specified dimension.  The graphic's aspect ratio will be maintained.    </p>
+</li></ul> <div class="section section-4 " id="29004912_ImagesandImageViewAPIs-Flipbookanimations">
+<h4 class="heading "><span>Flipbook animations</span></h4>
+<p>
+You can display flipbook-style animations with the <tt class=" ">ImageView</tt> by assigning an array of images to the <tt class=" ">images</tt> property.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// from the Kitchen Sink, examples/image_view_animated.js</code></div>
+<div class="line"><code class="plain">var images = [];</code></div>
+<div class="line"><code class="keyword">for</code><code class="plain"> (var i=</code><code class="value">1</code><code class="plain">;i&lt;</code><code class="value">18</code><code class="plain">;i++) {</code></div>
+<div class="line"><code class="plain">	images.push(</code><code class="string">'../images/campFire'</code><code class="plain"> + ((i&lt;</code><code class="value">10</code><code class="plain">)?</code><code class="string">'0'</code><code class="plain">+i:i)+</code><code class="string">'.gif'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">var imageView = Titanium.UI.createImageView({</code></div>
+<div class="line"><code class="plain">	images:images,</code></div>
+<div class="line"><code class="plain">	duration:</code><code class="value">100</code><code class="plain">, </code><code class="comments">// in milliseconds, the time before next frame is shown</code></div>
+<div class="line"><code class="plain">	repeatCount:</code><code class="value">0</code><code class="plain">,  </code><code class="comments">// 0 means animation repeats indefinitely, use &gt; 1 to control repeat count</code></div>
+<div class="line"><code class="plain">	top:</code><code class="value">0</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="comments">// imageView.stop() would stop the animation</code></div>
+<div class="line"><code class="comments">// imageView.start() would start the animation again</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004912_ImagesandImageViewAPIs-Density-specificimages">
+<h4 class="heading "><span>Density-specific images</span></h4>
+<p>
+On the iPhone, you have two display densities to deal with: the original iPhone/iPod density and the double-density &quot;retina&quot; displays. The retina displays, featured on the iPhone 4 and newer models has twice the DPI of the earlier displays. Following Apple's scheme, retina images are named to match their non-retina counterparts, with &quot;@2x&quot; appended to the name. In your code, though, you don't worry about that suffix.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var img = Ti.UI.createImageView({</code></div>
+<div class="line"><code class="plain">	image: </code><code class="string">'logo.png'</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">/* logo@2x.png will be used automatically if it exists with retina devices */</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+On iOS, you can retrieve density-specific images from a remote URL as well. Use the same @2x naming scheme as described here. You can add the <tt class=" ">hires=true</tt> property to your <tt class=" ">ImageView</tt> to specify that the remote URL is a high-resolution image. Optionally, Set the <tt class=" ">img.defaultImage</tt> property equal to a <i class=" ">local</i> image and it will be displayed while your remote image is being downloaded.    </p>
+<p>
+Android has quite a few more resolutions and screen sizes to deal with. See the Android Overview chapter for more info on screen sizes. To support these screen variations, Titanium uses a set of directories as shown here:    </p>
+<p>
+<img src="images/download/attachments/29004912/android_directories.png" alt="images/download/attachments/29004912/android_directories.png" class="confluence-embedded-image" />
+</p>
+<p>
+You'd put your resolution-specific files in the appropriate directories. Then, in code you'd simply refer via the base name, as shown above for iPhone. Titanium will take care of pulling in the correct image for the device in use. Use the sample images in those folders as a starting point for the correct size and resolution when creating your graphics.    </p>
+<p>
+If you don't want to worry about creating graphics for these various resolutions, delete the resolution-specific folders. If you don't, Android will use the stock images Titanium supplies, which might mean users will see the stock splash screen instead of yours.    </p>
+</div>
+</div>
+<div class="section section-3 " id="29004912_ImagesandImageViewAPIs-References">
+<h3 class="heading "><span>References</span></h3>
+<ul class=" "><li class=" "> <p>
+API Docs - <a class="external-link external-link" href="#!/api/Titanium.UI.ImageView">ImageView object</a> </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="29004912_ImagesandImageViewAPIs-Summary">
+<h2 class="heading "><span>Summary</span></h2>
+<p>
+In this chapter, you learned how to add local and remote images to your apps. You saw that you can display images as instances of the ImageView object or as the background of another component. You also learned how to handle density-specific images on iOS and Android.    </p>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

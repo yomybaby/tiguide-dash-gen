@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Writing Unit Tests with Drillbit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004751" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004751"><span>Edit</span></a>
+<h1>Writing Unit Tests with Drillbit</h1>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Writing_Unit_Tests_with_Drillbit-section-29004751_WritingUnitTestswithDrillbit-Overview" Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-Overview="Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Writing_Unit_Tests_with_Drillbit-section-29004751_WritingUnitTestswithDrillbit-HowtowriteaDrillbittest" Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-HowtowriteaDrillbittest="Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-HowtowriteaDrillbittest">How to write a Drillbit test</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Writing_Unit_Tests_with_Drillbit-section-29004751_WritingUnitTestswithDrillbit-Assertions" Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-Assertions="Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-Assertions">Assertions</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Writing_Unit_Tests_with_Drillbit-section-29004751_WritingUnitTestswithDrillbit-AsynchronousTests" Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-AsynchronousTests="Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-AsynchronousTests">Asynchronous Tests</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Writing_Unit_Tests_with_Drillbit-section-29004751_WritingUnitTestswithDrillbit-RunningDrillbit" Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-RunningDrillbit="Writing_Unit_Tests_with_Drillbit.html#29004751_WritingUnitTestswithDrillbit-RunningDrillbit">Running Drillbit</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+A unit testing framework, harness, and driver for Titanium    </p>
+</div>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-HowtowriteaDrillbittest">
+<h2 class="heading "><span>How to write a Drillbit test</span></h2>
+<p>
+Drillbit resembles a JSSpec test and uses some of their conventions.    </p>
+<p>
+To define a test suite, you have several options:    </p>
+<ul class=" "><li class=" "> <p>
+Create a standalone Javascript file, For example, <tt class=" ">foo.js</tt> under the <tt class=" ">drillbit/tests</tt> folder would define a test suite for <tt class=" ">foo</tt>.    </p>
+</li><li class=" "> <p>
+Create a directory with a Javascript file using the same name under it. For example, <tt class=" ">foo/foo.js</tt> under the <tt class=" ">drillbit/tests</tt> folder would define a test suite for <tt class=" ">foo</tt>.    </p>
+</li><li class=" "> <p>
+Any other resources under the test suite's directory will be recursively copied into the Test Harness application's root before it is deployed    </p>
+</li><li class=" "> <p>
+For platform specific test suites, create either of the above under one of the special platform directories. For example, <tt class=" ">android/foo.js</tt> would define a test suite for <tt class=" ">foo</tt> that only ran on the Android emulator.    </p>
+</li></ul> <p>
+You can also specify extra test directories for Drillbit to pull test suites from by using the <tt class=" ">--tests-dir</tt> argument. See the <strong class=" ">Running Drillbit</strong> section below.    </p>
+<p>
+In a test suite's Javascript file, you simply need to call the Drillbit function <tt class=" ">describe</tt> to give a description and test spec for your test suite. For example, a simple math test suite with just two tests might look like:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">describe(</code><code class="string">"test simple math"</code><code class="plain">, {</code></div>
+<div class="line"><code class="plain">  testAdd: function() {</code></div>
+<div class="line"><code class="plain">    valueOf(</code><code class="value">1</code><code class="plain">+</code><code class="value">1</code><code class="plain">).shouldBe(</code><code class="value">2</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">  },</code></div>
+<div class="line"><code class="plain">  testSubtract: function() {</code></div>
+<div class="line"><code class="plain">    valueOf(</code><code class="value">2</code><code class="plain">-</code><code class="value">1</code><code class="plain">).shouldBe(</code><code class="value">1</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+The first parameter is the description for your test, and the second parameter is your test spec. Any functions inside the test spec are considered tests to be run by Drillbit.    </p>
+<p>
+Optionally, you may also define these special functions inside your test spec:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+before_all    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Called before all tests are run    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+after_all    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Called after all tests are run    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+before    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Called before each and every test method    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+after    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Called after each and every test method    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+timeout    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+property in milliseconds for the max time a test should take    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-Assertions">
+<h2 class="heading "><span>Assertions</span></h2>
+<p>
+All assertions are executed on the return value of the <tt class=" ">valueOf</tt> method. They all start with the word <tt class=" ">should</tt>:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBe(other)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value should be equal (==) to other    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldNotBe(other)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value should not be equal (!=) to other    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeExactly(other)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value should be exactly equal (===) to other    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldNotBeExactly(other)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value should not be exactly equal (!==) to other    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeGreaterThan(number)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be greater than number    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeGreaterThanEqual(number)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be greater than or equal to number    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeLessThan(number)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be less than number    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeLessThanEqual(number)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be less than or equal to number    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeTrue()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be true (boolean)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeFalse()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be false (boolean)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeNull()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be null    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldNotBeNull()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must not be null    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeUndefined()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be undefined    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldNotBeUndefined()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must not be undefined    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeFunction()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be a function    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeObject()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be an object    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeArray()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be an array    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeString()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be a string    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeNumber()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be a number    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeBoolean()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be a boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldContain(object)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must contain object (indexOf(object) != -1)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeOneOf(array)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be found in array    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldMatchArray(array)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be an array and all of it's values must equal (==) array's values    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldThrowException(function)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+if the value is a function, it will be executed, and it must throw an exception. otherwise, the test fails.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldNotThrowException(function)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+if the value is a function, it will be executed, and it must not throw an exception. otherwise, the test fails.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+shouldBeZero()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+value must be 0 (number)    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+Examples:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">valueOf(</code><code class="value">1</code><code class="plain">+</code><code class="value">1</code><code class="plain">).shouldBe(</code><code class="value">2</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">valueOf(</code><code class="value">1</code><code class="plain">*</code><code class="value">3</code><code class="plain">).shouldNotBe(</code><code class="value">4</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">valueOf(</code><code class="value">2</code><code class="plain">).shouldBeGreaterThan(</code><code class="value">1</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">valueOf(Ti.App).shouldBeObject();</code></div>
+<div class="line"><code class="plain">valueOf(userAgent).shouldContain(</code><code class="string">'Titanium/'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">valueOf(</code><code class="string">'a'</code><code class="plain">).shouldBeOneOf([</code><code class="string">'a'</code><code class="plain">,</code><code class="string">'b'</code><code class="plain">,</code><code class="string">'c'</code><code class="plain">]);</code></div>
+<div class="line"><code class="plain">valueOf([</code><code class="value">1</code><code class="plain">, </code><code class="value">2</code><code class="plain">, </code><code class="value">3</code><code class="plain">]).shouldMatchArray([</code><code class="value">1</code><code class="plain">, </code><code class="value">2</code><code class="plain">, </code><code class="value">3</code><code class="plain">]);</code></div>
+<div class="line"><code class="plain">valueOf(function() {</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">throw</code><code class="plain"> </code><code class="keyword">new</code><code class="plain"> Exception(</code><code class="string">"error"</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">}).shouldThrowException();</code></div>
+</div>
+</div> </div>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-AsynchronousTests">
+<h2 class="heading "><span>Asynchronous Tests</span></h2>
+<p>
+You can make a test asynchronous by appending <tt class=" ">_as_async</tt> to the end of the function name. Asynchronous tests receive one argument: the callback object.    </p>
+<p>
+The callback object has two functions:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">passed()</tt> The asynchronous test should call this when the test passes.    </p>
+</li><li class=" "> <p>
+<tt class=" ">failed(error)</tt> The asynchronous test should call this when the test fails, and pass in an exception or an error message    </p>
+</li></ul> <p>
+When asserting using the <tt class=" ">should</tt> functions, if an assertion fails, an exception is thrown by Drillbit. In a normal test, this exception is automatically caught and handled by Drillbit, but in an asynchronous test, you will need to surround assertions with <tt class=" ">try</tt> and <tt class=" ">catch</tt>, and call <tt class=" ">callback.failed(exception)</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">An example using Asynchronous XHR and a timeout fallback</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">describe(</code><code class="string">"test"</code><code class="plain">, {</code></div>
+<div class="line"><code class="plain">  test_as_async: function(callback) {</code></div>
+<div class="line"><code class="plain">    var xhr = Ti.Network.createHTTPClient();</code></div>
+<div class="line"><code class="plain">    var timer = </code><code class="value">0</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">    xhr.onload = function() {</code></div>
+<div class="line"><code class="plain">      clearTimeout(timer);</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">try</code><code class="plain"> {</code></div>
+<div class="line"><code class="plain">        valueOf(</code><code class="keyword">this</code><code class="plain">.responseText.length).shouldBeGreaterThan(</code><code class="value">0</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">        callback.passed();</code></div>
+<div class="line"><code class="plain">      } </code><code class="keyword">catch</code><code class="plain"> (e) {</code></div>
+<div class="line"><code class="plain">        callback.failed(e);</code></div>
+<div class="line"><code class="plain">      }</code></div>
+<div class="line"><code class="plain">    };</code></div>
+<div class="line"><code class="plain">    xhr.onerror = function(e) {</code></div>
+<div class="line"><code class="plain">      clearTimeout(timer);</code></div>
+<div class="line"><code class="plain">      callback.failed(e.error);</code></div>
+<div class="line"><code class="plain">    };</code></div>
+<div class="line"><code class="plain">    xhr.open(</code><code class="string">'GET'</code><code class="plain">, </code><code class="string">'http://www.test.com'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    xhr.send();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Wait 10s for response</code></div>
+<div class="line"><code class="plain">    timer = setTimeout(function() {</code></div>
+<div class="line"><code class="plain">      callback.failed(</code><code class="string">"Timed out waiting for HTTP response"</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    }, </code><code class="value">10000</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+Drillbit also provides convenience functions for asynchronous tests:    </p>
+<p>
+<tt class=" ">asyncTest(args)</tt>: Creates a function suitable for use as an asynchronous test    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">args</tt> Either a function that starts the asynchronous task or an object with named arguments:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">args.start</tt> A function that starts the asynchronous task (required). The return value of this function will be passed to <tt class=" ">onTimeout</tt>, if it is specified.    </p>
+</li><li class=" "> <p>
+<tt class=" ">args.timeout</tt> A timeout in milliseconds. After the timeout is reached, if <tt class=" ">args.onTimeout</tt> is defined, it is called with a try/catch wrapper. Otherwise, the test will fail with a timeout error message. (optional)    </p>
+</li><li class=" "> <p>
+<tt class=" ">args.onTimeout</tt> : A function that is called after <tt class=" ">args.timeout</tt> is reached. The return value of the <tt class=" ">start</tt> function is passed as a parameter (optional)    </p>
+</li><li class=" "> <p>
+<tt class=" ">args.timeoutError</tt> : A custom error to report after <tt class=" ">args.timeout</tt> is reached (optional)    </p>
+</li></ul></li></ul> <p>
+<tt class=" ">this.async(function)</tt>: Returns a function wrapper that surrounds `function` in a try/catch and calls callback.passed if it is successful, or callback.failed if an exception is caught. (only available within an `asyncTest` object)    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">function</tt> The function with Drillbit assertions    </p>
+</li></ul> <p>
+Here's an example that does the same as above, but uses the convenience APIs to simplify it:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">describe(</code><code class="string">"test"</code><code class="plain">, {</code></div>
+<div class="line"><code class="plain">  test: asyncTest({</code></div>
+<div class="line"><code class="plain">    start: function(callback) {</code></div>
+<div class="line"><code class="plain">      var xhr = Ti.Network.createHTTPClient();</code></div>
+<div class="line"><code class="plain">      xhr.onload = </code><code class="keyword">this</code><code class="plain">.async(function() {</code></div>
+<div class="line"><code class="plain">        valueOf(</code><code class="keyword">this</code><code class="plain">.responseText.length).shouldBeGreaterThan(</code><code class="value">0</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">      });</code></div>
+<div class="line"><code class="plain">      xhr.onerror = </code><code class="keyword">this</code><code class="plain">.async(function(e) {</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">throw</code><code class="plain"> e.error;</code></div>
+<div class="line"><code class="plain">      });</code></div>
+<div class="line"><code class="plain">      xhr.open(</code><code class="string">'GET'</code><code class="plain">, </code><code class="string">'http://www.test.com'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">      xhr.send();</code></div>
+<div class="line"><code class="plain">    },</code></div>
+<div class="line"><code class="plain">    timeout: </code><code class="value">10000</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">    timeoutError: </code><code class="string">"Timed out waiting for HTTP response"</code></div>
+<div class="line"><code class="plain">  })</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> </div>
+<div class="section section-2 " id="29004751_WritingUnitTestswithDrillbit-RunningDrillbit">
+<h2 class="heading "><span>Running Drillbit</span></h2>
+<p>
+Before running Drillbit, you'll need to install one of the newest Titanium Desktop 1.2 RCs, links stored here for posterity:    </p>
+<p>
+<strong class=" ">1.2 RC4</strong> </p>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="http://builds.appcelerator.com.s3.amazonaws.com/RC/desktopsdk-1.2.0.RC4-osx.zip" target="_blank">Mac OSX</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="http://builds.appcelerator.com.s3.amazonaws.com/RC/desktopsdk-1.2.0.RC4-win32.zip" target="_blank">Windows</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="http://builds.appcelerator.com.s3.amazonaws.com/RC/desktopsdk-1.2.0.RC4-linux-i386.zip" target="_blank">Linux 32-bit</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="http://builds.appcelerator.com.s3.amazonaws.com/RC/desktopsdk-1.2.0.RC3-linux-x86_64.zip" target="_blank">Linux 64-bit</a> </p>
+</li></ul> <p>
+The drillbit script lives under the Titanium Mobile repository at <tt class=" ">drillbit/drillbit.py</tt>. The script expects the MobileSDK zip to be built using <tt class=" ">scons</tt> before it is run. The zip is extracted into <tt class=" ">dist/mobilesdk</tt> and all tests are built from there.    </p>
+<p>
+<tt class=" ">drillbit/drillbit.py</tt> can be run without arguments, but there are extra arguments that provide extended functionality and customization    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Drillbit Usage</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">./drillbit/drillbit.py [--platforms=PLATFORMS] [--tests-dir=DIR] [--results-dir=DIR] [--tests=TESTS] [platform specific args..]</code></div>
+<div class="line"><code class="plain">  Common Arguments</code></div>
+<div class="line"><code class="plain">  --platforms=PLATFORMS			A list of platforms to run Drillbit </code><code class="keyword">for</code><code class="plain"> (</code><code class="keyword">default</code><code class="plain">: android,iphone)</code></div>
+<div class="line"><code class="plain">  --tests-dir=DIR					Additional tests are loaded from DIR</code></div>
+<div class="line"><code class="plain">  --results-dir=DIR				Generates JSON and HTML results in DIR</code></div>
+<div class="line"><code class="plain">  --tests=TESTS					Specify which test suites to enable by </code><code class="keyword">default</code><code class="plain"> (separated by comma)</code></div>
+<div class="line"><code class="plain">  UI Specific arguments:</code></div>
+<div class="line"><code class="plain">  --autorun						Start running tests as soon as Drillibit starts</code></div>
+<div class="line"><code class="plain">  --autoclose						Close Drillbit as soon as all tests are finished running</code></div>
+<div class="line"><code class="plain">  --web-console					Launch Drillbit with the Web / Javascript Console showing (</code><code class="keyword">for</code><code class="plain"> debugging Drillbit itself)</code></div>
+<div class="line"><code class="plain">  iPhone Specific Arguments</code></div>
+<div class="line"><code class="plain">  --iphone-version=DIR			The iPhone SDK version to build against (</code><code class="keyword">default</code><code class="plain">: </code><code class="value">4.0</code><code class="plain">)</code></div>
+<div class="line"><code class="plain">  Android Specific Arguments</code></div>
+<div class="line"><code class="plain">  --android-sdk=DIR				Android SDK is loaded from DIR</code></div>
+<div class="line"><code class="plain">  --android-version=VERSION		The Android Platform version to build against (</code><code class="keyword">default</code><code class="plain">: </code><code class="value">4</code><code class="plain">)</code></div>
+<div class="line"><code class="plain">  --android-force-build			When passed, the test harness is forcefully built on initial deploy</code></div>
+<div class="line"><code class="plain">  --android-device=DEVICE			The device argument to pass to ADB. (</code><code class="keyword">default</code><code class="plain">: -e)</code></div>
+</div>
+</div> <p>
+For example, to only run the <tt class=" ">network.httpclient</tt> test suite for Android:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">./drillbit/drillbit.py --platforms=android --tests=network.httpclient</code></div>
+</div>
+</div> </div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

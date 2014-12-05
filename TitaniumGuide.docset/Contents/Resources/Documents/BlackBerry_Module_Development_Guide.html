@@ -1,0 +1,707 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="37534720" class="content">
+<h1>BlackBerry Module Development Guide</h1>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-Introduction" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-introduction="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-Introduction">Introduction</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-BlackBerryModulePrerequisites" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-blackberrymoduleprerequisites="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-BlackBerryModulePrerequisites">BlackBerry Module Prerequisites</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-CreatingaNativeModule" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-creatinganativemodule="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-CreatingaNativeModule">Creating a Native Module</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-UsingtheCLI" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-usingthecli="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-UsingtheCLI">Using the CLI</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-UsingStudio" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-usingstudio="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-UsingStudio">Using Studio</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-ImportingtheModuletoQDE" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-importingthemoduletoqde="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-ImportingtheModuletoQDE">Importing the Module to QDE</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-TitaniumAPIsforModuleDevelopment" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-titaniumapisformoduledevelopment="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-TitaniumAPIsforModuleDevelopment">Titanium APIs for Module Development</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-ModuleLifecycle" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-modulelifecycle="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-ModuleLifecycle">Module Lifecycle</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-Proxies" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-proxies="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-Proxies">Proxies</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-MethodsandProperties" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-methodsandproperties="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-MethodsandProperties">Methods and Properties</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-Events" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-events="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-Events">Events</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-TypeConversions" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-typeconversions="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-TypeConversions">Type Conversions</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-CheckingTypes" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-checkingtypes="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-CheckingTypes">Checking Types</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypesfromJavaScriptTypes" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-convertingnativetypesfromjavascripttypes="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypesfromJavaScriptTypes">Converting Native Types from JavaScript Types</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypestoJavaScriptTypes" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-convertingnativetypestojavascripttypes="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypestoJavaScriptTypes">Converting Native Types to JavaScript Types</a> </p>
+</li></ul></li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-BuildingtheModule" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-buildingthemodule="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-BuildingtheModule">Building the Module</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-BuildingwiththeCLItools" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-buildingwiththeclitools="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-BuildingwiththeCLItools">Building with the CLI tools</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-BuildingwithQDE" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-buildingwithqde="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-BuildingwithQDE">Building with QDE</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/BlackBerry_Module_Development_Guide-section-37534720_BlackBerryModuleDevelopmentGuide-TestingtheModuleinaTitaniumApplication" blackberry_module_development_guide.html#37534720_blackberrymoduledevelopmentguide-testingthemoduleinatitaniumapplication="BlackBerry_Module_Development_Guide.html#37534720_BlackBerryModuleDevelopmentGuide-TestingtheModuleinaTitaniumApplication">Testing the Module in a Titanium Application</a> </p>
+</li></ul> <div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-Introduction">
+<h2 class="heading "><span>Introduction</span></h2>
+<p>
+Titanium provides the ability to extend the built-in functionality of the Titanium SDK through a series of optional extensions called modules. Modules let you write code in a platform&apos;s native language (C++ for BlackBerry). Through a series of classes and attributes, we can expose new functionality to the JavaScript running in the Titanium SDK.  The BlackBerry 10 NDK uses the Cascades framework as its backbone framework, which is built on top of Qt. Therefore, all the BlackBerry components are derived from the <a class="external-link external-link" href="http://developer.blackberry.com/native/reference/cascades/qobject.html#details" target="_blank">QObject</a> class.  Instead of the <i class=" ">STL</i> containers, like string or map, you will be working with the Qt containers, like <tt class=" ">QString</tt>, <tt class=" ">QMap</tt>, or <tt class=" ">QList</tt>.    </p>
+<p>
+This guide covers how to:    </p>
+<ul class=" "><li class=" "> <p>
+Create a BlackBerry module project    </p>
+</li><li class=" "> <p>
+Use Titanium Module APIs in a module    </p>
+</li><li class=" "> <p>
+Build a module    </p>
+</li><li class=" "> <p>
+Test a module    </p>
+</li></ul> <p>
+This guide assumes you are familiar with native development using the BlackBerry 10 NDK and the QNX Momentics IDE (QDE).  For more information about the BlackBerry 10 NDK, see <a class="external-link external-link" href="http://developer.blackberry.com/native/documentation/core/" target="_blank">http://developer.blackberry.com/native/documentation/core/</a>.    </p>
+<p>
+For samples of using the module APIs, see <a class="external-link external-link" href="https://github.com/appcelerator/titanium_mobile_blackberry/tree/master/src/tibb/Modules" target="_blank">https://github.com/appcelerator/titanium_mobile_blackberry/tree/master/src/tibb/Modules</a>.    </p>
+</div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-BlackBerryModulePrerequisites">
+<h2 class="heading "><span>BlackBerry Module Prerequisites</span></h2>
+<p>
+To develop a BlackBerry-based module, the following software is required to build a Titanium application for BlackBerry:    </p>
+<ul class=" "><li class=" "> <p>
+Titanium SDK    </p>
+</li><li class=" "> <p>
+Supported versions of BlackBerry NDK and the Momentics IDE, as described in <a class="document-link " href="#!/guide/Installing_the_BlackBerry_NDK" installing_the_blackberry_ndk.html="Installing_the_BlackBerry_NDK.html">Installing the BlackBerry NDK</a> </p>
+</li><li class=" "> <p>
+Studio or the Titanium Command-Line Interface (CLI) for building and running test applications    </p>
+</li></ul> </div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-CreatingaNativeModule">
+<h2 class="heading "><span>Creating a Native Module</span></h2>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-UsingtheCLI">
+<h3 class="heading "><span>Using the CLI</span></h3>
+<p>
+Run the Titanium CLI create command to generate a BlackBerry stub module, including documentation that you can use as a starting point to building your own Titanium BlackBerry extension. The project created is used by the QNX Momentics IDE.  You cannot work on the native module in Studio.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium create -p blackberry --id &lt;MODULE_ID&gt; -n &lt;MODULE_NAME&gt; -t module</code></div>
+</div>
+</div> <p>
+Starting with Release 3.3.0, the Titanium CLI generates a module project containing multiple platforms.  The module contains platform folders, for example, <tt class=" ">blackberry</tt>, that contain platform-specific resources and common folders for assets, documentation and examples.    </p>
+</div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-UsingStudio">
+<h3 class="heading "><span>Using Studio</span></h3>
+<p>
+Read the <a class="document-link " href="#!/guide/Creating_a_New_Titanium_Module" creating_a_new_titanium_module.html="Creating_a_New_Titanium_Module.html">Creating a New Titanium Module</a> guide to find out more about creating modules with Studio.  Note that you cannot build the native module with Studio; you need to use QDE or the BlackBerry command-line tools.    </p>
+</div>
+</div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-ImportingtheModuletoQDE">
+<h2 class="heading "><span>Importing the Module to QDE</span></h2>
+<p>
+The QDE is the tool most often used to develop native BlackBerry 10 applications. Although the module stub generated during create has a Makefile that can be utilized by command-line tools, developers often find the Eclipse-based IDE easier to use.    </p>
+<p>
+To get started with BlackBerry 10 module development, import the module stub project to QDE:    </p>
+<ol class=" "><li class=" "> <p>
+In the menu bar, select <strong class=" ">File </strong>&gt; <strong class=" ">Import...</strong>.  The import wizard opens.    </p>
+</li><li class=" "> <p>
+Select <strong class=" ">Generela </strong>&gt; <strong class=" ">Existing Projects in Workspace</strong>, and click <strong class=" ">Next</strong>.    </p>
+</li><li class=" "> <p>
+In the <strong class=" ">Select root directory</strong> textbox, enter the path to your BlackBerry module stub project or click <strong class=" ">Browse </strong>and navigate to it.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Finish</strong>.    </p>
+</li></ol> <p>
+QDE sets up a new project based on the stub project.  In the project, there is a CPP source file with the same name as your module.  This file is the entry point and the startup method is the hook to the BlackBerry SDK. When a module is first loaded into a running Titanium application, the startup method is called.    </p>
+<p>
+To build the module stub, right-click the project in the <strong class=" ">Project Explorer</strong> view and select <strong class=" ">Build Configuration</strong> &gt; <strong class=" ">Build All</strong>.  This command builds both the ARMv7 binary for devices and x86 binary for the simulator.    </p>
+<p>
+BlackBerry uses the V8 JavaScript runtime engine, and the generated stub has some simple example of extending the module by &quot;plugging into&quot; V8. To embedded V8 developers and Node.JS developers the code will be very familiar. Using the stub as a sample, add your own BlackBerry 10 extensions and these will be available to Titanium applications. A good resource for how to work with the V8 runtime is the V8 Embedder&apos;s Guide <a class="external-link external-link" href="https://developers.google.com/v8/embed" target="_blank">https://developers.google.com/v8/embed</a>.    </p>
+</div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-TitaniumAPIsforModuleDevelopment">
+<h2 class="heading "><span>Titanium APIs for Module Development</span></h2>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-ModuleLifecycle">
+<h3 class="heading "><span>Module Lifecycle</span></h3>
+<p>
+To execute code before your module starts, add it to the <tt class=" ">CreateModule()</tt> method in the <tt class=" ">&lt;MODULE_NAME&gt;ModuleStartup.cpp</tt> source file.  This method is called during application startup. It is only called once, before your module is actually loaded.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">BlackBerryModuleModuleStartup.cpp</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="preprocessor">#include &quot;BlackBerryModuleModuleStartup.h&quot;</code></div>
+<div class="line"><code class="preprocessor">#include &quot;BlackBerryModuleModule.h&quot;</code></div>
+<div class="line"><code class="plain">Handle&lt;Object&gt; BlackBerryModuleModuleStartup::CreateModule()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="functions">fprintf</code><code class="plain">(stderr, </code><code class="string">&quot;Hello, Titanium!&quot;</code><code class="plain">); </code><code class="comments">// OUTPUT THIS LINE TO THE CONSOLE DURING APPLICATION LAUNCH</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> BlackBerryModuleModule::CreateModule();  </code><code class="comments">// DO NOT REMOVE THIS LINE</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-Proxies">
+<h3 class="heading "><span>Proxies</span></h3>
+<p>
+A <tt class=" ">TiProxy</tt> is a native class exposed to the JavaScript. You will use some helper macros and specific function calls to hook it up with the JavaScript engine.  To create a Proxy, your class must extend the <tt class=" ">TiProxy</tt> class and include the <tt class=" ">TiCore.h</tt> header file. See <tt class=" ">ExamleProxy.h</tt> and <tt class=" ">ExamleProxy.cpp</tt> below for a sample.    </p>
+</div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-MethodsandProperties">
+<h3 class="heading "><span>Methods and Properties</span></h3>
+<p>
+To expose a method or property to the JavaScript, you need to do four things:    </p>
+<ol class=" "><li class=" "> <p>
+Declare the function in the header file.    </p>
+</li><li class=" "> <p>
+Use either the <tt class=" ">EXPOSE_SETTER</tt>, <tt class=" ">EXPOSE_GETTER</tt> or <tt class=" ">EXPOSE_METHOD</tt> macro in the header file, where <tt class=" ">CLASS</tt> is the name of the class and <tt class=" ">METHOD</tt> is the name of the method:    </p>
+<ol class=" "><li class=" "> <p>
+Use <tt class=" ">EXPOSE_SETTER(CLASS, METHOD)</tt> for methods that expect a <tt class=" ">TiValue</tt> but returns void.    </p>
+</li><li class=" "> <p>
+Use <tt class=" ">EXPOSE_GETTER(CLASS, METHOD)</tt> for methods that do not expect any parameters but returns a <tt class=" ">TiValue</tt>.    </p>
+</li><li class=" "> <p>
+Use <tt class=" ">EXPOSE_METHOD(CLASS, METHOD)</tt> for methods that expect a <tt class=" ">TiValue</tt> and returns a <tt class=" ">TiValue</tt>.    </p>
+</li></ol></li><li class=" "> <p>
+Expose the API to JavaScript in the class constructor using one of the below methods. The <tt class=" ">API_NAME</tt> is the API element that is called by the application, while<tt class=" "> _METHOD</tt> is the method name in the source file prefixed with an underscore (&apos;_&apos;):    </p>
+<ol class=" "><li class=" "> <p>
+Use <tt class=" ">createPropertySetterGetter(API_NAME, _setMETHOD _getMETHOD</tt><tt class=" ">)</tt> for exposing a property with a setter and getter.    </p>
+</li><li class=" "> <p>
+Use <tt class=" ">createPropertySetter(API_NAME, _METHOD</tt><tt class=" ">)</tt> for exposing a property with a setter only.    </p>
+</li><li class=" "> <p>
+Use <tt class=" ">createPropertyGetter(API_NAME, _METHOD</tt><tt class=" ">)</tt> for exposing a property with a getter only.    </p>
+</li><li class=" "> <p>
+Use <tt class=" ">createPropertyFunction(API_NAME, _METHOD</tt><tt class=" ">)</tt> for exposing a method.    </p>
+</li></ol></li><li class=" "> <p>
+Declare the method function in the source file.    </p>
+</li></ol> <p>
+The example below shows how to declare methods, setters and getters.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">ExampleProxy.h</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Proxy Definition</code></div>
+<div class="line"><code class="preprocessor">#ifndef EXAMPLE_PROXY_H</code></div>
+<div class="line"><code class="preprocessor">#define EXAMPLE_PROXY_H</code></div>
+<div class="line"><code class="preprocessor">#include &quot;TiCore.h&quot;</code></div>
+<div class="line"><code class="keyword">class</code><code class="plain"> ExampleProxy: </code><code class="keyword">public</code><code class="plain"> Ti::TiProxy {</code></div>
+<div class="line"><code class="keyword">public</code><code class="plain">:</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// **Required** Macro</code></div>
+<div class="line"><code class="plain">        CREATE_PROXY(ExampleProxy)</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// **Required** Parameter `const char*`</code></div>
+<div class="line"><code class="plain">        ExampleProxy(</code><code class="keyword">const</code><code class="plain"> </code><code class="color1">char</code><code class="plain">*);</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">virtual</code><code class="plain"> ~ExampleProxy();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Setter prop example</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">void</code><code class="plain"> setExampleProperty(Ti::TiValue);</code></div>
+<div class="line"><code class="plain">        EXPOSE_SETTER(ExampleProxy, setExampleProperty);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Getter prop example</code></div>
+<div class="line"><code class="plain">        Ti::TiValue getExampleProperty();</code></div>
+<div class="line"><code class="plain">        EXPOSE_GETTER(ExampleProxy, getExampleProperty);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Method exampleMethod</code></div>
+<div class="line"><code class="plain">        Ti::TiValue exampleMethod(Ti::TiValue);</code></div>
+<div class="line"><code class="plain">        EXPOSE_METHOD(ExampleProxy, exampleMethod);</code></div>
+<div class="line"><code class="plain">};</code></div>
+<div class="line"><code class="preprocessor">#endif /* EXAMPLE_PROXY_H */</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">ExampleProxy.cpp</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="preprocessor">#include &quot;ExampleProxy.h&quot;</code></div>
+<div class="line"><code class="comments">// You MUST pass in the `name` of the constructor to the base class</code></div>
+<div class="line"><code class="plain">ExampleProxy::ExampleProxy(</code><code class="keyword">const</code><code class="plain"> </code><code class="color1">char</code><code class="plain">* name) : Ti::TiProxy(name)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a setter and getter for the same property</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Note: the setter and getter *MUST* start with `_`</code></div>
+<div class="line"><code class="plain">    createPropertySetterGetter(</code><code class="string">&quot;exampleProperty&quot;</code><code class="plain">, _setExampleProperty, _getExampleProperty);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">/* Or create them individually, first approach is recommended if</code></div>
+<div class="line"><code class="comments">     * both, setter and getter, exist</code></div>
+<div class="line"><code class="comments">     *</code></div>
+<div class="line"><code class="comments">     * createPropertySetter(&quot;exampleProperty&quot;, _setExampleProperty);</code></div>
+<div class="line"><code class="comments">     * createPropertyGetter(&quot;exampleProperty&quot;, _getExampleProperty);</code></div>
+<div class="line"><code class="comments">     * </code></div>
+<div class="line"><code class="comments">     */</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a method, it also has to start with `_`</code></div>
+<div class="line"><code class="plain">    createPropertyFunction(</code><code class="string">&quot;example&quot;</code><code class="plain">, _example);</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">ExampleProxy::~ExampleProxy()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// delete instatiated pointers</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="keyword">void</code><code class="plain"> ExampleProxy::initStart()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Called when proxy created from JS and</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// not properties have been applied</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="keyword">void</code><code class="plain"> ExampleProxy::initEnd()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Called when proxy created from JS and</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// properties have been applied</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="keyword">void</code><code class="plain"> ExampleProxy::setExampleProperty(Ti::TiValue value)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Note, some values will be undefined</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Check with:</code></div>
+<div class="line"><code class="plain">    value.isList();</code></div>
+<div class="line"><code class="plain">    value.isProxy();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a QString</code></div>
+<div class="line"><code class="plain">    QString val = value.toString();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a number (double)</code></div>
+<div class="line"><code class="plain"> </code><code class="color1">double</code><code class="plain"> num = value.toNumber();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a boolean</code></div>
+<div class="line"><code class="plain"> </code><code class="color1">bool</code><code class="plain"> flag = value.toBool();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a list</code></div>
+<div class="line"><code class="plain">    QList&lt;Ti::TiValue&gt; list = value.toList()</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a proxy, is this takes a proxy</code></div>
+<div class="line"><code class="plain">    Ti::TiProxy *proxy = value.toProxy();</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get the actual JavaScript value</code></div>
+<div class="line"><code class="plain">    Handle&lt;Value&gt; val = value.toJSValue()</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// To get a color, if this takes a color, otherwise returns bb::cascades::Color::Yellow</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// #include &lt;bb/cascades/Color&gt;</code></div>
+<div class="line"><code class="plain">    bb::cascades::Color color = value.toColor();</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">Ti::TiValue ExampleProxy::getExampleProperty()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Warning!!! do not &quot;new&quot; a Ti::TiValue, instatiate it on the stack!!</code></div>
+<div class="line"><code class="plain">    Ti::TiValue value;</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Caution! use only one of these</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Creates a JS String()</code></div>
+<div class="line"><code class="plain">    value.setString(</code><code class="string">&quot;some string&quot;</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Creates a JS Number()</code></div>
+<div class="line"><code class="plain">    value.setNumber(12.54);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a JS Bool()</code></div>
+<div class="line"><code class="plain">    value.setBool(</code><code class="keyword">true</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Returns a proxy</code></div>
+<div class="line"><code class="plain">    value.setProxy(</code><code class="keyword">this</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Createa a JS Array() with TiValues</code></div>
+<div class="line"><code class="plain">    QList&lt;Ti::Value&gt; list;</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain">        Ti::TiValue value1;</code></div>
+<div class="line"><code class="plain">        value1.setString(</code><code class="string">&quot;one&quot;</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">        list.append(value1);</code></div>
+<div class="line"><code class="plain">        Ti::TiValue value2;</code></div>
+<div class="line"><code class="plain">        value2.setNumber(2);</code></div>
+<div class="line"><code class="plain">        list.append(value2);</code></div>
+<div class="line"><code class="plain">        Ti::TiValue value3;</code></div>
+<div class="line"><code class="plain">        value3.setBool(</code><code class="keyword">true</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">        list.append(value3);</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain">    value.setList(list);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Return the created value</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> value;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">Ti::TiValue ExampleProxy::exampleMethod(Ti::TiValue value)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Now you can call functions in this class</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Get the value from `value`</code></div>
+<div class="line"><code class="plain">    QString str = value.toString();</code></div>
+<div class="line"><code class="plain">    str.prepend(</code><code class="string">&quot;Something added to &quot;</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Call local function</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// doSomethingWith(str) &lt;---- this would be a local function to this class</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a return value</code></div>
+<div class="line"><code class="plain">    Ti::TiValue returnValue;</code></div>
+<div class="line"><code class="plain">    returnValue.setString(str);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Can also be null or undefined</code></div>
+<div class="line"><code class="plain">    returnValue.setUndefined()</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// or</code></div>
+<div class="line"><code class="plain">    returnValue.setNull()</code></div>
+<div class="line"><code class="plain"> </code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> returnValue;</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-Events">
+<h3 class="heading "><span>Events</span></h3>
+<p>
+To fire an event, you need to create an instance of the <tt class=" ">TiEventParameters</tt>, then call the <tt class=" ">fireEvent(QString eventName, Ti::TiEventParameters params)</tt> method, for example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Ti::TiEventParameters params;</code></div>
+<div class="line"><code class="plain">params.addParam(</code><code class="string">&quot;some_string_key&quot;</code><code class="plain">, </code><code class="string">&quot;some_value&quot;</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">params.addParam(</code><code class="string">&quot;some_int_key&quot;</code><code class="plain">, </code><code class="value">12</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">params.addParam(</code><code class="string">&quot;some_double_key&quot;</code><code class="plain">, </code><code class="value">12.32</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">params.addParam(</code><code class="string">&quot;some_proxy_key&quot;</code><code class="plain">, </code><code class="keyword">this</code><code class="plain">); </code><code class="comments">// `this` is the proxy</code></div>
+<div class="line"><code class="comments">// the `e.source` is included</code></div>
+<div class="line"><code class="plain">fireEvent(</code><code class="string">&quot;my_event&quot;</code><code class="plain">, params);</code></div>
+</div>
+</div> <p>
+To know which event has been added, use the <tt class=" ">onEventAdded(QString)</tt> function. Make sure you add it as a virtual function in the header file.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">void</code><code class="plain"> ExampleProxy::onEventAdded(QString eventName)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain">(eventName == </code><code class="string">&quot;my_event&quot;</code><code class="plain">)</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// do something if needed</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-TypeConversions">
+<h3 class="heading "><span>Type Conversions</span></h3>
+<p>
+The <tt class=" ">TiValue</tt> class is a simple, yet powerful, class. It&apos;s a tiny bridge between the JavaScript types and the native types. The purpose for this is that you, as a module developer, should not be directly touching the JavaScript engine.    </p>
+<div class="section section-4 " id="37534720_BlackBerryModuleDevelopmentGuide-CheckingTypes">
+<h4 class="heading "><span>Checking Types</span></h4>
+<p>
+To check what native type is returned from JavaScript use these <tt class=" ">TiValue</tt> functions:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+<span style="color: #2b4771;">
+Function    </span>
+</p>
+</td>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+Return Value    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isList()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isNull    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isList()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isUndefined()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isProxy()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+isNumber()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+For example, to check the value of a JavaScript array or a <tt class=" ">TiProxy</tt>, first check the object is the correct type, then check the values of that object:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">void</code><code class="plain"> MyProxy::setMyCustomProperty(TiValue value)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// check for JS Array</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain">(value.isList())</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain">        QList&lt;TiValue&gt; array = value.toList()</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Now you can loop and get all the values</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// check for TiProxy</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain">(value.isProxy())</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain">        TiProxy* proxy = value.toProxy();</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypesfromJavaScriptTypes">
+<h4 class="heading "><span>Converting Native Types from JavaScript Types</span></h4>
+<p>
+To get native types from a <tt class=" ">TiValue</tt> created from JavaScript, use these <tt class=" ">TiValue</tt> functions:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+<span style="color: #2b4771;">
+Function    </span>
+</p>
+</td>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+Return Value    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toString()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+QString    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toColor()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bb::cascades::Color    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toJSValue()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Handle (JavaScript Value)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toProxy()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TiProxy*    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toBool()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+boolean    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toNumber()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+double    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+toList()    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+QList    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+For example, to get a <tt class=" ">String</tt> from JavaScript:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">void</code><code class="plain"> MyProxy::setMyCustomProperty(TiValue value) {</code></div>
+<div class="line"><code class="plain">    QString str = value.toString() </code><code class="comments">// more code</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="37534720_BlackBerryModuleDevelopmentGuide-ConvertingNativeTypestoJavaScriptTypes">
+<h4 class="heading "><span>Converting Native Types to JavaScript Types</span></h4>
+<p>
+To set native types to a TiValue use these TiValue functions:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+Function    </p>
+</td>
+<td class="highlight confluenceTd" rowspan="1" colspan="1">
+<p>
+Return Value    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setString(QString)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+void    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setNumber(double)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+void    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setBool(bool)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+void    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setProxy(Ti::TiProxy*)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+void    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setList(QList)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+void    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+To return a <tt class=" ">String</tt> to JavaScript:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">TiValue returnValue;</code></div>
+<div class="line"><code class="plain">returnValue.setString(</code><code class="string">&quot;Something cool&quot;</code><code class="plain">);</code></div>
+<div class="line"><code class="keyword">return</code><code class="plain"> returnValue; </code></div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-BuildingtheModule">
+<h2 class="heading "><span>Building the Module</span></h2>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-BuildingwiththeCLItools">
+<h3 class="heading "><span>Building with the CLI tools</span></h3>
+<p>
+<strong class=" ">Starting with Release 3.3.0</strong>, the Titanium SDK provides a Node.js script to build the module.  In the module&apos;s <tt class=" ">blackberry</tt>, run the <tt class=" ">build.js</tt> script.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">node build.js</code></div>
+</div>
+</div> <p>
+This script generates the ARM and x86 binaries, and packages a ZIP file for you in the <tt class=" ">blackberry</tt> directory.    </p>
+<p>
+<strong class=" ">Prior to Release 3.3.0</strong>, to build the module using the BlackBerry NDK CLI tools, source the environment file in your BlackBerry NDK or Momentics directory, then build your BlackBerry module project.  For example, on Mac OS X:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">. /Applications/Momentics.app/bbndk-env_10_2_0_1155.sh</code></div>
+<div class="line"><code class="plain">make -C ~/Documents/Titanium_Studio_Workspace/BlackBerryModule/module</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="37534720_BlackBerryModuleDevelopmentGuide-BuildingwithQDE">
+<h3 class="heading "><span>Building with QDE</span></h3>
+<p>
+To build the module, right-click the project in the <strong class=" ">Project Explorer</strong> view and select <strong class=" ">Build Configuration</strong> &gt; <strong class=" ">Build All</strong>.  This command builds both the ARMv7 binary for devices and x86 binary for the simulator.    </p>
+</div>
+</div>
+<div class="section section-2 " id="37534720_BlackBerryModuleDevelopmentGuide-TestingtheModuleinaTitaniumApplication">
+<h2 class="heading "><span>Testing the Module in a Titanium Application</span></h2>
+<p>
+Starting with Release 3.3.0, the Titanium SDK provides a build script to automatically package your application.  In the module&apos;s <tt class=" ">blackberry</tt>, unpack the ZIP file to either the project or Titanium SDK folder.  You can also use Studio&apos;s <strong class=" ">Help </strong>&gt; <strong class=" ">Install Mobile Module...</strong> option from the menu bar.    </p>
+<p>
+In the Titanium application, add the module to your <tt class=" ">tiapp.xml</tt> file and load it in to your application using the <tt class=" ">require</tt> method.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">tiapp.xml</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;modules&gt;</code></div>
+<div class="line"><code class="plain">    &lt;module platform=</code><code class="string">&quot;blackberry&quot;</code><code class="plain">&gt;MODULE_ID&lt;/module&gt;</code></div>
+<div class="line"><code class="plain">&lt;/modules&gt;&#xA0;</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">app.js</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var bb_module = require(</code><code class="string">&apos;MODULE_ID&apos;</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">var bb_proxy = bb_module.createExample();</code></div>
+<div class="line"><code class="plain">var str = bb_proxy.example(</code><code class="string">&quot;foo&quot;</code><code class="plain">);</code></div>
+</div>
+</div> <p>
+<strong class=" ">Prior to Release 3.3.0</strong>, you need to manually package your application.  To test your module in a Titanium application, after you have finished building it to generate the ARM and x86 binaries, copy the module&apos;s <tt class=" ">arm</tt>, <tt class=" ">x86</tt> and <tt class=" ">include</tt> folders and the <tt class=" ">manifest</tt> file to a path called <tt class=" ">modules/blackberry/&lt;MODULE_ID&gt;/&lt;VERSION&gt;</tt> to either your Titanium SDK path or to your local project, then require in the module to your application.  For example, on Mac OS X, you can create a directory for your module and copy the files to it:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">cd ~/Library/Application\ Support/Titanium/modules/</code></div>
+<div class="line"><code class="plain">mkdir -p blackberry/&lt;MODULE_ID&gt;/&lt;VERSION&gt;</code></div>
+<div class="line"><code class="plain">cd blackberry/&lt;MODULE_ID&gt;/&lt;VERSION&gt;</code></div>
+<div class="line"><code class="plain">cp -r ~/Documents/Titanium_Studio_Workspace/&lt;MODULE_NAME&gt;/module/arm .</code></div>
+<div class="line"><code class="plain">cp -r ~/Documents/Titanium_Studio_Workspace/&lt;MODULE_NAME&gt;/module/x86 .</code></div>
+<div class="line"><code class="plain">cp -r ~/Documents/Titanium_Studio_Workspace/&lt;MODULE_NAME&gt;/module/include header</code></div>
+<div class="line"><code class="plain">cp -r ~/Documents/Titanium_Studio_Workspace/&lt;MODULE_NAME&gt;/manifest .</code></div>
+</div>
+</div> <p>
+Your module&apos;s folder structure should be similar to the one below:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">blackberry</code></div>
+<div class="line"><code class="plain">&#x2514;&#x2500;&#x2500; com.appc.bbmod</code></div>
+<div class="line"><code class="plain">    &#x2514;&#x2500;&#x2500; </code><code class="value">1.0</code></div>
+<div class="line"><code class="plain">        &#x251C;&#x2500;&#x2500; arm</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x251C;&#x2500;&#x2500; Makefile</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x251C;&#x2500;&#x2500; Makefile.Debug</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x251C;&#x2500;&#x2500; Makefile.Release</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x251C;&#x2500;&#x2500; a.le-v7</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; libBlackBerryModule.a</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x2514;&#x2500;&#x2500; a.le-v7-g</code></div>
+<div class="line"><code class="plain">        &#x2502;       &#x2514;&#x2500;&#x2500; libBlackBerryModule.a</code></div>
+<div class="line"><code class="plain">        &#x251C;&#x2500;&#x2500; header</code></div>
+<div class="line"><code class="plain">        &#x2502;   &#x2514;&#x2500;&#x2500; BlackBerryModuleModuleStartup.h</code></div>
+<div class="line"><code class="plain">        &#x251C;&#x2500;&#x2500; manifest</code></div>
+<div class="line"><code class="plain">        &#x251C;&#x2500;&#x2500; </code><code class="keyword">package</code><code class="plain">.json</code></div>
+<div class="line"><code class="plain">        &#x2514;&#x2500;&#x2500; x86</code></div>
+<div class="line"><code class="plain">            &#x251C;&#x2500;&#x2500; Makefile</code></div>
+<div class="line"><code class="plain">            &#x251C;&#x2500;&#x2500; Makefile.Debug</code></div>
+<div class="line"><code class="plain">            &#x251C;&#x2500;&#x2500; Makefile.Release</code></div>
+<div class="line"><code class="plain">            &#x251C;&#x2500;&#x2500; a</code></div>
+<div class="line"><code class="plain">            &#x2502;   &#x2514;&#x2500;&#x2500; libBlackBerryModule.a</code></div>
+<div class="line"><code class="plain">            &#x2514;&#x2500;&#x2500; a-g</code></div>
+<div class="line"><code class="plain">                &#x2514;&#x2500;&#x2500; libBlackBerryModule.a</code></div>
+</div>
+</div> </div>
+</div>
+
+</div>
+
+</body>
+</html>

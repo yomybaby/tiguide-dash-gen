@@ -1,0 +1,581 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="35620083" class="content">
+<h1>Alloy Command-Line Interface Reference</h1>
+<p>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-New" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-new="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-New">New</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-Generate" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-generate="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-Generate">Generate</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-Install" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-install="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-Install">Install</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-Compile" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-compile="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-Compile">Compile</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-Run" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-run="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-Run">Run</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-i18n-extract" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-i18n-extract="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-i18n-extract">i18n-extract</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-AdditionalOptions" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-additionaloptions="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-AdditionalOptions">Additional Options</a> </p>
+</li></ul> <p>
+The Alloy Command-Line Interface (CLI) is a command-line tool for managing and building Alloy projects.    </p>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-New">
+<h2 class="heading "><span>New</span></h2>
+<p>
+Creates a new Alloy project.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alloy </code><code class="keyword">new</code><code class="plain"> [&lt;project_path&gt;] [&lt;project_template&gt;] [--force] [--no-colors]</code></div>
+</div>
+</div> <div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;project_path&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Path to a skeleton Titanium project, otherwise the current working directory is used.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;project_template&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Selects the template. Choose between <strong class=" ">default</strong> for a single pane application or <strong class=" ">two_tabbed</strong> or a tabbed application. Defaults to <strong class=" ">default</strong>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-f, --force    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Forces the command to execute.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-n, --no-colors    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Disables color output.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-Generate">
+<h2 class="heading "><span>Generate</span></h2>
+<p>
+Creates skeleton Alloy components.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alloy generate &lt;component&gt; [--widgetname &lt;widget_name&gt;] [--outputPath &lt;output_path&gt;] [--platform &lt;platform&gt;] [--force] [--no-colors] </code></div>
+</div>
+</div> <div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;component&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Format is component specific.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+controller &lt;name&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Create a skeleton controller, view and style.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+jmk    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates <tt class=" ">alloy.jmk</tt>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+model &lt;name&gt; &lt;adapter&gt; [schema]    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a model with the specified <tt class=" ">name</tt>. See <a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-ModelFormat" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-modelformat="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-ModelFormat">Model Format</a> below.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+migration &lt;model_name&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a skeleton migration file for the specified model.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+style &lt;&lt;name&gt; | --all&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a skeleton style file with the specified name.<br>If the name is associated with a view-controller, Alloy uses the id and class names from the markup file to populate the style file.<br>If <tt class=" ">--all</tt> flag is specified, Alloy generates skeleton style files for all view-controllers.<br>If you add new id or class attributes to the markup file, running this command updates the style file with the new attributes.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+view &lt;name&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a skeleton view and style with the specified <tt class=" ">name</tt>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+widget &lt;name&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a basic widget with the specified <tt class=" ">name</tt>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+--widgetname &lt;name&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Since Alloy 1.4.0.</strong> Creates a component for the specified widget. Can only be used to create controllers, views or styles.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-o, --outputPath &lt;outputPath&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Output path for generated code. Point to the &apos;app&apos; directory.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+--platform &lt;platform&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Create a platform-specific view or controller component, where &lt;platform&gt; is either android, ios or mobileweb.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-f, --force    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Forces the command to execute.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-n, --no-colors    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Disables color output.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<div class="section section-3 " id="35620083_AlloyCommand-LineInterfaceReference-ModelFormat">
+<h3 class="heading "><span>Model Format</span></h3>
+<p>
+To generate a model, first select the adapter type:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">sql</tt> for the SQLite database for the Android and iOS platform.    </p>
+</li><li class=" "> <p>
+<tt class=" ">properties</tt> for storing models locally in Titanium SDK context.    </p>
+</li><li class=" "> <p>
+<span style="color: #999999;">
+<tt class=" ">localStorage</tt> for HTML5 localStorage for the Mobile Web platform. Deprecated since Alloy 1.5.0.    </span>
+</p>
+</li></ul> <p>
+For the <tt class=" ">sql</tt> and <tt class=" ">properties</tt> adapters, you will also need to specify a table schema. The <tt class=" ">sql</tt> adapter type will also generate a migration file with the model.    </p>
+<p>
+The table schema format for generating models is a space-delimited list of the field name, followed by a colon (&apos;:&apos;), followed by the data type. For example, specifying &apos;name:string age:number sex:varchar dob:date&apos; will create a table with four columns: &apos;name&apos; which stores a string, &apos;age&apos; which stores a number, &apos;sex&apos; which stores a character, and &apos;dob&apos; which stores a date.    </p>
+<p>
+Actually, in the above example, since both the Android and iOS platforms use SQLite, none of these datatypes are available. Instead, they will be mapped based on the following:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Datatype    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+SQLite Datatype    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string<br>varchar<br>text    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TEXT    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int<br>tinyint<br>smallint<br>bigint<br>integer    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+INTEGER    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+double<br>float<br>real    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+REAL    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+blob    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+BLOB    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+decimal<br>number<br>date<br>datetime<br>boolean    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMERIC    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+null    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NULL    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+unknown datatype    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TEXT    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-Install">
+<h2 class="heading "><span>Install</span></h2>
+<p>
+Installs special Alloy project components.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alloy install &lt;module&gt; [&lt;project_path&gt;]</code></div>
+</div>
+</div> <div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;module&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Format is module specific.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+plugin    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Installs the compiler plugin to hook the Alloy project to Studio.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;project_path&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Path to the Alloy project, otherwise the current working directory is used.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-Compile">
+<h2 class="heading "><span>Compile</span></h2>
+<p>
+Compiles Alloy code to Titanium SDK code.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alloy compile [&lt;project_path&gt;] [--config &lt;compiler_options&gt;] [--no-colors]</code></div>
+</div>
+</div> <div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+&lt;project_path&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Path to the Alloy project, otherwise the current working directory is used.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-c, --config &lt;compiler_options&gt;    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Compiler configuration options to use. See <a class="document-link " href="#!/guide/Alloy_Command-Line_Interface_Reference-section-35620083_AlloyCommand-LineInterfaceReference-CompilerOptions" alloy_command-line_interface_reference.html#35620083_alloycommand-lineinterfacereference-compileroptions="Alloy_Command-Line_Interface_Reference.html#35620083_AlloyCommand-LineInterfaceReference-CompilerOptions">Compiler Options</a> below.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-n, --no-colors    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Disables color output.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<div class="section section-3 " id="35620083_AlloyCommand-LineInterfaceReference-CompilerOptions">
+<h3 class="heading "><span>Compiler Options</span></h3>
+<p>
+The compiler options are a list of comma-delimited assignment statements (variable=value) without any spaces. For example, specifying &quot;beautify=false,deploytype=test&quot; overrides the default compiler behavior to disable beautifying the generated JavaScript files and building the application for the test environment.    </p>
+<p>
+Refer to the <tt class=" ">event.alloyConfig</tt> object in <a class="document-link " href="#!/guide/Build_Configuration_File_(alloy.jmk)" build_configuration_file_(alloy.jmk).html="Build_Configuration_File_(alloy.jmk).html">Build Configuration File (alloy.jmk)</a> for a list of settable compiler options.    </p>
+</div>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-Run">
+<h2 class="heading "><span>Run</span></h2>
+<p>
+Use the <tt class=" ">titanium build</tt> command to run Alloy projects.  See the <a class="document-link " href="#!/guide/Titanium_Command-Line_Interface_Reference" titanium_command-line_interface_reference.html="Titanium_Command-Line_Interface_Reference.html">Titanium Command-Line Interface Reference guide</a> for more information.    </p>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-i18n-extract">
+<h2 class="heading "><span>i18n-extract</span></h2>
+<p>
+Inspects your TSS and JS files for instances of Titanium&apos;s localization functions, extracts the i18n key from each function and adds it to the target language&apos;s strings.xml file.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alloy extract-i18n [&lt;language&gt;] [--apply]</code></div>
+</div>
+</div> <div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<tt class=" ">&lt;language&gt;</tt> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Optional. A two-letter language code that specifies the target language. Default is <strong class=" "><tt class=" ">en</tt></strong> (English).    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<tt class=" ">--apply</tt> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Optional. If present, the command writes new localization entries to the target language&apos;s strings.xml file. If absent, a preview of the changes are displayed in the terminal window.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+The following localization functions are supported:    </p>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="#!/api/Titanium.Locale-method-getString">Titanium.Locale.getString()</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="#!/api/Titanium.Locale-method-getString">Ti.Locale.getString()</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="#!/api/Global-method-L">L()</a> </p>
+</li></ul> <p>
+The syntax options for calling <tt class=" ">alloy extract-i18n</tt> are shown below.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">//</code><code class="plain"> Show a before and after of your i18n </code><code class="functions">file</code><code class="plain">. Does NOT write changes to the </code><code class="functions">file</code><code class="plain">.</code></div>
+<div class="line"><code class="plain">alloy extract-i18n  </code></div>
+<div class="line"><code class="plain"> </code></div>
+<div class="line"><code class="plain">//</code><code class="plain"> Write changes to </code><code class="string">&quot;i18n/en/strings.xml&quot;</code><code class="plain">:</code></div>
+<div class="line"><code class="plain">alloy extract-i18n --apply   </code></div>
+<div class="line"><code class="plain"> </code></div>
+<div class="line"><code class="plain">//</code><code class="plain"> Specify </code><code class="string">&quot;es&quot;</code><code class="plain"> as the language and write the changes to </code><code class="string">&quot;i18n/es/strings.xml&quot;</code><code class="plain">:</code></div>
+<div class="line"><code class="plain">alloy extract-i18n es --apply</code></div>
+<div class="line"><code class="plain">&#xA0;</code></div>
+<div class="line"><code class="plain">//</code><code class="plain"> Specify a different language (</code><code class="string">&quot;es&quot;</code><code class="plain">) and preview changes:</code></div>
+<div class="line"><code class="plain">alloy extract-i18n es</code></div>
+</div>
+</div> <p>
+Also see <a class="external-link external-link" href="#!/guide/Alloy_Tasks_with_the_CLI#AlloyTaskswiththeCLI-Extractinglocalizationstrings">Extracting localization strings</a> in the <a class="external-link external-link" href="#!/guide/Alloy_Tasks_with_the_CLI">Alloy Tasks with the CLI</a> guide.    </p>
+</div>
+<div class="section section-2 " id="35620083_AlloyCommand-LineInterfaceReference-AdditionalOptions">
+<h2 class="heading "><span>Additional Options</span></h2>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Options    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-h, --help    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Outputs command usage.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+-v, --version    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Outputs the version number.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

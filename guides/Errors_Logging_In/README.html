@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Errors Logging In</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="30083289" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=30083289"><span>Edit</span></a>
+<h1>Errors Logging In</h1>
+<div class="section section-2 " id="30083289_ErrorsLoggingIn-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<p>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Errors_Logging_In-section-30083289_ErrorsLoggingIn-Overview" Errors_Logging_In.html#30083289_ErrorsLoggingIn-Overview="Errors_Logging_In.html#30083289_ErrorsLoggingIn-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Errors_Logging_In-section-30083289_ErrorsLoggingIn-TroubleLoggingin" Errors_Logging_In.html#30083289_ErrorsLoggingIn-TroubleLoggingin="Errors_Logging_In.html#30083289_ErrorsLoggingIn-TroubleLoggingin">Trouble Logging in</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Errors_Logging_In-section-30083289_ErrorsLoggingIn-LaunchStudiofromtheCommandLine" Errors_Logging_In.html#30083289_ErrorsLoggingIn-LaunchStudiofromtheCommandLine="Errors_Logging_In.html#30083289_ErrorsLoggingIn-LaunchStudiofromtheCommandLine">Launch Studio from the Command Line</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Errors_Logging_In-section-30083289_ErrorsLoggingIn-ChecktheLogFileforThrownExceptions" Errors_Logging_In.html#30083289_ErrorsLoggingIn-ChecktheLogFileforThrownExceptions="Errors_Logging_In.html#30083289_ErrorsLoggingIn-ChecktheLogFileforThrownExceptions">Check the Log File for Thrown Exceptions</a> </p>
+</li></ul></li></ul> </div>
+<div class="section section-2 " id="30083289_ErrorsLoggingIn-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+If you are unable to log in to Studio, please try the following diagnostic steps and then submit this as part of your question on the Q &amp; A forum.    </p>
+</div>
+<div class="section section-2 " id="30083289_ErrorsLoggingIn-TroubleLoggingin">
+<h2 class="heading "><span>Trouble Logging in</span></h2>
+<div class="section section-3 " id="30083289_ErrorsLoggingIn-LaunchStudiofromtheCommandLine">
+<h3 class="heading "><span>Launch Studio from the Command Line</span></h3>
+<ol class=" "><li class=" "> <p>
+Try the login command below on the command line:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">curl -v -d </code><code class="string">"un=XXXX&amp;pw=YYYY"</code><code class="plain"> https:</code><code class="comments">//api.appcelerator.com/p/v1/sso-login</code></div>
+</div>
+</div> <p>
+(replacing XXXX and YYYY with your username and password. The username needs to be url-escaped, like user@company.com =&gt; user%40company.com)    </p>
+</li><li class=" "> <p>
+If the above command returns success, try to run Studio from the command line and then log in. Check the generated exception log on the command line.    </p>
+<ol class=" "><li class=" "> <p>
+From Mac: open a terminal and run &quot;<strong class=" ">&lt;install_dir&gt;/TitaniumStudio.app/Contents/MacOS/TitaniumStudio</strong>&quot; (by default, the installation directory is &quot;/Applications/Titanium Studio&quot;)    </p>
+</li><li class=" "> <p>
+From Windows: open a command prompt and run &quot;<strong class=" ">&lt;install_dir&gt;\TitaniumStudio.exe -consoleLog</strong>&quot; (by default, the installation directory is &quot;C:\Users\&lt;username&gt;\AppData\Local\Titanium Studio&quot;)    </p>
+</li><li class=" "> <p>
+From Linux: open a terminal and run &quot;<strong class=" ">&lt;install_dir&gt;/TitaniumStudio</strong>&quot;    </p>
+</li></ol></li></ol> </div>
+<div class="section section-3 " id="30083289_ErrorsLoggingIn-ChecktheLogFileforThrownExceptions">
+<h3 class="heading "><span>Check the Log File for Thrown Exceptions</span></h3>
+<p>
+Check the Studio log file to see if an exception was thrown when attempting to login. (See <a class="document-link " href="#!/guide/Accessing_the_Log_File" Accessing_the_Log_File.html="Accessing_the_Log_File.html">Accessing the Log File</a> for details on how to access the log file.)    </p>
+<p>
+If the exception generated is<strong class=" "> javax.net.ssl.SSLHandshakeException</strong>, <strong class=" ">javax.net.ssl.SSLPeerUnverifiedException</strong> or <strong class=" ">&quot;PKIX path building failed&quot;</strong>, it means that the required certificate could not be added to Java's certificate store. You need to manually download and import the necessary certificates.    </p>
+<p>
+For <strong class=" ">Appcelerator Studio</strong>, on an OS X system, run:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">openssl s_client -showcerts -connect dashboard.appcelerator.com:</code><code class="value">443</code><code class="plain"> &lt;/dev/</code><code class="keyword">null</code><code class="plain"> </code><code class="value">2</code><code class="plain">&gt;/dev/</code><code class="keyword">null</code><code class="plain">|openssl x509 -outform PEM &gt;dashboard.pem</code></div>
+<div class="line"><code class="plain">sudo keytool -</code><code class="keyword">import</code><code class="plain"> -keystore /System/Library/Java/Support/CoreDeploy.bundle/Contents/Home/lib/security/cacerts -alias dashboard -file dashboard.pem</code></div>
+</div>
+</div> <p>
+For <strong class=" ">Titanium Studio</strong>, on an OS X system, run:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">openssl s_client -showcerts -connect api.appcelerator.com:</code><code class="value">443</code><code class="plain"> &lt;/dev/</code><code class="keyword">null</code><code class="plain"> </code><code class="value">2</code><code class="plain">&gt;/dev/</code><code class="keyword">null</code><code class="plain">|openssl x509 -outform PEM &gt;mycertfile.pem</code></div>
+<div class="line"><code class="plain">sudo keytool -</code><code class="keyword">import</code><code class="plain"> -keystore /System/Library/Java/Support/CoreDeploy.bundle/Contents/Home/lib/security/cacerts -alias my_cert -file mycertfile.pem</code></div>
+</div>
+</div> <p>
+The first command downloads the server certificate, and the second command imports it to system Java's cacerts store.    </p>
+<p>
+<strong class=" ">Notes</strong>:    </p>
+<ul class=" "><li class=" "> <p>
+For Windows systems, you do not need to prepend the command with <tt class=" ">sudo</tt> and the Java cacerts path should be <tt class=" ">%JAVA_HOME%/JRE/lib/security/cacerts</tt>.    </p>
+</li><li class=" "> <p>
+For Linux systems, the Java cacerts path may vary. The common location is <tt class="plain plain ">/etc/ssl/certs/java/cacerts</tt>.    </p>
+</li></ul> <p>
+If the above steps do not help to resolve the issue, you could also try the following:    </p>
+<ol class=" "><li class=" "> <p>
+Download <a class="attachment-link " href="attachments_37683930_1_InstallCert.jar" attachments_37683930_1_InstallCert.jar="attachments_37683930_1_InstallCert.jar">InstallCert.jar</a> to a local directory;    </p>
+</li><li class=" "> <p>
+CD into the directory and run &quot;java -classpath InstallCert.jar InstallCert api.appcelerator.com&quot;;    </p>
+</li><li class=" "> <p>
+It should output the same exception stacktrace as above and detect what certificate needs to be added; enter '1'.    </p>
+</li></ol> <p>
+Let it run to the finish, and afterward, Java should be able to complete a handshake with the host, and you could verify by running the program again.    </p>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

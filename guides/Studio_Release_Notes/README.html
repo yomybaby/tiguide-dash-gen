@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Studio Release Notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="40929417" class="content">
+<h1>Studio Release Notes</h1>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.4.1-14November2014">
+<h2 class="heading "><span>Studio 3.4.1 - 14 November 2014</span></h2>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-BugFixes">
+<h3 class="heading "><span>Bug Fixes</span></h3>
+<ul class=" "><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-7032" target="_blank">TISTUD-7032</a>: The default size of modules table in tiapp.xml editor is reduced    </p>
+</li><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-7018" target="_blank">TISTUD-7018</a>: Yosemite: Node.ACS update is not listed in Studio update wizard    </p>
+</li><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-7015" target="_blank">TISTUD-7015</a>: Studio creates android L x86_64 bit emulator rather than an arm emulator by default if no emulator exists    </p>
+</li><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6940" target="_blank">TISTUD-6940</a>: Content Assist not showing many of the methods and properties of objects    </p>
+</li><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6681" target="_blank">TISTUD-6681</a>: Android is not detected on Studio Dashboard if only Android L (5.0) is installed    </p>
+</li><li class="p1 "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-1335" target="_blank">TISTUD-1335</a>: Content Assist: JavaScript class objects generate non-static proposals    </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.4.0-29September2014">
+<h2 class="heading "><span>Studio 3.4.0 - 29 September 2014</span></h2>
+<p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/issues/?filter=16428" target="_blank">Full List of Issues Addressed in Release 3.4.0</a> </p>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-NewFeatures">
+<h3 class="heading "><span>New Features</span></h3>
+<ul class=" "><li class=" "> <p>
+Support building a Titanium application with the iOS 8 SDK and Xcode 6.    </p>
+</li><li class=" "> <p>
+Update content assist to support shorthand notation for left and right navigation buttons.  When using the <tt class=" ">LeftNavButton</tt> or <tt class=" ">RightNavButton</tt> elements, content assist provides suggestions for button attributes.    </p>
+</li><li class=" "> <p>
+Add ability to extract strings in Alloy XML files to i18n files.  In the Alloy XML file, place the cursor on the text you want to extract to the <tt class=" ">strings.xml</tt> file.  Right-click, then select <strong class=" ">Source</strong> &gt; <strong class=" ">Externalize Strings...</strong>.  The <strong class=" ">Externalize String</strong> dialog appears asking you to enter a key for the string.  Enter a key name, then click <strong class=" ">OK.</strong>  The text in the Alloy XML file is replaced with the localized function <tt class=" ">L()</tt> with the key name you entered, and an entry will be added to  <tt class=" ">i18n/en/strings.xml</tt> with the key name and text.  If this file does not exist, Studio will create it.  This feature only supports adding entries to the <tt class=" ">strings.xml</tt> file in the English (<tt class=" ">en</tt>) subfolder.    </p>
+</li><li class=" "> <p>
+Add hyperlink detector to jump from i18n translation keys in Alloy View XML attributes to their definition in <tt class=" ">strings.xml</tt> files.  In an Alloy XML file, hold the <strong class=" ">Command</strong> key for Macs or <strong class=" ">Control</strong> key for Linux and Windows, then hover over a localized function with an i18n translation key.  The localized function turns into a hyperlink.  Click the hyperlink to jump to the entry in the <tt class=" ">i18n/en/strings.xml</tt> file.  This feature only works for XML attributes but will support node text and the localized attributes without the localization functions, such as <tt class=" ">titleid</tt>, in a future release.    </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.3.0-17July2014">
+<h2 class="heading "><span>Studio 3.3.0 - 17 July 2014</span></h2>
+<p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/issues/?filter=16138" target="_blank">Full List of Issues Addressed in Release 3.3.0</a> </p>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-NewFeatures.1">
+<h3 class="heading "><span>New Features</span></h3>
+<div class="section section-4 " id="40929417_StudioReleaseNotes-AlloyProjectImprovements">
+<h4 class="heading "><span>Alloy Project Improvements</span></h4>
+<p>
+This release includes the following improvements for Alloy projects:    </p>
+<ul class=" "><li class=" "> <p>
+Content assistance improvements (see next section).    </p>
+</li><li class=" "> <p>
+Create new view and style files from the right-context menu.  Right-click on your project in the <strong class=" ">Project Explorer</strong> view, then select <strong class=" ">New</strong> &gt; <strong class=" ">Alloy View</strong> or <strong class=" ">New</strong> &gt; <strong class=" ">Alloy Style</strong> to create a new view or style, respectively.    </p>
+</li><li class=" "> <p>
+Navigate to event handlers from the XML file to the controller file.  Hold the <strong class=" ">Command</strong> key for Macs or <strong class=" ">Control</strong> key for Linux and Windows, then click on the event handler in the XML file to navigate to method in the Controller file.    </p>
+</li><li class=" "> <p>
+Navigate to ID and class styles from the XML file to the TSS file.  Hold the <strong class=" ">Command</strong> key for Macs or <strong class=" ">Control</strong> key for Linux and Windows, then click on the ID or class in the XML file to navigate to the style in the TSS file.    </p>
+</li><li class=" "> <p>
+Create event handlers in the corresponding controller.  Select the event handler in the XML file, then hold the <strong class=" ">Command + 1</strong> keys for Macs or<strong class=" "> Control + 1</strong> keys for Linux and Windows to bring up an action menu.  Double-click <strong class=" ">Create event listener in controller file</strong> to create an empty function in the controller file.    </p>
+</li><li class=" "> <p>
+Create ID and class styles in the corresponding TSS file.  Select the ID or class style in the XML file, then hold the <strong class=" ">Command + 1</strong> keys for Macs or<strong class=" "> Control + 1</strong> keys for Linux and Windows to bring up an action menu.  Double-click <strong class=" ">Create ruleset for ID/class in stylesheet</strong> to create an empty style in the TSS file.    </p>
+</li></ul> </div>
+<div class="section section-4 " id="40929417_StudioReleaseNotes-ContentAssistanceImprovements">
+<h4 class="heading "><span>Content Assistance Improvements</span></h4>
+<p>
+This release includes the following content assistance improvements:    </p>
+<ul class=" "><li class=" "> <p>
+Add code assistance for methods that take constants as arguments. For example, suggests <tt class=" ">Ti.Media.CAMERA_FRONT</tt> or <tt class=" ">Ti.Media.CAMERA_REAR</tt> for the <tt class=" ">Ti.Camera.swtichCamera</tt> method.    </p>
+</li><li class=" "> <p>
+Add code assistance for proxy properties for XML elements in Alloy projects.  For example, suggests the <tt class=" ">LeftNavButton</tt> or <tt class=" ">RightNavButton</tt> elements as children of the <tt class=" ">Window</tt> element.    </p>
+</li><li class=" "> <p>
+Add code assistance for APIs in the <tt class=" ">Alloy</tt> namespace.  For example, suggests <tt class=" ">Alloy.Globals</tt> or <tt class=" ">Alloy.CFG</tt> if only <tt class=" ">Alloy.</tt> is typed.    </p>
+</li><li class=" "> <p>
+Add hovers (info box when hovering on an API element) for XML elements, XML attributes and TSS attributes for Alloy projects.    </p>
+</li></ul> </div>
+<div class="section section-4 " id="40929417_StudioReleaseNotes-GenymotionSupport">
+<h4 class="heading "><span>Genymotion Support</span></h4>
+<p>
+The Titanium toolchain now supports installing and launching your application on a Genymotion virtual device.  For more details, see <a class="document-link " href="#!/guide/Installing_Genymotion" Installing_Genymotion.html="Installing_Genymotion.html">Installing Genymotion</a>.    </p>
+</div>
+<div class="section section-4 " id="40929417_StudioReleaseNotes-NewWindowsInstaller">
+<h4 class="heading "><span>New Windows Installer</span></h4>
+<p>
+This release introduces a new installer for Windows.  The new installer helps guide or automatically installs necessary prerequisites for Titanium Studio and the Titanium SDK, such as the Oracle JDK, Node.js and Git.    </p>
+</div>
+</div>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-KnownIssues">
+<h3 class="heading "><span>Known Issues</span></h3>
+<div class="section section-4 " id="40929417_StudioReleaseNotes-AlloyPlugin">
+<h4 class="heading "><span>Alloy Plugin</span></h4>
+<p>
+Alloy 1.4.0 includes changes to the Alloy plugin, which is used by Studio to compile and launch your project. These changes will be applied automatically the first time you build a project after updating to 1.4.0. However, because the first build uses the old plugin, there is a small chance that it will fail. Retrying the build should resolve the issue, or you can manually update the plugin with the following command:    </p>
+<pre class=" "><tt class=" ">alloy install plugin [path_to_project] </tt></pre> <p>
+If you enter this command while in your project's folder, omit the path.    </p>
+<p>
+CLI users are not affected by this change.    </p>
+</div>
+</div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.2.3-01May2014">
+<h2 class="heading "><span>Studio 3.2.3 - 01 May 2014</span></h2>
+<p>
+20+ issues resolved. for a complete list, see the release notes section in <a class="external-link external-link" href="https://jira.appcelerator.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=15940" target="_blank">JIRA</a>.    </p>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-Notableissues">
+<h3 class="heading "><span>Notable issues</span></h3>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-4930" target="_blank">TISTUD-4930</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5007" target="_blank">TISTUD-5007</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5732" target="_blank">TISTUD-5732</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5834" target="_blank">TISTUD-5834</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5913" target="_blank">TISTUD-5913</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5969" target="_blank">TISTUD-5969</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6038" target="_blank">TISTUD-6038</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6077" target="_blank">TISTUD-6077</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6109" target="_blank">TISTUD-6109</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6187" target="_blank">TISTUD-6187</a> </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.2.2">
+<h2 class="heading "><span>Studio 3.2.2</span></h2>
+<p>
+No updates.  This version was skipped.    </p>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.2.1-10February2014">
+<h2 class="heading "><span>Studio 3.2.1 - 10 February 2014</span></h2>
+<p>
+20+ issues resolved. for a complete list, see the release notes section in <a class="external-link external-link" href="https://jira.appcelerator.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=15658" target="_blank">JIRA</a>.    </p>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-Notableissues.1">
+<h3 class="heading "><span>Notable issues</span></h3>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-4406" target="_blank">TISTUD-4406</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5247" target="_blank">TISTUD-5247</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5895" target="_blank">TISTUD-5895</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5937" target="_blank">TISTUD-5937</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5956" target="_blank">TISTUD-5956</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5981" target="_blank">TISTUD-5981</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5989" target="_blank">TISTUD-5989</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6007" target="_blank">TISTUD-6007</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6016" target="_blank">TISTUD-6016</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-6086" target="_blank">TISTUD-6086</a> </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.2.0-20December2013">
+<h2 class="heading "><span>Studio 3.2.0 - 20 December 2013</span></h2>
+<p>
+A major release with 300+ improvements and fixes. Here is a summary of the new features:    </p>
+<ul class=" "><li class=" "> <p>
+Brand new platform installation and configuration wizard    </p>
+</li><li class=" "> <p>
+Asynchronous login to speed up startup time    </p>
+</li><li class=" "> <p>
+Auto-detection of connected devices with a streamlined launch mode interface    </p>
+</li><li class=" "> <p>
+Overhaul of the user interface    </p>
+</li><li class=" "> <p>
+Upgrade from Eclipse 3.7 (Indigo) to 4.3 (Kepler) to support Mac OS X 10.9 (Mavericks)    </p>
+</li><li class=" "> <p>
+Support for creating Github forks    </p>
+</li></ul> <div class="section section-3 " id="40929417_StudioReleaseNotes-Notableissues.2">
+<h3 class="heading "><span>Notable issues</span></h3>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-1458" target="_blank">TISTUD-1458</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-1594" target="_blank">TISTUD-1594</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-2948" target="_blank">TISTUD-2948</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-3328" target="_blank">TISTUD-3328</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-3669" target="_blank">TISTUD-3669</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-3804" target="_blank">TISTUD-3804</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-4400" target="_blank">TISTUD-4400</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-4463" target="_blank">TISTUD-4463</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5060" target="_blank">TISTUD-5060</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5061" target="_blank">TISTUD-5061</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5200" target="_blank">TISTUD-5200</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5240" target="_blank">TISTUD-5240</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5312" target="_blank">TISTUD-5312</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5419" target="_blank">TISTUD-5419</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5444" target="_blank">TISTUD-5444</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5457" target="_blank">TISTUD-5457</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5467" target="_blank">TISTUD-5467</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5552" target="_blank">TISTUD-5552</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5570" target="_blank">TISTUD-5570</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5571" target="_blank">TISTUD-5571</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5822" target="_blank">TISTUD-5822</a> </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="40929417_StudioReleaseNotes-Studio3.1.3-18September2013">
+<h2 class="heading "><span>Studio 3.1.3 - 18 September 2013</span></h2>
+<p>
+20+ tickets addressed. For a complete list, see the release notes section in <a class="external-link external-link" href="https://jira.appcelerator.org/secure/IssueNavigator.jspa?mode=hide&amp;requestId=15477" target="_blank">JIRA</a>.    </p>
+<div class="section section-3 " id="40929417_StudioReleaseNotes-Notableissues.3">
+<h3 class="heading "><span>Notable issues</span></h3>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-3295" target="_blank">TISTUD-3295</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5093" target="_blank">TISTUD-5093</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5224" target="_blank">TISTUD-5224</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5281" target="_blank">TISTUD-5281</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5283" target="_blank">TISTUD-5283</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://jira.appcelerator.org/browse/TISTUD-5381" target="_blank">TISTUD-5381</a> </p>
+</li></ul> </div>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="37520113" class="content">
+<h1>Setting up the Titanium CLI</h1>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-Overview" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-overview="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-PreparingfortheTitaniumCLI" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-preparingforthetitaniumcli="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-PreparingfortheTitaniumCLI">Preparing for the Titanium CLI</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-InstalltheCLI" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-installthecli="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-InstalltheCLI">Install the CLI</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-ConfiguretheCLI" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-configurethecli="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-ConfiguretheCLI">Configure the CLI</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-UpdatetheCLI" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-updatethecli="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-UpdatetheCLI">Update the CLI</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-CreateaBasicProject" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-createabasicproject="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-CreateaBasicProject">Create a Basic Project</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-NextSteps" setting_up_the_titanium_cli.html#37520113_settingupthetitaniumcli-nextsteps="Setting_up_the_Titanium_CLI.html#37520113_SettinguptheTitaniumCLI-NextSteps">Next Steps</a> </p>
+</li></ul> <div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+This guide covers the setup of the Titanium CLI tool if you want to exclusively use command-line tools for development. If you are using Studio 3.x and later, the CLI is automatically installed if you chose to install additional Titanium updates.    </p>
+</div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-PreparingfortheTitaniumCLI">
+<h2 class="heading "><span>Preparing for the Titanium CLI</span></h2>
+<p>
+Before installing and using the Titanium CLI, you need to install the Oracle JDK and Node.js.    </p>
+<ul class=" "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_Oracle_JDK" installing_oracle_jdk.html="Installing_Oracle_JDK.html">Installing Oracle JDK</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_Node" installing_node.html="Installing_Node.html">Installing Node</a> </p>
+</li></ul> <p>
+<strong class=" "><a class="external-link external-link" href="http://www.appcelerator.com/products/download/" target="_blank">Register</a></strong> for an <i class=" ">Appcelerator Network</i> account.    </p>
+<p>
+If needed, install the Android SDK and NDK beforehand to help simplify the CLI setup process.    </p>
+<ul class=" "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_the_Android_SDK" installing_the_android_sdk.html="Installing_the_Android_SDK.html">Installing the Android SDK</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_the_Android_NDK" installing_the_android_ndk.html="Installing_the_Android_NDK.html">Installing the Android NDK</a> </p>
+</li></ul> <p>
+The Titanium CLI only supports Titanium SDK 3.x and later.    </p>
+</div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-InstalltheCLI">
+<h2 class="heading "><span>Install the CLI</span></h2>
+<ol class=" "><li class=" "> <p>
+Install the <tt class=" ">titanium</tt> CLI.  On Mac OS X and Linux, you may need to prefix this command with <tt class=" ">sudo</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">npm install -g titanium</code></div>
+</div>
+</div></li><li class=" "> <p>
+Log in using your Appcelerator credentials.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium login</code></div>
+</div>
+</div> <p>
+You are prompted for your Appcelerator network login and password.    </p>
+</li><li class=" "> <p>
+Install the latest released SDK.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium sdk install</code></div>
+</div>
+</div></li><li class=" "> <p>
+Configure CLI.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium setup quick</code></div>
+</div>
+</div> <p>
+The script prompts you to enter basic information, such as your name, Appcelerator network e-mail login, default locale, default SDK version, default workspace folder and Android SDK home directory.    </p>
+</li></ol> </div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-ConfiguretheCLI">
+<h2 class="heading "><span>Configure the CLI</span></h2>
+<p>
+Use the CLI setup wizard to quickly configure your CLI options and platform settings.  For example, running the <tt class=" ">titanium setup</tt> command with no options prompts you to enter basic information as well as your Android SDK home directory for Android development.  The following command prompts you for advanced CLI options and additional platform settings:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium setup</code></div>
+</div>
+</div> <p>
+Use the CLI config command to selectively change your CLI options and platform settings.  For example, running the <tt class=" ">titanium config</tt> command with no options outputs your current configuration settings.  If you have already setup the Android SDK and NDK, the following commands set your Android platform settings (on a Mac OS X system):    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium config android.sdk /Users/appc/sdk/android-sdk/</code></div>
+<div class="line"><code class="plain">titanium config android.ndk /Users/appc/sdk/android-ndk-r8b/</code></div>
+</div>
+</div> <p>
+Note: Not all platforms need to be configured.  For example, for iOS development, the CLI uses the xcode-select path to obtain the path to the Xcode development tools.    </p>
+</div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-UpdatetheCLI">
+<h2 class="heading "><span>Update the CLI</span></h2>
+<p>
+To update the CLI tool, run the npm install command.  On Mac OS X and Linux, you may need to prefix this commands with <tt class=" ">sudo</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">npm install -g titanium</code></div>
+</div>
+</div> <p>
+To update the Titanium SDK, run the <tt class=" ">titanium sdk install</tt> command.  For example, running the command with no options installs the latest released version.  The following command installs the lastest continuous integration build and makes it the default SDK version:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium sdk install --branch master --</code><code class="keyword">default</code></div>
+</div>
+</div> </div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-CreateaBasicProject">
+<h2 class="heading "><span>Create a Basic Project</span></h2>
+<p>
+The following CLI commands create a basic project then builds it.  You need to have a platform SDK installed and configured, or else you can only build Mobile Web projects.  For the Android platform, you need to have previously created an Android virtual device (emulator).  To create a new emulator, see <a class="document-link " href="#!/guide/Native_Android_Debugging_and_Testing_Tools-section-29004938_NativeAndroidDebuggingandTestingTools-Creatinganemulator" native_android_debugging_and_testing_tools.html#29004938_nativeandroiddebuggingandtestingtools-creatinganemulator="Native_Android_Debugging_and_Testing_Tools.html#29004938_NativeAndroidDebuggingandTestingTools-Creatinganemulator">Native Android Debugging and Testing Tools</a>.    </p>
+<p>
+When running these commands, you are prompted for missing information, such as the application ID and platforms, which may also be specified using command-line options.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">titanium create --name&#xA0;MyFirstProject</code></div>
+<div class="line"><code class="plain">cd MyFirstProject</code></div>
+<div class="line"><code class="plain">titanium build</code></div>
+</div>
+</div> </div>
+<div class="section section-2 " id="37520113_SettinguptheTitaniumCLI-NextSteps">
+<h2 class="heading "><span>Next Steps</span></h2>
+<p>
+Review the <a class="document-link " href="#!/guide/Installing_Platform_SDKs" installing_platform_sdks.html="Installing_Platform_SDKs.html">Installing Platform SDKs</a> to install additional development tools for mobile platform development and the <a class="document-link " href="#!/guide/Titanium_CLI_Tasks" titanium_cli_tasks.html="Titanium_CLI_Tasks.html">Titanium CLI Tasks</a> for using the CLI.    </p>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1685 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>iOS Module Development Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004946" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004946"><span>Edit</span></a>
+<h1>iOS Module Development Guide</h1>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<p>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Overview" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Overview="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-iOSModulePrerequisites" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-iOSModulePrerequisites="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-iOSModulePrerequisites">iOS Module Prerequisites</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Step1%3ASettingUpyourModuleEnvironment" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step1%3ASettingUpyourModuleEnvironment="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step1%3ASettingUpyourModuleEnvironment">Step 1: Setting Up your Module Environment</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Step2%3ACreatingyourFirstModule" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step2%3ACreatingyourFirstModule="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step2%3ACreatingyourFirstModule">Step 2: Creating your First Module</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-OpentheTestModuleinXcode" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-OpentheTestModuleinXcode="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-OpentheTestModuleinXcode">Open the Test Module in Xcode</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-PackagingyourModule" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-PackagingyourModule="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-PackagingyourModule">Packaging your Module</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-TestingyourModule" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-TestingyourModule="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-TestingyourModule">Testing your Module</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-TestingyourModuleinatestapplication" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-TestingyourModuleinatestapplication="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-TestingyourModuleinatestapplication">Testing your Module in a test application</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Step3%3ABasicModuleArchitecture" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step3%3ABasicModuleArchitecture="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step3%3ABasicModuleArchitecture">Step 3: Basic Module Architecture</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ModuleLifecycle" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ModuleLifecycle="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ModuleLifecycle">Module Lifecycle</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Proxy" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Proxy="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Proxy">Proxy</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ProxyMethods" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ProxyMethods="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ProxyMethods">Proxy Methods</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ProxyProperties" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ProxyProperties="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ProxyProperties">Proxy Properties</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningObjectValues" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningObjectValues="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningObjectValues">Returning Object Values</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningPrimitiveValues" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningPrimitiveValues="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningPrimitiveValues">Returning Primitive Values</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningComplexValues" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningComplexValues="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningComplexValues">Returning Complex Values</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningFiles" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningFiles="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningFiles">Returning Files</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningBlobs" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningBlobs="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningBlobs">Returning Blobs</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningCGRect" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningCGRect="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningCGRect">Returning CGRect</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningCGPoint" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningCGPoint="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningCGPoint">Returning CGPoint</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ReturningUIColor" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningUIColor="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ReturningUIColor">Returning UIColor</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-SettingProxyValues" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-SettingProxyValues="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-SettingProxyValues">Setting Proxy Values</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-HandlingEvents" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-HandlingEvents="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-HandlingEvents">Handling Events</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-MemoryManagement" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-MemoryManagement="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-MemoryManagement">Memory Management</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-ViewProxy" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ViewProxy="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-ViewProxy">View Proxy</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-View" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-View="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-View">View</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-CreatingaViewandViewProxy" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-CreatingaViewandViewProxy="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-CreatingaViewandViewProxy">Creating a View and View Proxy</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-AddingSpecialCompilerDirectives" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-AddingSpecialCompilerDirectives="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-AddingSpecialCompilerDirectives">Adding Special Compiler Directives</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-BundlingModuleAssets" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-BundlingModuleAssets="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-BundlingModuleAssets">Bundling Module Assets</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-BuildingJavaScriptNativeModules" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-BuildingJavaScriptNativeModules="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-BuildingJavaScriptNativeModules">Building JavaScript Native Modules</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-Step4%3APackagingyourModuleforDistribution" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step4%3APackagingyourModuleforDistribution="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-Step4%3APackagingyourModuleforDistribution">Step 4: Packaging your Module for Distribution</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-DescribingyourModule" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DescribingyourModule="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DescribingyourModule">Describing your Module</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-DistributingyourModuleManually" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DistributingyourModuleManually="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DistributingyourModuleManually">Distributing your Module Manually</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-DistributingyourModulethroughtheTitanium+PlusMarketplace" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DistributingyourModulethroughtheTitanium+PlusMarketplace="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-DistributingyourModulethroughtheTitanium+PlusMarketplace">Distributing your Module through the Titanium+Plus Marketplace</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide-section-29004946_iOSModuleDevelopmentGuide-CompilingmoduleswithXcode4.2" iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-CompilingmoduleswithXcode4.2="iOS_Module_Development_Guide.html#29004946_iOSModuleDevelopmentGuide-CompilingmoduleswithXcode4.2">Compiling modules with Xcode 4.2</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+Titanium provides the ability to extend the built-in functionality through a series of optional extensions, called Titanium+Plus Modules. We'll reference them as Modules in this guide as a short abbreviation.    </p>
+<p>
+This document is covers the process of iOS Module development:    </p>
+<ul class=" "><li class=" "> <p>
+Step 1 covers how to set up your environment for development of iOS based Modules.    </p>
+</li><li class=" "> <p>
+Step 2 describes the step-by-step process for to creating your first module.    </p>
+</li><li class=" "> <p>
+Step 3 explains the basic architecture of modules.    </p>
+</li><li class=" "> <p>
+Step 4 describes how to use your module and distribute it to others.    </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-iOSModulePrerequisites">
+<h2 class="heading "><span>iOS Module Prerequisites</span></h2>
+<p>
+To develop an iOS-based Module, you'll need all of the software required to build a Titanium application for iOS:    </p>
+<ul class=" "><li class=" "> <p>
+Titanium CLI to create a module (since Release 3.3.0)    </p>
+</li><li class=" "> <p>
+Titanium SDK.    </p>
+</li><li class=" "> <p>
+Supported versions of Xcode and the iOS SDK, as described in <a class="document-link " href="#!/guide/Installing_the_iOS_SDK" Installing_the_iOS_SDK.html="Installing_the_iOS_SDK.html">Installing the iOS SDK</a>.    </p>
+</li><li class=" "> <p>
+Studio or the Titanium Command-Line Interface (CLI) for building and running test applications.    </p>
+</li></ul> <p>
+In addition, Python and the Python markdown (or markdown2) module are both required by the module build scripts. See the following sections to install Python and Markdown:    </p>
+<ul class=" "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_Python" Installing_Python.html="Installing_Python.html">Python</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Installing_Required_Python_Packages" Installing_Required_Python_Packages.html="Installing_Required_Python_Packages.html">Python setuptools</a> </p>
+</li></ul> <p>
+Like iOS application development, iOS module development is only supported on OS X.    </p>
+</div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Step1:SettingUpyourModuleEnvironment">
+<h2 class="heading "><span>Step 1: Setting Up your Module Environment</span></h2>
+<p>
+Prior to Release 3.3.0, to set up your Module environment on OS X, you'll need to place a helper script in your path or set up an alias to the legacy Titanium CLI script (<tt class=" ">titanium.py</tt>). For instructions on setting up an alias to <tt class=" ">titanium.py</tt>, see <a class="document-link " href="#!/guide/Legacy_Command-Line_Interface" Legacy_Command-Line_Interface.html="Legacy_Command-Line_Interface.html">Legacy Command-Line Interface</a>.    </p>
+</div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Step2:CreatingyourFirstModule">
+<h2 class="heading "><span>Step 2: Creating your First Module</span></h2>
+<p>
+Before building your first module, you'll want to create at test module to ensure that your environment is set up correctly and that you can use the module in a test application.    </p>
+<p>
+Starting with Release 3.3.0, to create a module, run the <tt class=" ">titanium create</tt> command with no options.  You will be prompted for the required information.  You can also run the <tt class=" ">titainum create</tt> command with the following options:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ti create -p ios -t module -d &lt;WORKSPACE_DIR&gt; -n &lt;MODULE_NAME&gt; -u &lt;MODULE_URL&gt; --id &lt;MODULE_ID&gt; </code></div>
+<div class="line"><code class="plain">## Sample Command</code></div>
+<div class="line"><code class="plain">ti create -p ios -t module -d ~/tmp/ -n test -u http:</code><code class="comments">// --id com.example.test </code></div>
+</div>
+</div> <p>
+<strong class=" ">Prior to Release 3.3.0</strong>, to create a module, run the <tt class=" ">titanium.py</tt> script in your console with the following options:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; titanium.py create --platform=iphone --type=module --dir=~/tmp/ --name=test --id=com.example.test</code></div>
+</div>
+</div> <p>
+After running this command, you should see the following:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Appcelerator Titanium XCode templates installed</code></div>
+<div class="line"><code class="plain">Created iphone module project</code></div>
+</div>
+</div> <p>
+This will create a new module in the directory <tt class=" ">~/tmp/test</tt>. Let's examine the contents of the newly created module.    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Filename / Directory</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Description / Purpose</strong> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+.gitignore    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A special .gitignore file used by the revision control system git to instruct it to ignore certain temporary files and directories. This file is not distributed with your module. This file can be safely ignored if you are not using git.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+README    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The file that gives a short explanation of the module project. This file is not distributed with your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+assets    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The directory where you should place module assets such as images.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+documentation    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The directory where you should place your module documentation for end-users. The file index.md is a Markdown-formatted template file that you should use when writing your module documentation. This is only required for module distributed in the Titanium+Plus Market-place. You can safely ignore this directory if you do not intend to distribute your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+example    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The directory where your module example(s) should go. The file app.js will be generated to include a sample loading of your module in a test window. This file can be used for quickly testing your module as well as give an example to end-users on how to use your module. This directory is distributed with your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/Classes    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The directory where you Objective-C headers and implementation classes should go. These files are not distributed with your module and are used by the Xcode compiler.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/ComExampleTest_Prefix.pch    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The pre-compiled header file. This file is not distributed with your module and is used by the Xcode compiler.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/build.py    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This file is a script that will compile and package your module for usage and distribution.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/manifest    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A special file that describes meta-data about your module and used by the Titanium compiler.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This file is required and is distributed with your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/module.xcconfig    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A special file used by Xcode when your module is compiled in an end-user Titanium application which references your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This file is a Xcode configuration file which can setup special compiler and linker directives that are specific to your module. This file is distributed with your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/platform    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Directory for platform-specific assets. This is analogous to the <tt class=" ">platform</tt> directory in a standard Titanium application project, and contains platform-specific assets that are not processed by Titanium (for example, Android styles and themes).    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/test.xcodeproj    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The directory which contains your Xcode project. This directory is not distributed with your module.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/timodule.xml    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Titanium module configuration file. The format is described in <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference" tiapp.xml_and_timodule.xml_Reference.html="tiapp.xml_and_timodule.xml_Reference.html">tiapp.xml and timodule.xml Reference</a>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+iphone/titanium.xcconfig    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A special file used by Xcode when your module is compiled when building your module. This file is a Xcode configuration file which can setup special compiler and linker directives that are specific to your module. This file is not distributed with your module and only used during module development.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+</p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+Starting with Release 3.3.0, the Titanium CLI generates a module project containing multiple platforms.  The module contains platform folders, for example, <tt class=" ">iphone</tt>, that contain platform-specific resources and common folders for assets, documentation and examples.    </p>
+<p>
+Prior to Release 3.3.0, none of the previous listed folder are contained in an <tt class=" ">iphone</tt> folder.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-OpentheTestModuleinXcode">
+<h3 class="heading "><span>Open the Test Module in Xcode</span></h3>
+<p>
+In this step, we're going to ensure that you can open your newly created Test module in Xcode.    </p>
+<p>
+Open the test.xcodeproj in Xcode. From the console, you can simply type the following to open the project:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; open test.xcodeproj</code></div>
+</div>
+</div> <p>
+This should start Xcode (if not already running) and open your test project. You should see the following window.    </p>
+<p>
+<img src="images/download/attachments/29004946/xcode_module.png" alt="images/download/attachments/29004946/xcode_module.png" class="confluence-embedded-image" />
+</p>
+<p>
+The main Module files are defined in <tt class=" ">ComExampleTestModule.h</tt> (header) and <tt class=" ">ComExampleTestModule.m</tt> (implementation).    </p>
+<p>
+You should ignore the files <tt class=" ">ComExampleTestModuleAssets.h</tt> (header) and <tt class=" ">ComExampleTestModuleAssets.m</tt> (implementation) files as these are system generated when your module is packaged. Any changes to these files will be overwritten each time your module is built.    </p>
+<p>
+At this point, you should be able to build your module in Xcode using the Build command under the Build menu.    </p>
+<p>
+If your build succeeded, you're ready to package your module and test it in a real Titanium application.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-PackagingyourModule">
+<h3 class="heading "><span>Packaging your Module</span></h3>
+<p>
+To package your module, you'll need to run the build.py script from the console.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; ./build.py</code></div>
+</div>
+</div> <p>
+This will cause the console to emit a bunch of compiler statements to standard output and may take a few seconds to build and package. Once the build completes successfully, you should see the following at the end of output:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; ** BUILD SUCCEEDED **</code></div>
+</div>
+</div> <div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+As mentioned previously, your Titanium SDK may have been installed under <tt class=" ">~/Library</tt> instead of <tt class=" ">/Library</tt>. Your <tt class=" ">titanium.xcconfig</tt> file must refer to the correct directory, else the build will fail.    </p>
+</div>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+If the Python markdown2 module is not installed, build.py will fail when it tries to generate the module docs. If you have not already done so, see <a class="document-link " href="#!/guide/Installing_Required_Python_Packages" Installing_Required_Python_Packages.html="Installing_Required_Python_Packages.html">Installing Required Python Packages</a>.    </p>
+</div>
+<p>
+You should also find the file named <tt class=" ">com.example.test-iphone-0.1.zip</tt> in the current directory (<tt class=" ">~/tmp/test</tt>). If you do not find this file, your module did not properly build and package.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-TestingyourModule">
+<h3 class="heading "><span>Testing your Module</span></h3>
+<p>
+To test your module, we'll first want to simply run the Module test harness. The Module test harness will create a temporary project, copy in your example app.js file (pre-generated for you) and load your module. You can perform this test by running the following in console from the current directory (~/tmp/test):    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; titanium.py run</code></div>
+</div>
+</div> <p>
+This will cause the console to emit a bunch of logging to standard output and make take several seconds to build, package and launch the iPhone simulator.    </p>
+<p>
+If successful, you should see the iPhone simulator and a white screen:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav883e1611cc8a979ca92a7f792d4b63cc.png" alt="images/download/attachments/29004946/worddav883e1611cc8a979ca92a7f792d4b63cc.png" class="confluence-embedded-image" width="188" />
+</p>
+<p>
+You should see something like the following near the end of your Console output:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">[INFO] [object ComExampleTestModule] loaded</code></div>
+<div class="line"><code class="plain">[DEBUG] loading: /var/folders/4n/4nhl7xlPFsaSrlAGHhPwg++++TI/-Tmp-/mNdElWkti/test/Resources/com.example.test.js, resource: var/folders/4n/4nhl7xlPFsaSrlAGHhPwg++++TI/-Tmp-/mNdElWkti/test/Resources/com_test_js</code></div>
+<div class="line"><code class="plain">[INFO] module is =&gt; [object ComExampleTestModule]</code></div>
+<div class="line"><code class="plain">[DEBUG] application booted in </code><code class="value">82.601011</code><code class="plain"> ms</code></div>
+</div>
+</div> <p>
+The important two statements to look for are:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">[INFO] [object ComExampleTestModule] loaded</code></div>
+<div class="line"><code class="plain">[INFO] module is =&gt; [object ComExampleTestModule]</code></div>
+</div>
+</div> <p>
+The first statement can be found if you look at the method named startup in the file <tt class=" ">ComExampleTestModule.m</tt> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)startup</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// this method is called when the module is first loaded</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// you *must* call the superclass</code></div>
+<div class="line"><code class="plain">  [</code><code class="keyword">super</code><code class="plain"> startup];</code></div>
+<div class="line"><code class="plain">  NSLog(@</code><code class="string">"[INFO] %@ loaded"</code><code class="plain">,self);</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+We'll explain this method in more detail in a later section.The second statement can be found if you look at the file <tt class=" ">app.js</tt> under the example directory.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var test = require(</code><code class="string">'com.example.test'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">Ti.API.info(</code><code class="string">"module is =&gt; "</code><code class="plain">+test);</code></div>
+</div>
+</div> <p>
+When loading a module from JavaScript, you'll first need to import it by requiring it using the require('module_id') command like above.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-TestingyourModuleinatestapplication">
+<h3 class="heading "><span>Testing your Module in a test application</span></h3>
+<p>
+Now, we need to test your Module in a test application.    </p>
+<p>
+Before we can test the module in a real application, we have to install it. Since we already packaged the module in the previous step, we can skip building your module. However, remember that as you change your module code, you will need to repeat the build and install steps.    </p>
+<p>
+To install your Module so that it can be used in a real application, you will need to install it. In the console, run the following:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; cp com.example.test-iphone-</code><code class="value">0.1</code><code class="plain">.zip /Library/Application\ Support/Titanium/</code></div>
+</div>
+</div> <p>
+This will copy your Module distribution file into your Titanium directory. The Titanium compiler is smart enough to automatically expand your module into the correct directory when referenced in your application.    </p>
+<p>
+Your module will be expanded into the following directory:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">/Library/Application Support/Titanium/modules/iphone/com.example.test/</code><code class="value">0.1</code></div>
+</div>
+</div> <p>
+This directory structure allows multiple versions of the same module to co-exist at the same time.    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+As mentioned previously, you'll need to adjust the paths above if your Titanium SDK was installed below <tt class=" ">~/Library</tt> instead of <tt class=" ">/Library</tt>.    </p>
+</div>
+<p>
+Next, we need to create a test application using Studio or the Titanium CLI.    </p>
+<p>
+Once your application project is created, navigate to your test application folder and edit the file named tiapp.xml in a text editor.    </p>
+<p>
+You will need to add the following to this file near the end of the file:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;modules&gt;</code></div>
+<div class="line"><code class="plain">  &lt;module version=</code><code class="string">"0.1"</code><code class="plain">&gt;com.example.test&lt;/module&gt;</code></div>
+<div class="line"><code class="plain">&lt;/modules&gt;</code></div>
+</div>
+</div> <p>
+This is an important step as it will instruct the Titanium compiler that your module needs one or more modules defined and which version(s). In this test case, we simply need to reference our com.example.test module and the default version, 0.1.    </p>
+<p>
+The final XML file should look like the following:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ti:app xmlns:ti=</code><code class="string">"http://ti.appcelerator.org"</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">  &lt;id&gt;com.example.test&lt;/id&gt;</code></div>
+<div class="line"><code class="plain">  &lt;name&gt;testapp&lt;/name&gt;</code></div>
+<div class="line"><code class="plain">  &lt;version&gt;</code><code class="value">1.0</code><code class="plain">&lt;/version&gt;</code></div>
+<div class="line"><code class="plain">  &lt;publisher&gt;not specified&lt;/publisher&gt;</code></div>
+<div class="line"><code class="plain">  &lt;url&gt;not specified&lt;/url&gt;</code></div>
+<div class="line"><code class="plain">  &lt;description&gt;not specified&lt;/description&gt;</code></div>
+<div class="line"><code class="plain">  &lt;copyright&gt;not specified&lt;/copyright&gt;</code></div>
+<div class="line"><code class="plain">  &lt;icon&gt;appicon.png&lt;/icon&gt;</code></div>
+<div class="line"><code class="plain">  &lt;persistent-wifi&gt;</code><code class="keyword">false</code><code class="plain">&lt;/persistent-wifi&gt;</code></div>
+<div class="line"><code class="plain">  &lt;prerendered-icon&gt;</code><code class="keyword">false</code><code class="plain">&lt;/prerendered-icon&gt;</code></div>
+<div class="line"><code class="plain">  &lt;statusbar-style&gt;</code><code class="keyword">default</code><code class="plain">&lt;/statusbar-style&gt;</code></div>
+<div class="line"><code class="plain">  &lt;statusbar-hidden&gt;</code><code class="keyword">false</code><code class="plain">&lt;/statusbar-hidden&gt;</code></div>
+<div class="line"><code class="plain">  &lt;fullscreen&gt;</code><code class="keyword">false</code><code class="plain">&lt;/fullscreen&gt;</code></div>
+<div class="line"><code class="plain">  &lt;navbar-hidden&gt;</code><code class="keyword">false</code><code class="plain">&lt;/navbar-hidden&gt;</code></div>
+<div class="line"><code class="plain">  &lt;analytics&gt;</code><code class="keyword">true</code><code class="plain">&lt;/analytics&gt;</code></div>
+<div class="line"><code class="plain">  &lt;guid&gt;c347a9a1-44bd-48c8-a6bf-7762f2582f50&lt;/guid&gt;</code></div>
+<div class="line"><code class="plain">  &lt;modules&gt;</code></div>
+<div class="line"><code class="plain">    &lt;module version=</code><code class="string">"0.1"</code><code class="plain">&gt;com.example.test&lt;/module&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/modules&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ti:app&gt;</code></div>
+</div>
+</div> <div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+The guid value will be different that above since it is a globally-unique ID generated for each application.    </p>
+</div>
+<p>
+Now, we need to edit our app.js to load our module. Edit the app.js file in the Resources directory of our test application and add the following at the end of the file:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var test = require(</code><code class="string">'com.example.test'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">Ti.API.info(</code><code class="string">"module is =&gt; "</code><code class="plain">+test);</code></div>
+</div>
+</div> <p>
+Launch the application in the simulator and you should see a normal test application.    </p>
+<p>
+The Studio console should output some important key logging statements that will help ensure that your module loaded:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Detected third-party module: com.example.test/</code><code class="value">0.1</code></div>
+</div>
+</div> <p>
+This statement should be printed for each module referenced in the <tt class=" ">tiapp.xml</tt> file.    </p>
+<p>
+We should also see the following based on the code we added to <tt class=" ">app.js</tt>:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">[INFO] [object ComExampleTestModule] loaded</code></div>
+<div class="line"><code class="plain">[INFO] module is =&gt; [object ComExampleTestModule]</code></div>
+</div>
+</div> <p>
+If you see this statements and no errors in the logging console, your module loaded and works. Your system is set up and ready to go!    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Step3:BasicModuleArchitecture">
+<h2 class="heading "><span>Step 3: Basic Module Architecture</span></h2>
+<p>
+The Titanium platform is based on a modular architecture and while you can create third-party modules as described in this document, Titanium itself uses the same module SDK internally for built-in APIs.    </p>
+<p>
+The module architecture contains the following key interface components:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Proxy    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A base class that represents the native binding between your JavaScript code and native code.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ViewProxy    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A specialized Proxy that knows how to render Views.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+View    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The visual representation of a UI component which Titanium can render.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Module    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A special type of Proxy that describes a specific API set, or namespace.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+When building a Module, you can only have one Module class but you can have zero or more Proxies, Views and ViewProxies.<br />For each View, you will need a ViewProxy.    </p>
+<p>
+The ViewProxy represents the model data (which is kept inside the proxy itself in case the View needs to be released) and is responsible for exposing the APIs and events that the View supports.    </p>
+<p>
+You create a Proxy when you want to return non-visual data between JavaScript and native. The Proxy knows how to handle any method and property dispatching and event firing.    </p>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-ModuleLifecycle">
+<h3 class="heading "><span>Module Lifecycle</span></h3>
+<p>
+The module provides several places for you to hook into the application's lifecycle.    </p>
+<p>
+When you create a iOS module, the boiler plate code provides you with the default <tt class=" ">startup</tt> and <tt class=" ">shutdown</tt> methods to execute code when the module is loaded or unloaded from the application, respectively.    </p>
+<p>
+You can also use the <tt class=" ">load</tt> method to execute code before the application starts.  This allows the application to register callbacks for lifespan events, such as <tt class=" ">application:didFinishLaunchingWithOptions</tt>.    </p>
+<p>
+For items you want to inject right into the runtime, use the<tt class=" "> </tt><tt class=" ">performSelectorDuringRunLoopStart</tt> method to assign a callback that executes every time a run loop starts before the file is executed.  The selector is a class method that takes one argument, which is the <tt class=" ">TiBindingRunLoop</tt> method.  This is useful for modifying the runtime or for debugging by capturing exceptions before the application has been parsed.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">+(</code><code class="keyword">void</code><code class="plain">)doALittleDance:(TiBindingRunLoop)runLoop</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">    NSLog(@</code><code class="string">"I'm doing a little dance for %@"</code><code class="plain">,runLoop);</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="comments">// Binds the previous method before the application starts.</code></div>
+<div class="line"><code class="comments">// Function executes when the runtime loop starts.</code></div>
+<div class="line"><code class="plain">+(</code><code class="keyword">void</code><code class="plain">)load</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">    NSLog(@</code><code class="string">"I'mma do a little dance."</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    [self performSelectorDuringRunLoopStart:</code><code class="color1">@selector</code><code class="plain">(doALittleDance:)];</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-Proxy">
+<h3 class="heading "><span>Proxy</span></h3>
+<p>
+To create a Proxy, your interface declaration must extend TiProxy. Import &quot;TiProxy.h&quot; in your import statement. For example, your interface would be:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiProxy.h"</code></div>
+<div class="line"><code class="color2">@interface</code><code class="plain"> FooProxy : TiProxy</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+Your implementation would then be:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"FooProxy.h"</code></div>
+<div class="line"><code class="color1">@implementation</code><code class="plain"> FooProxy</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+By convention, Titanium requires the use of the suffix Proxy to indicate that the class is a Proxy.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-ProxyMethods">
+<h3 class="heading "><span>Proxy Methods</span></h3>
+<p>
+Proxies expose methods and properties by simply using standard Objective-C syntax. To expose a method, a Proxy must have one of the following valid signatures:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(id)methodName:(id)args</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+This signature is used when the method returns a value to the caller. The returned result can be either a valid NSObject, nil or a Proxy (or subclass thereof).    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)methodName:(id)args</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+This signature should be used if your method returns no value.    </p>
+<p>
+Both signatures take a single argument (args) as a NSArray. However, generally, we recommend using the id declaration. This will make it easier to typecast the incoming value to another value, which we'll describe below.    </p>
+<p>
+If you function takes no arguments, you can simply ignore the incoming args value.    </p>
+<p>
+Titanium provides several convenience macros for typecasting incoming values to a specific type and extracting them from the array.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ENSURE_SINGLE_ITEM(args,type)</code></div>
+</div>
+</div><ul class=" "><li class=" "> <p>
+The first parameter is the name of the argument.    </p>
+</li><li class=" "> <p>
+The second parameter is the type name that the value should be.    </p>
+</li></ul> <p>
+This macro will do two actions:    </p>
+<ol class=" "><li class=" "> <p>
+pull out the first argument (i.e. [args objectAtIndex:0])    </p>
+</li><li class=" "> <p>
+cast the return value to the type passed in the second argument.    </p>
+</li></ol> <p>
+This macro can only be used for single-argument methods. If you have multiple arguments, you should simply used the normal array accessor methods.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ENSURE_UI_THREAD_0_ARGS</code></div>
+</div>
+</div> <p>
+This macro can be used to ensure that the current method only runs on the UI thread (main thread). If the method is invoked on a non-main thread, it will simply re-queue the method on the UI thread. This method is equivalent to [NSThread performSelectorOnMainThread].    </p>
+<p>
+You can only use this method if you have no return result.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ENSURE_UI_THREAD_1_ARG(arg)</code></div>
+</div>
+</div> <p>
+This macro can be used to ensure that the current method, with argument, only runs on the UI Thread. It is the same as the previous macro with the exception that it will ensure that the arguments are passed along, too.    </p>
+<p>
+Titanium provides a Utility library for converting and checking certain values. This library is in TiUtils and can be imported with:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiUtils.h"</code></div>
+</div>
+</div> <p>
+Some common conversion utility examples:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">CGFloat f = [TiUtils floatValue:arg];</code></div>
+<div class="line"><code class="plain">NSInteger f = [TiUtils intValue:arg];</code></div>
+<div class="line"><code class="plain">NSString *value = [TiUtils stringValue:arg];</code></div>
+<div class="line"><code class="plain">NSString *value = [TiUtils stringValue:@</code><code class="string">"key"</code><code class="plain"> properties:dict def:@</code><code class="string">"default"</code><code class="plain">];</code></div>
+<div class="line"><code class="plain">TiColor *bgcolor = [TiUtils colorValue:arg];</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-ProxyProperties">
+<h3 class="heading "><span>Proxy Properties</span></h3>
+<p>
+To expose a JavaScript property in a Proxy, you can simply define a Objective-C property:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="color1">@property</code><code class="plain">(nonatomic,readwrite,assign) NSString* propertyName;</code></div>
+</div>
+</div> <p>
+You can optionally just define a getter and/or setter property.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)setPropertyName:(id)value</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(id)propertyName</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> @</code><code class="string">"foo"</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+In the setter method, Titanium will pass a single value as the converted value as the first argument (instead of an NSArray like a method).    </p>
+<p>
+In the getter method, your property method must return a value as either a NSObject, nil or TiProxy (or subclass).    </p>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningObjectValues">
+<h4 class="heading "><span>Returning Object Values</span></h4>
+<p>
+The following Objective-C types can be returned without conversion:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSString    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSDictionary    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSArray    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSNumber    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSDate    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NSNull    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningPrimitiveValues">
+<h4 class="heading "><span>Returning Primitive Values</span></h4>
+<p>
+To return a primitive value from either a method or property, you should return an NSNumber with the appropriate wrapped primitive value. Titanium provides a set of macros to make this easier:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Macro</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Description</strong> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMINT    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithInt:value]    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMBOOL    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithInt:value]    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMLONG    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithLong:value]    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMLONGLONG    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithLongLong:value]    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMDOUBLE    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithDouble:value]    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+NUMFLOAT    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Equivalent to [NSNumber numberWithFloat:value]    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningComplexValues">
+<h4 class="heading "><span>Returning Complex Values</span></h4>
+<p>
+There are two approaches to returning complex values:    </p>
+<ul class=" "><li class=" "> <p>
+The first approach is to set values in a NSDictionary and it. When returning a NSDictionary, Titanium converts this to a JavaScript object with each key/value being mapped into JavaScript object property/values.    </p>
+</li><li class=" "> <p>
+The second approach is to create a specialized Proxy. The Proxy should then be returned which will be exposed as a JavaScript object with functions and properties. Invocation against the returned Proxy will be invoked against your returned proxy instance. When you return a Proxy instance, you must autorelease it if you created it in your method.    </p>
+</li></ul> </div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningFiles">
+<h4 class="heading "><span>Returning Files</span></h4>
+<p>
+To return a reference to a filesystem file, you should return an instance of a TiFile proxy. This will automatically handle exposing the native file and it's methods and properties. To return a file, you can use the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiFile alloc] initWithPath:path] autorelease];</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningBlobs">
+<h4 class="heading "><span>Returning Blobs</span></h4>
+<p>
+To return a reference to a blob data (such as a NSData), you should return an instance of a TiBlob. This will automatically handle exposing some native blob operations. To return a blob, you can use the following examples:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiBlob alloc] initWithData:nsdata mimetype:@</code><code class="string">"application/octet-stream"</code><code class="plain">] autorelease];</code></div>
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiBlob alloc] initWithImage:image] autorelease];</code></div>
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiBlob alloc] initWithFile:file] autorelease];</code></div>
+</div>
+</div> <p>
+In the first example above, the second argument should map to the mime type of the raw data content. If the data is binary, you can use the &quot;application/octet-stream&quot; value.    </p>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningCGRect">
+<h4 class="heading "><span>Returning CGRect</span></h4>
+<p>
+To return a CGRect, Titanium provides a proxy named TiRect. You can use the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">TiRect *result = [[[TiRect alloc] init] autorelease];</code></div>
+<div class="line"><code class="plain">[result setRect:rect];</code></div>
+<div class="line"><code class="keyword">return</code><code class="plain"> result;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningCGPoint">
+<h4 class="heading "><span>Returning CGPoint</span></h4>
+<p>
+To return a CGPoint, Titanium provides a proxy named TiRect. You can use the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiPoint alloc] initWithPoint:point] autorelease];</code></div>
+</div>
+</div> <p>
+4. Returning NSRange    </p>
+<p>
+To return an NSRange, create an NSDictionary using the NSRange values and return the NSDictionary.<br />TiRange was used to return an NSRange in the past. TiRange has been removed from the SDK as of version 2.1.0 in favor of NSDictionary.<br />You can use the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">return</code><code class="plain"> [NSDictionary dictionaryWithObjectsAndKeys:NUMINT(range.location),@</code><code class="string">"location"</code><code class="plain">,NUMINT(range.length),@</code><code class="string">"length"</code><code class="plain">, nil];</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-ReturningUIColor">
+<h4 class="heading "><span>Returning UIColor</span></h4>
+<p>
+To return a UIColor, Titanium provides a proxy named TiColor. You can use the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="keyword">return</code><code class="plain"> [[[TiColor alloc] initWithColor:color name:@</code><code class="string">"#fff"</code><code class="plain">] autorelease];</code></div>
+</div>
+</div> <p>
+The second argument (name) should be the textual name (if provided) of the UIColor.    </p>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-SettingProxyValues">
+<h4 class="heading "><span>Setting Proxy Values</span></h4>
+<p>
+When you create a proxy from JavaScript, you typically pass an optional dictionary of key/value pairs. By using this pattern, Titanium provides built-in functionality to help make proxy programming easier.    </p>
+<p>
+Let's use a simple example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var my_module = require(</code><code class="string">'com.example.test'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">var foo = my_module.createFoo({</code></div>
+<div class="line"><code class="plain"> </code><code class="string">"bar"</code><code class="plain">:</code><code class="string">"123"</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+Titanium will automatically correctly define and dispatch proxy factory creation methods like above. You simply need to define a Proxy with the same name as your module and the name of your method plus the Proxy suffix.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ComExampleTestFooProxy.h</code></div>
+<div class="line"><code class="plain">ComExampleTestFooProxy.m</code></div>
+</div>
+</div> <p>
+Your module does not need to define the createFoo method. Using this convention, Titanium already knows how to do that for you.    </p>
+<p>
+In your proxy, you would then want to define a setter method to handle the bar property. Upon construction (the init), Titanium will automatically call the setter for all properties passed in the constructor.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"ComExampleTestFooProxy.h"</code><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiUtils.h"</code></div>
+<div class="line"><code class="color1">@implementation</code><code class="plain"> ComExampleTestFooProxy</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)setBar:(id)value</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">   NSString *str = [TiUtils stringValue:value];</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+In the above example, we simply define the setter and use the TiUtils to convert the value into a stringValue. Using this utility ensures that no matter what type of value passed into the argument, we'll get the string representation. So, if the user was to pass the number 123, it would still return an NSString with the value @&quot;123&quot;.    </p>
+<p>
+Proxies are also special about how they handle and hold their properties. Proxies will always store values passed in a special internal NSDictionary called 'dynprops'. This means that you can always use the following method to retrieve the value of the proxy without having to define getters and setters for each of your properties:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">id value = [self valueForUndefinedKey:@</code><code class="string">"bar"</code><code class="plain">];</code></div>
+</div>
+</div> <p>
+If you use valueForUndefinedKey, you will always retrieve the original property value. However, if you want to invoke a potential getter (which may or may not return the original property value in JavaScript), you should use the following:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">id value = [self valueForKey:@</code><code class="string">"bar"</code><code class="plain">];</code></div>
+</div>
+</div> <p>
+In the above code example, if we had defined a method like the following below it would be invoked instead of retrieving our internal original property.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(id)bar</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> @</code><code class="string">"456"</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+Properties don't have to be passed in the constructor for them to be internally set and your setter invoked.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">foo.bar = </code><code class="value">789</code><code class="plain">;</code></div>
+</div>
+</div> <p>
+When you invoke the property of a proxy, the following will happen:    </p>
+<ul class=" "><li class=" "> <p>
+If you have defined a setter, it will be invoked.    </p>
+</li><li class=" "> <p>
+If you have not defined a setter, the property and value will be stored internally in the dynprops.    </p>
+</li></ul> <p>
+If you implement a setter, you should also manually store the property yourself in dynprops. You can do this by calling the following method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)setBar:(id)value</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  [self replaceValue:value forKey:@</code><code class="string">"bar"</code><code class="plain"> notification:NO];</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+The third argument (notification) tells Titanium whether you want the setter to be invoked from this property change. Since we're already inside our setter, we don't want an infinite recursion so we pass NO.    </p>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-HandlingEvents">
+<h4 class="heading "><span>Handling Events</span></h4>
+<p>
+Proxies automatically handle firing events and managing event listeners. Internally, when you call addEventListener or removeEventListener from JavaScript against a proxy instance, the proxy will automatically handle the code for managing the event listeners.    </p>
+<p>
+If you want to be notified upon an add or remove, you should override the methods:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)_listenerAdded:(NSString*)type count:(</code><code class="keyword">int</code><code class="plain">)count</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)_listenerRemoved:(NSString*)type count:(</code><code class="keyword">int</code><code class="plain">)count</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+The <tt class=" ">_listenerAdded</tt> method will be invoked with the event name (type) and the total number of existing listener with the same type (including the new event listener). This is convenient, for example, when you would like to enable some action only once at least one listener is listening for the event. This can be useful for conserving system resources.<br />The <tt class=" ">_listenerRemoved</tt> method will be invoked with the event name (type) and the total number of remaining listeners with the same type (excluding the removed listener). This is useful when you want to cleanup system resources once no listeners are actively listening for events. To send an event to any event listener, you use the convenience method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)fireEvent:(NSString*)type withObject:(id)obj;</code></div>
+</div>
+</div> <p>
+The first argument is the default and most common way to fire an event. The first argument (type) is the event name. The second argument (obj) is an NSDictionary of event properties. The second argument can also be nil if no additional event properties are needed. The event properties will be part of the event argument which is the first argument in all event functions.    </p>
+<p>
+For example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)mymethod{NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:@</code><code class="string">"foo"</code><code class="plain">,@</code><code class="string">"name"</code><code class="plain">,nil];</code></div>
+<div class="line"><code class="plain">[self fireEvent:@</code><code class="string">"foo"</code><code class="plain"> withObject:event];}</code></div>
+</div>
+</div> <p>
+In this example, we'd adding one additional event property named 'name' with the value of 'foo'. In JavaScript, this would be retrieved like:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">foo.addEventListener(</code><code class="string">'foo'</code><code class="plain">,function(e){</code></div>
+<div class="line"><code class="plain">  alert(</code><code class="string">"name is "</code><code class="plain">+e.name);</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+In addition to any additional event arguments passed, Titanium automatically provides the following built-in properties on all events fired:    </p>
+<ul class=" "><li class=" "> <p>
+source &mdash; The source object (proxy) that fired the event    </p>
+</li><li class=" "> <p>
+type &mdash; The type of event    </p>
+</li></ul> <p>
+You can also check for the existing of a listener (recommended) before firing an event. This is done with the <tt class=" ">_hasListeners</tt> method.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">(</code><code class="keyword">void</code><code class="plain">)fireMyEvent</code></div>
+<div class="line"><code class="plain">{</code><code class="keyword">if</code><code class="plain"> ([self _hasListeners:@</code><code class="string">"foo"</code><code class="plain">])</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="comments">// fire event</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+It is generally recommended that you only construct your event object and fire the event if you have listeners to conserve processing power.    </p>
+</div>
+<div class="section section-4 " id="29004946_iOSModuleDevelopmentGuide-MemoryManagement">
+<h4 class="heading "><span>Memory Management</span></h4>
+<p>
+Proxies act like any Objective-C class and all memory management rules must be considered. When returning a new proxy instance from a method, you must autorelease the instance. Titanium will retain a reference to the proxy which maps to a reference to the resulting JavaScript variable reference. However, once the JavaScript variable is no longer referenceable, it will be released and your proxy will be sent the dealloc message.    </p>
+<p>
+You must take special care to retain/release your objects in Titanium just like you would in any Objective-C based programs. Improper retain/release will cause crashes and undesired results.    </p>
+</div>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-ViewProxy">
+<h3 class="heading "><span>View Proxy</span></h3>
+<p>
+A View Proxy is a specialization of a Proxy that is used for Views &mdash; objects which interact with the UI to draw things on the screen.    </p>
+<p>
+The View Proxy holds the data (model) and acts like a controller for dispatching property changes and methods against the view. The View handles the internal logic for interacting with UIKit and handling UIKit events. The View is a model delegate to the View Proxy and, as long as referenced, receives property changes.    </p>
+<p>
+The View Proxy does not always retain a valid reference to a View. The View is only created on demand, as needed. Once the View is created and retained by the View Proxy, all property change events on the View Proxy will be forwarded to the View.    </p>
+<p>
+The View property methods are named using a special, required convention.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)setFoo_:(id)value</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+The suffix of the property name must end with an underscore. In the case of the View property methods, invocations against the View will always be on the UI main thread.    </p>
+</div>
+<p>
+When you have properties in your View Proxy that should be handled by an active View, you don't need to define them in your View. Instead, you can define them using the syntax above in your View and they be automatically dispatched. In the event that your View is attached after properties have been set, the View Proxy will automatically forward all property change events (results in calling each setter method) to the View upon construction.    </p>
+<p>
+However, the View must have and dispatch any methods that it wants the View to also handle. This is normally done with the following example code:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">(</code><code class="keyword">void</code><code class="plain">)show:(id)args</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  [[self view] performSelectorOnMainThread:</code><code class="color1">@selector</code><code class="plain">(show:)</code></div>
+<div class="line"><code class="plain">    withObject:args waitUntilDone:NO];</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+You can also use a convenience macro that does the equivalent:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">USE_VIEW_FOR_UI_METHOD(methodName)</code></div>
+</div>
+</div> <p>
+The following code example is the same as the show method above:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">USE_VIEW_FOR_UI_METHOD(show)</code></div>
+</div>
+</div> <p>
+To get a generic reference to the View Proxy's view, the method 'view' can be called and you can cast the view result to your View class.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-View">
+<h3 class="heading "><span>View</span></h3>
+<p>
+A View implementation must extend the TiUIView class. The TiUIView class extends UIView and provides Titanium specific functionality.    </p>
+<p>
+To define a new View, for example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiUIView.h"</code><code class="color2">@interface</code><code class="plain"> ComExampleTestFooView : TiUIView</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+To define the View implementation, for example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"ComExampleTestFooView.h"</code></div>
+<div class="line"><code class="color1">@implementation</code><code class="plain"> ComExampleTestFooView</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+The View will be attached to the UIView hierarchy as needed by the View Proxy. However, if you have sub-views you will need to attach them to yourself (TiUIView) as necessary. This is typically done by assigning your view to an instance variable and keeping a reference to it and only creating and attaching when the reference is nil.    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-CreatingaViewandViewProxy">
+<h3 class="heading "><span>Creating a View and View Proxy</span></h3>
+<p>
+To create a view, in Xcode, select the menu File-&gt;New File... and the following File chooser dialog should be shown:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav278411dc9a15c70032c0c42341f3d10e.png" alt="images/download/attachments/29004946/worddav278411dc9a15c70032c0c42341f3d10e.png" class="confluence-embedded-image" width="472" />
+</p>
+<p>
+You should see an Appcelerator item under iPhone OS in the left hand window pane. Each of the icons in the right hand window pane provide the various types of files that can be quickly created from an Appceleratorspecific template. Choose &quot;TiUIView&quot; and click the &quot;Next&quot; button.    </p>
+<p>
+In the next dialog, you should enter the filename &quot;ComExampleTestView.m&quot; and select you project directory and the &quot;Classes&quot; subdirectory. You can use the &quot;Choose...&quot; button to select using a file chooser.    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav36cc6bf263d911dbb09be616758d731c.png" alt="images/download/attachments/29004946/worddav36cc6bf263d911dbb09be616758d731c.png" class="confluence-embedded-image" width="430" />
+</p>
+<p>
+At this point, you should see two new files in your Xcode project.    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav827e4fcea9a3f86baf2155ce76ba13a0.png" alt="images/download/attachments/29004946/worddav827e4fcea9a3f86baf2155ce76ba13a0.png" class="confluence-embedded-image" width="430" />
+</p>
+<p>
+You'll probably want to change the default Copyright boilerplate to meet your own specific needs. At this point, we're ready to change the code to make it do something useful.    </p>
+<p>
+In this example, we'll create a View that will simply attach a square as a child subview when the color property is set. Use the following code in <tt class=" ">ComExampleTestView.h</tt>:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiUIView.h"</code></div>
+<div class="line"><code class="color2">@interface</code><code class="plain"> ComExampleTestView : TiUIView</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  UIView *square;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+And then change ComExampleTestView.m to the following code:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"ComExampleTestView.h"</code></div>
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiUtils.h"</code></div>
+<div class="line"><code class="color1">@implementation</code><code class="plain"> ComExampleTestView</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)dealloc</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  RELEASE_TO_NIL(square);</code></div>
+<div class="line"><code class="plain">  [</code><code class="keyword">super</code><code class="plain"> dealloc];</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(UIView*)square</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (square==nil)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">    square = [[UIView alloc] initWithFrame:[self frame]];</code></div>
+<div class="line"><code class="plain">    [self addSubview:square];</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> square;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (square!=nil)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">    [TiUtils setView:square positionRect:bounds];</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)setColor_:(id)color</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  UIColor *c = [[TiUtils colorValue:color] _color];</code></div>
+<div class="line"><code class="plain">  UIView *s = [self square];</code></div>
+<div class="line"><code class="plain">  s.backgroundColor = c;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+We've created our view class that represents the visual part of our example. We'll now need to create a View-Proxy that knows how to map our JavaScript bindings into native code. Select the menu &quot;File-&gt;New File...&quot; again and create a &quot;TiViewProxy&quot;.<br />Since this is a simple example, we can simply leave the template code as-is for now.    </p>
+<p>
+To test the new view, we need to write the application logic in JavaScript. Since we're testing a simple view, we can use the titanium command line tool to quickly test. Add the following JavaScript code to the file under your project examples directory in the app.js file:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var my_module = require(</code><code class="string">'com.example.test'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">var foo = my_module.createView({</code></div>
+<div class="line"><code class="plain"> </code><code class="string">"color"</code><code class="plain">:</code><code class="string">"red"</code><code class="plain">,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">"width"</code><code class="plain">:</code><code class="value">20</code><code class="plain">,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">"height"</code><code class="plain">:</code><code class="value">20</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="plain">window.add(foo);</code></div>
+</div>
+</div> <p>
+This will load our module, create a view proxy (and View) and attach our View to the window as a 20 x 20 red square.<br />To run it, in the console, simply type the following from your module project directory:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&gt; titanium run</code></div>
+</div>
+</div> <p>
+You should see a lot of console logging as the project is compiled, packaged and the test application built and run. After about 30 seconds, you should see the following:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav800fe8ba5b540456b1a4a105c4c87a40.png" alt="images/download/attachments/29004946/worddav800fe8ba5b540456b1a4a105c4c87a40.png" class="confluence-embedded-image" width="555" />
+</p>
+<p>
+A few notes on our test code:    </p>
+<ul class=" "><li class=" "> <p>
+In Titanium views, we typically recommend storing a reference to your main UIView as a class member variable (in this example, &quot;square&quot;) and then load the view and attach it to yourself (your TiUIView) as needed. In this example, we only attach it when a property is set.    </p>
+</li><li class=" "> <p>
+You must implement a special method called &quot;frameSizeChanged:bounds:&quot;. This method is called each time the frame/bounds/center changes within Titanium. Titanium has a special layout engine and you should use this method to signal changes to your frame and bounds. You should not override &quot;setBounds:&quot;, &quot;setFrame:&quot; or &quot;setCenter:&quot;. When you override this method, you must call the special method &quot;setView:positionRect:&quot; against the TiUtils helper class. This method will correctly layout your child view within the correct layout boundaries of the new bounds of your view.    </p>
+</li><li class=" "> <p>
+Since we used a View naming pattern for creation (the method &quot;createView&quot; against our module), we don't need to define a function in our module. Titanium will automatically do this for us when using this naming convention. However, if you instead wanted to create a method named &quot;createFooView&quot;, you would need to define this method yourself in your module and create the proxy directly.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-AddingSpecialCompilerDirectives">
+<h3 class="heading "><span>Adding Special Compiler Directives</span></h3>
+<p>
+If your module needs a special Framework or other system library or special compiler directives, you can use the module's xcconfig file to define them. Titanium automatically creates a file named module.xcconfig and one named titanium.xcconfig. The titanium.xcconfig is used when compiling your module for packaging. However, module.xcconfig is used by the application compiler when the application is built and your module is referenced. This allows you to control the compiler directives used during this process, too.    </p>
+<p>
+To demonstrate this, let's walk through a simple example. Let's add a Framework.    </p>
+<p>
+First, we'll need to add the Framework in Xcode. In this example, we'll simply add GameKit. Select Frameworks in your project folder, right click &quot;Add -&gt; Existing Frameworks&quot; and select the menu item.    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav36d4c37a7bcafe457e7c46d33fb37733.png" alt="images/download/attachments/29004946/worddav36d4c37a7bcafe457e7c46d33fb37733.png" class="confluence-embedded-image" width="543" />
+</p>
+<p>
+This will bring up the following dialog window:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddavaaa7cb51650ea8e42507d871a116d676.png" alt="images/download/attachments/29004946/worddavaaa7cb51650ea8e42507d871a116d676.png" class="confluence-embedded-image" width="239" />
+</p>
+<p>
+And choose &quot;GameKit.framework&quot; and click the &quot;Add&quot; button. You should now see the new Framework reference under the Frameworks folder:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddavf212612204fc29b2c47e647e4fa8e725.png" alt="images/download/attachments/29004946/worddavf212612204fc29b2c47e647e4fa8e725.png" class="confluence-embedded-image" width="233" />
+</p>
+<p>
+If you compile your project, you should now have no errors.    </p>
+<p>
+Now that we've added the Framework to the project, we still need to set it up so that the application compiler can also import this Framework during compile. To do that, edit the module.xcconfig and add the following line at the bottom:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">OTHER_LDFLAGS=$(inherited) -framework GameKit</code></div>
+</div>
+</div> <p>
+Now, we want to actually define a couple of methods that will actually use GameKit so we can demonstrate that it's working. In this example, we want to create a GameKit session and display the UI peer chooser.    </p>
+<p>
+Let's start with the application code. In Titanium when designing an API that support choosing a value from a dialog, we typically recommend passing an object with the function callbacks defined as values to the keys &quot;success&quot;, &quot;error&quot; and &quot;cancel&quot;.    </p>
+<p>
+In code, this would look like:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">my_module.start(</code><code class="string">'Jeff'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">  my_module.showChooser({</code></div>
+<div class="line"><code class="plain">      success:function(e)</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain">      alert(</code><code class="string">"peer choosen: "</code><code class="plain">+e.peer);</code></div>
+<div class="line"><code class="plain">    },</code></div>
+<div class="line"><code class="plain">      cancel:function(e){</code></div>
+<div class="line"><code class="plain">      alert(</code><code class="string">"cancelled"</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain">  });</code></div>
+</div>
+</div> <p>
+The first function (start) simply will start a GameKit session with my display name (&quot;Jeff&quot;). The second function (showChooser) will display a GameKit peer chooser UI dialog. We pass two function callbacks, &quot;success&quot; and &quot;cancel&quot;. We want to call &quot;success&quot; when a peer is chosen and &quot;cancel&quot; when the user cancels the selection dialog. You might also want to define an &quot;error&quot; callback in the case that you encounter a setup error, etc.    </p>
+<p>
+Now, let's look at adding the native code. We'll do this code in our ComExampleTestModule.m and ComExampleTestModule.h files. Let's start with the implementation code. Paste the following after the methods already defined and before the &quot;@end&quot; statement:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#pragma mark Internal</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)dealloc</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (session!=nil)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">    [session disconnectFromAllPeers];</code></div>
+<div class="line"><code class="plain">    RELEASE_TO_NIL(session);</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">  RELEASE_TO_NIL(peer);</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (controller!=nil)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">    [controller performSelectorOnMainThread:</code><code class="color1">@selector</code><code class="plain">(dismiss) withObject:nil waitUntilDone:NO];</code></div>
+<div class="line"><code class="plain">    RELEASE_TO_NIL(controller);</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">  [</code><code class="keyword">super</code><code class="plain"> dealloc];</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">#pragma Public APIs</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)start:(id)name</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  ENSURE_SINGLE_ARG(name,NSString);</code></div>
+<div class="line"><code class="plain">  NSString *sessionid = [TiUtils createUUID];</code></div>
+<div class="line"><code class="plain">  [[GKSession alloc] initWithSessionID:sessionid</code></div>
+<div class="line"><code class="plain">  displayName:name</code></div>
+<div class="line"><code class="plain">  sessionMode:GKSessionModePeer];</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)stop:(id)args</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (session!=nil)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">	[session disconnectFromAllPeers];</code></div>
+<div class="line"><code class="plain">	RELEASE_TO_NIL(session);</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)showChooser:(id)args</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  ENSURE_UI_THREAD_1_ARG(args);</code></div>
+<div class="line"><code class="plain">  ENSURE_SINGLE_ARG(args,NSDictionary);</code></div>
+<div class="line"><code class="plain">  id success = [args objectForKey:@</code><code class="string">"success"</code><code class="plain">];</code></div>
+<div class="line"><code class="plain">  id cancel = [args objectForKey:@</code><code class="string">"cancel"</code><code class="plain">];</code></div>
+<div class="line"><code class="plain">  RELEASE_TO_NIL(successCallback);</code></div>
+<div class="line"><code class="plain">  RELEASE_TO_NIL(cancelCallback);</code></div>
+<div class="line"><code class="plain">  successCallback = [success retain];</code></div>
+<div class="line"><code class="plain">  cancelCallback = [cancel retain];</code></div>
+<div class="line"><code class="plain">  controller = [[GKPeerPickerController alloc] init];</code></div>
+<div class="line"><code class="plain">  controller.delegate = self;</code></div>
+<div class="line"><code class="plain">  [controller show];</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">#pragma mark Delegates</code></div>
+<div class="line"><code class="comments">/* Notifies delegate that a connection type was chosen by the user.</code></div>
+<div class="line"><code class="comments">*/</code></div>
+<div class="line"><code class="plain">- (</code><code class="keyword">void</code><code class="plain">)peerPickerController:(GKPeerPickerController *)picker didSelectConnection-Type:(GKPeerPickerConnectionType)type</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="comments">/* Notifies delegate that the connection type is requesting a GKSession</code></div>
+<div class="line"><code class="comments">*/</code></div>
+<div class="line"><code class="plain">- (GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnection-Type:(GKPeerPickerConnectionType)type</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> session;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="comments">/* Notifies delegate that the peer was connected to a GKSession.</code></div>
+<div class="line"><code class="comments">*/</code></div>
+<div class="line"><code class="plain">- (</code><code class="keyword">void</code><code class="plain">)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString*)peerID toSession:(GKSession *)session_</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  RELEASE_TO_NIL(peer);</code></div>
+<div class="line"><code class="plain">  peer = [session_ retain];</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (successCallback)</code></div>
+<div class="line"><code class="plain">  {</code></div>
+<div class="line"><code class="plain">  NSDictionary *event = [NSDictionary dictionaryWithObjectsAnd-</code></div>
+<div class="line"><code class="plain">  Keys:peerID,@</code><code class="string">"peer"</code><code class="plain">,nil];</code></div>
+<div class="line"><code class="plain">  [self _fireEventToListener:@</code><code class="string">"success"</code><code class="plain"> withObject:event listener:successCallback</code></div>
+<div class="line"><code class="plain">  thisObject:nil];</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="comments">/* Notifies delegate that the user cancelled the picker.</code></div>
+<div class="line"><code class="comments">*/</code></div>
+<div class="line"><code class="plain">- (</code><code class="keyword">void</code><code class="plain">)peerPickerControllerDidCancel:(GKPeerPickerController *)picker</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (cancelCallback!=nil)</code></div>
+<div class="line"><code class="plain">	{</code></div>
+<div class="line"><code class="plain">	  [self _fireEventToListener:@</code><code class="string">"cancel"</code><code class="plain"> withObject:nil listener:cancelCallback </code><code class="keyword">this</code><code class="plain">-Object:nil];</code></div>
+<div class="line"><code class="plain">	}</code></div>
+<div class="line"><code class="plain">  }</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+Let's examine this code. First, dealloc simply cleans up once the module is unloaded. We simply release our memory. Titanium defines a macro RELEASE_TO_NIL that will conveniently call release against an NSObject and also set the reference to nil. It's safe to call against a nil value.    </p>
+<p>
+The next method, start, will start our GKSession and retain our reference in our member variable, session. The start method uses our macro ENSURE_SINGLE_ARG to convert our argument and unpack it as the first argument into the variable &quot;name&quot;.    </p>
+<p>
+The next method, stop, simply will disconnect our session from many connected peers and release the reference.    </p>
+<p>
+The next method, showChooser, will be responsible for displaying our UI dialog. Module methods run on a non-UI thread, however, all UIKit methods must be executed on the main UI thread. In this case, we use our macro ENSURE_UI_THREAD_1_ARG to ensure that the method is running on the UI thread. The second macro, ENSURE_SINGLE_ARG will convert the argument passed to a NSDictionary as the first argument.    </p>
+<p>
+We then pull out the callbacks, release any memory potentially already held and retain our arguments as member variables of our class. We'll use those later when we want to invoke the functions from native. The remaining GameKit code simply creates a controller, assign ourself as a delegate and shows the chooser.    </p>
+<p>
+The remaining methods are optional GameKit chooser delegate methods that we implement. The &quot;peerPicker-Controller&quot; method is called when a peer is chosen. In this case, we want to fire an event with some data to our &quot;success&quot; callback. Data passed in a JavaScript event should be passed as a NSDictionary of key/value pairs. Each of the keys will be properties of the event object passed to the callback function. We can call the proxy method <tt class=" ">_fireEventToListener:withObject:listener:thisObject:</tt> to invoke the callback method object and pass data to it. You can pass nil to &quot;withObject&quot; if you do not have any additional event data.    </p>
+<p>
+Let's now add the interface code in ComExampleTestModule.h to complete the exercise:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code><code class="keyword">import</code><code class="plain"> </code><code class="string">"TiModule.h"</code><code class="plain">#</code><code class="keyword">import</code><code class="plain"> &lt;GameKit/GameKit.h&gt;</code></div>
+<div class="line"><code class="color2">@interface</code><code class="plain"> ComExampleTestModule : TiModule &lt;GKPeerPickerControllerDelegate&gt;</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">  GKSession *session;</code></div>
+<div class="line"><code class="plain">  GKSession *peer;</code></div>
+<div class="line"><code class="plain">  GKPeerPickerController *controller;</code></div>
+<div class="line"><code class="plain">  KrollCallback *successCallback;</code></div>
+<div class="line"><code class="plain">  KrollCallback *cancelCallback;</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="color1">@end</code></div>
+</div>
+</div> <p>
+Now that we've added our interface and implementation, compile in Xcode and make sure that we have no compiler errors. Assuming you have no errors, now execute titanium run from console and you should get something like the following:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav812ecf5cb747c42f07013060188e705f.png" alt="images/download/attachments/29004946/worddav812ecf5cb747c42f07013060188e705f.png" class="confluence-embedded-image" width="576" />
+</p>
+<p>
+Now, let's hit the &quot;Cancel&quot; button to invoke our cancel callback. You should see the following:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddaved751d47a6db116be8a2bc0a02674372.png" alt="images/download/attachments/29004946/worddaved751d47a6db116be8a2bc0a02674372.png" class="confluence-embedded-image" width="572" />
+</p>
+<p>
+If you see the cancel, good news, it works!    </p>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-BundlingModuleAssets">
+<h3 class="heading "><span>Bundling Module Assets</span></h3>
+<p>
+To distribute module assets with your module distribution, you must place them in the &quot;assets&quot; directory of your project. Any assets within this folder (with the exception of JavaScript files, see below) will be distributed and copied into the folder pattern &quot;module/&lt;moduleid&gt;&quot; in the application bundle. You can then load them using this relative path from your Objective-C code. For example, assuming you had a module image named &quot;foo.png&quot;. You could load that using the following example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">NSString *path = [NSString stringWithFormat:@</code><code class="string">"modules/%@/foo.png"</code><code class="plain">,[self moduleId]];NSURL *url = [TiUtils toURL:path proxy:self];UIImage *image = [TiUtils image:url proxy:self];</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-BuildingJavaScriptNativeModules">
+<h3 class="heading "><span>Building JavaScript Native Modules</span></h3>
+<p>
+One of the nice things about Titanium modules is that they can be either fully native or fully JavaScript. Up until now, we've talked primarily about fully native modules. Let's now talk about JavaScript modules.    </p>
+<p>
+Sometimes you want to create a native module but implement them written in JavaScript and distribute them as compiled modules. In Titanium, you would write your module code in a file named &quot;&lt;module_id&gt;.js&quot; in your &quot;assets&quot; directory. Using our sample project, this would be &quot;com.example.test.js&quot;.    </p>
+<p>
+The module file must use the CommonJS format for declaring a module and it's exports. Let's start with a very simple example that defines one property and one function:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">exports.prop1 = </code><code class="value">123</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">exports.func = function(v)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> </code><code class="string">"hello : "</code><code class="plain"> + v;</code></div>
+<div class="line"><code class="plain">};</code></div>
+</div>
+</div> <p>
+Copy this code into a new file named &quot;com.example.test.js&quot; under the &quot;assets&quot; folder.    </p>
+<p>
+Now, let's modify our test application code to use the module. Remove our existing code changes in this file and replace with:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var my_module = require(</code><code class="string">'com.example.test'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">var result = my_module.func( </code><code class="string">"prop1 is "</code><code class="plain"> + my_module.prop1 );</code></div>
+<div class="line"><code class="plain">alert(result);</code></div>
+</div>
+</div> <p>
+Now, in the console, type &quot;titanium run&quot; to run the project. You should see the following:    </p>
+<p>
+<img src="images/download/attachments/29004946/worddav69abd826f5121c72eaa376d663dea1d8.png" alt="images/download/attachments/29004946/worddav69abd826f5121c72eaa376d663dea1d8.png" class="confluence-embedded-image" width="591" />
+</p>
+<p>
+CommonJS allows you to cleanly export one or more properties/functions by defining them to the special &quot;exports&quot; object (which is pre-defined before loading your module). Any methods or properties defined outside of the &quot;exports&quot; object will be considered module scoped and won't be visible outside of the module.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-Step4:PackagingyourModuleforDistribution">
+<h2 class="heading "><span>Step 4: Packaging your Module for Distribution</span></h2>
+<p>
+Titanium modules are created so that they can be easily built for distribution - either internally within your own distribution mechanism or externally, using the upcoming Titanium+Plus marketplace.    </p>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-DescribingyourModule">
+<h3 class="heading "><span>Describing your Module</span></h3>
+<p>
+Titanium module metadata is described in a special text file named &quot;manifest&quot;. This file is a simple key/value property format. Here's an example of our test module:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">#</code></div>
+<div class="line"><code class="plain"># </code><code class="keyword">this</code><code class="plain"> is your module manifest and used by Titanium</code></div>
+<div class="line"><code class="plain"># during compilation, packaging, distribution, etc.</code></div>
+<div class="line"><code class="plain">#</code></div>
+<div class="line"><code class="plain">version: </code><code class="value">0.1</code></div>
+<div class="line"><code class="plain">description: My module</code></div>
+<div class="line"><code class="plain">author: Your Name</code></div>
+<div class="line"><code class="plain">license: Specify your license</code></div>
+<div class="line"><code class="plain">copyright: Copyright (c) </code><code class="value">2010</code><code class="plain"> by Your Company</code></div>
+<div class="line"><code class="plain"># these should not be edited</code></div>
+<div class="line"><code class="plain">name: test</code></div>
+<div class="line"><code class="plain">moduleid: com.example.test</code></div>
+<div class="line"><code class="plain">guid: 5bfdfd9b-12fe-42a4-bf2f-6ce7841fb4ae</code></div>
+<div class="line"><code class="plain">platform: iphone</code></div>
+<div class="line"><code class="plain">minsdk: </code><code class="value">1.4</code><code class="plain">.</code><code class="value">0</code></div>
+</div>
+</div> <p>
+Before you distribute your module, you must edit this manifest and change a few values. Some of the values are pre-generated and should not be edited - these are noted with the comment before them. In the manifest file, any line starting with a hash character (#) is ignored. The following are the descriptions of each entry in the manifest:    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Filename/Directory</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Description/Purpose</strong> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+version    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is the version of your module. You should change this value each time you make major changes and distribute them. Version should be in the dotted notation (X.Y.Z) and must not con-tain any spaces or non-number characters.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+description    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a human-readable description of your module. It should be short and suitable for display next to your module name.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+author    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a human-readable author name you want to display next to your module. It can simply be your personal name, such as &quot;Jeff Haynie&quot; or an organizational name such as &quot;Appcelerator&quot;.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+license    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a human-readable name of your license. You should use a short description such as &quot;Apache Public License&quot; or &quot;Commercial&quot;.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+copyright    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a human-readable copyright string for your module. For example, &quot;Copyright (c) 2010 by Appcelerator, Inc.&quot;    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+name    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a read-only name of your module that is generated when you created your project. You must not edit this value.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+moduleid    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a read-only module id of your module that is generated when you created your project. You should not edit this value. NOTE: you must generate a unique id. We recommend using your reverse-DNS company name + module_name as a pattern to guarantee uniqueness. The Titanium Marketplace will only allow unique module ids when distributing modules. If you must edit this value, you must also edit the value in your module implementation file.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+guid    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a read-only unique module id for your module that is generated when you created your project. You must not edit this value.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+platform    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+This is a read-only platform target of your module that is generated when you created your project. You must not edit this value.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+minsdk    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The is a generated value for the minimum Titanium SDK version that was used when creating your module. This is currently not used and reserved for future use.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-DistributingyourModuleManually">
+<h3 class="heading "><span>Distributing your Module Manually</span></h3>
+<p>
+To distribute your module manually, you can simply build your module using the &quot;build.py&quot; script and distributing the zip file directly. Modules can simply be copied into the /Library/Application\ Support/Titanium directory to be installed (once referenced and compiled in a project).    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+As mentioned in the note on page 4, you'll need to determine whether your Titanium SDK was installed below ~/Library instead of /Library. If so, you would need to copy your module to ~/Library/Application\ Support/Titanium instead of /Library/Application\ Support/Titanium.    </p>
+</div>
+</div>
+<div class="section section-3 " id="29004946_iOSModuleDevelopmentGuide-DistributingyourModulethroughtheTitaniumPlusMarketplace">
+<h3 class="heading "><span>Distributing your Module through the Titanium+Plus Marketplace</span></h3>
+<p>
+To distribute your module through the Titanium+Plus Marketplace, you'll first need to package normally. Once you have tested your module locally and are ready to distribute it, you can then submit it to the marketplace for distribution. There are several prerequisites you'll need before you can distribute:    </p>
+<ul class=" "><li class=" "> <p>
+You must have a valid Titanium developer account.    </p>
+</li><li class=" "> <p>
+You must have fully completed filling our your manifest values.    </p>
+</li><li class=" "> <p>
+You must have a valid license text in the LICENSE file in your project.    </p>
+</li><li class=" "> <p>
+You must have a valid documentation file in the index.md file in your documentation directory of your project.    </p>
+</li><li class=" "> <p>
+You must specify some additional metadata upon upload such as the price (which can be free).    </p>
+</li><li class=" "> <p>
+If you are charging for your module, you must establish a payment setup with Appcelerator so we can pay you.    </p>
+</li><li class=" "> <p>
+You must accept the Titanium+Plus Marketplace terms of service agreement.    </p>
+</li></ul> <p>
+Once you have upload your module and completed the necessary submission steps, your module will be queued for submission and availability in the marketplace directory.    </p>
+<p>
+The first time you submit a module, we will review your module for the basic requirements above. However, once approved, your module(s) will be immediately submitted without subsequent approval required.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004946_iOSModuleDevelopmentGuide-CompilingmoduleswithXcode4.2">
+<h2 class="heading "><span>Compiling modules with Xcode 4.2</span></h2>
+<p>
+Xcode 4.2 changes the standard architecture for compilation to just armv7. But to support certain devices, Titanium Mobile targets both armv6 and armv7. As a result, your module won't be useable with a Titanium Mobile project that uses armv6 and armv7.    </p>
+<p>
+Titanium Mobile 1.8.0 will include a fix to the default module project template so that you do not need to worry about this with newly created modules. But if you are working on an existing module, and you change the &quot;Base SDK&quot; to &quot;Latest iOS (iOS 5.0)&quot;, you will need to follow the steps below to make sure you are able to use your module with a Titanium Mobile application.    </p>
+<p>
+Follow these steps:    </p>
+<p>
+1. Open you project in Xcode 4.2 and go to the project name.    </p>
+<p>
+<img src="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.05.47_PM.png" alt="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.05.47_PM.png" class="confluence-embedded-image confluence-content-image-border" />
+</p>
+<p>
+2. Once there, click on Architectures and add &quot;armv6&quot; by selecting &quot;other&quot;, then the plus sign ( + ), and then just type &quot;armv6&quot;    </p>
+<p>
+<img src="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.07.17_PM.png" alt="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.07.17_PM.png" class="confluence-embedded-image confluence-content-image-border" />
+<br /> <img src="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.08.00_PM.png" alt="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.08.00_PM.png" class="confluence-embedded-image confluence-content-image-border" />
+</p>
+<p>
+3. Click Done.    </p>
+<p>
+4. Do the same thing in the Valid Architectures field; add armv6 if its not there already.    </p>
+<p>
+5. After this is done, go to your target and repeat the steps:    </p>
+<p>
+<img src="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.10.00_PM.png" alt="images/download/attachments/29004946/Screen_Shot_2011-11-03_at_12.10.00_PM.png" class="confluence-embedded-image confluence-content-image-border" />
+</p>
+<p>
+That's it! Do a clean build (Product &gt; Clean Build, or Cmd + Shift + K), build your module, and you will be fully operational again.    </p>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

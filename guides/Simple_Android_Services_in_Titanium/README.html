@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Simple Android Services in Titanium</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004814" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004814"><span>Edit</span></a>
+<h1>Simple Android Services in Titanium</h1>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<p>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-Overview" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Overview="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-Features" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Features="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Features">Features</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-StartedversusBoundServiceInstances" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-StartedversusBoundServiceInstances="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-StartedversusBoundServiceInstances">Started versus Bound Service Instances</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-SimpleServiceExample" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-SimpleServiceExample="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-SimpleServiceExample">Simple Service Example</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-WriteyourServiceJavascriptCode" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-WriteyourServiceJavascriptCode="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-WriteyourServiceJavascriptCode">Write your Service Javascript Code</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-Updateyourtiapp.xml" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Updateyourtiapp.xml="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Updateyourtiapp.xml">Update your tiapp.xml</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-Writesomecodetostarttheservice" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Writesomecodetostarttheservice="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-Writesomecodetostarttheservice">Write some code to start the service</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-KeepsGoingandGoingandGoing..." Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-KeepsGoingandGoingandGoing...="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-KeepsGoingandGoingandGoing...">Keeps Going and Going and Going...</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Simple_Android_Services_in_Titanium-section-29004814_SimpleAndroidServicesinTitanium-FurtherNotes" Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-FurtherNotes="Simple_Android_Services_in_Titanium.html#29004814_SimpleAndroidServicesinTitanium-FurtherNotes">Further Notes</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+Titanium Mobile SDK gives you the ability to write your own Android Services using Javascript. At the moment they are limited to very simple services whose code &ndash; the code you write in Javascript &ndash; runs on an interval that you specify. They are also limited in the sense that they really need to be started within the same Titanium application in which they are defined, as opposed to being started by a separate application which contains an entry for them in the <tt class=" ">AndroidManifest.xml</tt>. This is because we have some work to do in divorcing these services from our Titanium &quot;contexts&quot; which are prevalent throughout all Titanium code and which are started up via the host application and its root Android Activity.    </p>
+<p>
+So, to reiterate, our support for creating your own Android services is &ndash; for the moment &ndash; limited to these simple, interval-based services that are tied to the Titanium application in which they are defined.    </p>
+</div>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-Features">
+<h2 class="heading "><span>Features</span></h2>
+<p>
+These services:    </p>
+<ul class=" "><li class=" "> <p>
+Run on an interval defined by you.    </p>
+</li><li class=" "> <p>
+Can survive &ndash; i.e., keep going &ndash; even when you back out of an application.    </p>
+</li><li class=" "> <p>
+Can do common Titanium stuff like write to the logcat with <tt class=" ">Ti.API.info</tt> (etc.) and create <strong class=" ">non-UI</strong> Titanium objects (<a class="external-link external-link" href="#!/api/Titanium.Network-method-createHTTPClient">Titanium.Network.createHTTPClient()</a>, for example, for XHR.)Note that not all Titanium APIs have been tested yet from with Service code. Services are Activity-less (in the Android sense), and much Titanium code relies on Android activities for context &ndash; you may find things which break when used within an activity-less Service.    </p>
+</li><li class=" "> <p>
+Can emit events which you can listen for.    </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-StartedversusBoundServiceInstances">
+<h2 class="heading "><span>Started versus Bound Service Instances</span></h2>
+<p>
+<a class="external-link external-link" href="http://developer.android.com/reference/android/app/Service.html" target="_blank">Android Services</a> can be &quot;started&quot; or &quot;bound to&quot;. (Warning: gross simplifications follow.) Think of a &quot;started&quot; service as a kind of fire-and-forget: you start the service and just let it run until you decide to stop it &ndash; you don't really interact with it. A &quot;bound service&quot; allows you to hold a reference to the service and interact with it.    </p>
+<p>
+Titanium supports both &quot;started&quot; and &quot;bound&quot; service instances, with some limitations concerning the latter. &quot;Started&quot; services are simple to support: we just needed to give you methods to start and stop them. We support &quot;bound&quot; services in the sense that we give you back a proxy. But the only thing you can really do with that proxy is add event listeners to it and use it to `.stop()` the service. This guide won't show an example of that, but you'll find one in our <a class="document-link " href="#!/guide/Example_Applications-section-29004877_ExampleApplications-KitchenSink" Example_Applications.html#29004877_ExampleApplications-KitchenSink="Example_Applications.html#29004877_ExampleApplications-KitchenSink">KitchenSink</a> app in the form of the <a class="external-link external-link" href="http://github.com/appcelerator/titanium_mobile/blob/master/demos/KitchenSink/Resources/examples/android_services.js" target="_blank">android_services.js</a> script.    </p>
+<p>
+Note that the same service can be both started and bound. &quot;Starting&quot; and &quot;binding&quot; are just notions of how you start and interact with a running service.    </p>
+<p>
+Okay, this is all neither here nor there without examples, so let's look at one.    </p>
+</div>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-SimpleServiceExample">
+<h2 class="heading "><span>Simple Service Example</span></h2>
+<p>
+This example shows a simple service &ndash; a service whose code runs on an interval &ndash; which does nothing other than write to logcat (the Android log). Not exciting, but it's a complete example from A to Z.    </p>
+<div class="section section-3 " id="29004814_SimpleAndroidServicesinTitanium-WriteyourServiceJavascriptCode">
+<h3 class="heading "><span>Write your Service Javascript Code</span></h3>
+<p>
+Remember, these simple services execute code on an interval. The code that executes is defined by you in a Javascript file, just like when you define other Titanium executable code. So just create a Titanium application and put a file named (for this example) <tt class=" ">logservice.js</tt> into the Resources folder. Open up <tt class=" ">logservice.js</tt> in an editor and just put this into it:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.API.info(</code><code class="string">'Hello World, I am a Service'</code><code class="plain">);</code></div>
+</div>
+</div> <p>
+You can do all sorts of things in that Javascript file, and everything you put in it will run every <strong class=" ">N</strong> milliseconds, as we'll see soon enough.    </p>
+</div>
+<div class="section section-3 " id="29004814_SimpleAndroidServicesinTitanium-Updateyourtiapp.xml">
+<h3 class="heading "><span>Update your tiapp.xml</span></h3>
+<p>
+You need to let the Titanium builder know that this Javascript file you just created is meant to be the code that executes when a Service runs. Do that by opening up the application's <tt class=" ">tiapp.xml</tt> and putting a 'services' element under the 'android' element and making it look like this:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">"http://schemas.android.com/apk/res/android"</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">  &lt;services&gt;</code></div>
+<div class="line"><code class="plain">    &lt;service url=</code><code class="string">"logservice.js"</code><code class="plain"> type=</code><code class="string">"interval"</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/services&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <p>
+Note that you specified a `url` &ndash; which is how Titanium will know that the file <tt class=" ">logservice.js</tt> is for a service &ndash; and a <tt class=" ">type</tt> of &quot;interval&quot;. We'll eventually be supporting more sophisticated types of services, so by putting <tt class=" ">type=&quot;interval&quot;</tt> here we know you mean it's a simple service which just runs on an interval &ndash; the only kind of service we support in 1.5.0.    </p>
+<p>
+At this point, you've successfully defined the service. If you were to build your app right now and check the generated <tt class=" ">AndroidManifest.xml</tt> in the <tt class=" ">build/android</tt> folder, you would see an entry for the service which looks something like this:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;service</code></div>
+<div class="line"><code class="plain">  android:name=</code><code class="string">"com.billdawson.logservicedemo.LogserviceService"</code></div>
+<div class="line"><code class="plain">/&gt;</code></div>
+</div>
+</div> <p>
+That's great, but the service won't actually run until you tell it to do so, which we'll cover in the next section.    </p>
+</div>
+<div class="section section-3 " id="29004814_SimpleAndroidServicesinTitanium-Writesomecodetostarttheservice">
+<h3 class="heading "><span>Write some code to start the service</span></h3>
+<p>
+As we noted up in the introduction, one caveat about these simple services is that they are pretty much bound to the Titanium application in which you create them. In other words, the services won't get started and run successfully unless you start them from code inside the same application in which you define them. So we can do that now just by adding some simple code to your application's <tt class=" ">app.js</tt> file.    </p>
+<p>
+For purposes of this example, all of the code examples that follow can just be put down at the bottom of your app's <tt class=" ">app.js</tt> file so they run when the app starts.    </p>
+<p>
+First we need to create an intent (also introduced in 1.5.0, and should be covered elsewhere) in which we specify the url of the service we wish to start, and the interval (in milliseconds) at which it should run the code in its Javascript file. We use <a class="external-link external-link" href="#!/api/Titanium.Android-method-createServiceIntent">Ti.Android.createServiceIntent()</a> to make the intent, then add the interval information to it using the intent's <tt class=" ">putExtra()</tt> method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var SECONDS = </code><code class="value">10</code><code class="plain">; </code><code class="comments">// every 10 seconds</code></div>
+<div class="line"><code class="plain">var intent = Titanium.Android.createServiceIntent({</code></div>
+<div class="line"><code class="plain">  url: </code><code class="string">'logservice.js'</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="plain">intent.putExtra(</code><code class="string">'interval'</code><code class="plain">, SECONDS * </code><code class="value">1000</code><code class="plain">); </code><code class="comments">// Needs to be milliseconds</code></div>
+</div>
+</div> <p>
+With the intent in hand, we need to tell Android to start the service defined by the intent:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Android.startService(intent);</code></div>
+</div>
+</div> <p>
+That's it! Go ahead and start your application in an emulator or on your phone. If you do it on your phone, you'll need to use <tt class=" ">adb logcat</tt> to see if the service is really writing that &quot;Hello World&quot; statement to the log every ten seconds.    </p>
+</div>
+<div class="section section-3 " id="29004814_SimpleAndroidServicesinTitanium-KeepsGoingandGoingandGoing...">
+<h3 class="heading "><span>Keeps Going and Going and Going...</span></h3>
+<p>
+You'll notice we didn't write any code yet to actually <strong class=" ">stop</strong> the service once it's running. You can do that by calling <a class="external-link external-link" href="#!/api/Titanium.Android-method-stopService">Titanium.Android.stopService()</a>, passing it an intent that has the same information. (Actually you don't need to set the &quot;interval&quot; extra in the intent if you are just stopping the service.);    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var intent = Titanium.Android.createServiceIntent({</code></div>
+<div class="line"><code class="plain">  url: </code><code class="string">'logservice.js'</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="plain">Titanium.Android.stopService(intent);</code></div>
+</div>
+</div> <p>
+Speaking of &quot;going and going and going&quot;, while you're testing your service you can back out completely from the application, and the service should still continue to run and emit these &quot;Hello World&quot; statements to the log.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004814_SimpleAndroidServicesinTitanium-FurtherNotes">
+<h2 class="heading "><span>Further Notes</span></h2>
+<ul class=" "><li class=" "> <p>
+Our (very) simple example above is an example of a &quot;started&quot; service. You'll recall from earlier in this guide that there is also this notion of &quot;binding&quot; to a service. See the KitchenSink's <a class="external-link external-link" href="http://github.com/appcelerator/titanium_mobile/blob/master/demos/KitchenSink/Resources/examples/android_services.js" target="_blank">android_services.js</a> script again for an example of binding to the service so that you can be notified when the service pauses and resumes (i.e., between intervals).    </p>
+</li><li class=" "> <p>
+Regarding the sample app above: note that if you back out of the application then launch it again, the service will get started a <i class=" ">second</i> time, because your <tt class=" ">app.js</tt> code will run again and call <a class="external-link external-link" href="#!/api/Titanium.Android-method-startService">Titanium.Android.startService()</a>. In reality &ndash; behind the scenes &ndash; there is only one instance of the Service running (in Android terms, its <tt class=" ">onCreate()</tt> has occurred only once, but it has been &quot;started&quot; twice. ie it's <tt class=" ">onStart()</tt> has occurred twice). A new set of intervals will then queue up and your service code will run double the number of times. This may not be what you want, so you can call <a class="external-link external-link" href="#!/api/Titanium.Android-method-isServiceRunning">Titanium.Android.isServiceRunning(intent)</a>, passing it the same intent that you would use to start the service. Then you can conditionally start it only if it's not already running.    </p>
+</li></ul> </div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

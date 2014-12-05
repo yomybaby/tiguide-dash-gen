@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Windows Phone 8 Module Development Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="37547046" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=37547046"><span>Edit</span></a>
+<h1>Windows Phone 8 Module Development Guide</h1>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Introduction" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Introduction="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Introduction">Introduction</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Prerequisites" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Prerequisites="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Prerequisites">Prerequisites</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-WindowsHybridApplicationandModuleArchitecture" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-WindowsHybridApplicationandModuleArchitecture="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-WindowsHybridApplicationandModuleArchitecture">Windows Hybrid Application and Module Architecture</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-CreatingaWindowsPhone8Module" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-CreatingaWindowsPhone8Module="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-CreatingaWindowsPhone8Module">Creating a Windows Phone 8 Module</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Example" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Example="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Example">Example</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI">Using the Titanium Windows Phone 8 Reflection API</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Constructor" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Constructor="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Constructor">Constructor</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Setter" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Setter="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Setter">Setter</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Getter" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Getter="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Getter">Getter</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveaStaticProperty" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveaStaticProperty="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveaStaticProperty">Retrieve a Static Property</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeMethod" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeMethod="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeMethod">Invoke Method</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticMethod" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticMethod="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticMethod">Invoke a Static Method</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeanAsyncMethod" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeanAsyncMethod="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeanAsyncMethod">Invoke an Async Method</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticAsyncMethod" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticAsyncMethod="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticAsyncMethod">Invoke a Static Async Method</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-EventHandling" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-EventHandling="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-EventHandling">Event Handling</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Destructor" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Destructor="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Destructor">Destructor</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Enumeration" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Enumeration="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Enumeration">Enumeration</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveComponents" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveComponents="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveComponents">Retrieve Components</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations">Limitations</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-ReflectionAPI" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-ReflectionAPI="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-ReflectionAPI">Reflection API</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Assemblies" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Assemblies="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Assemblies">Assemblies</a> </p>
+</li></ul></li></ul> <div class="section section-2 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Introduction">
+<h2 class="heading "><span>Introduction</span></h2>
+<p>
+Titanium provides the ability to use native Windows Phone 8 components in your Windows Phone Hybrid applications.  Titanium exposes a set of APIs to make Windows Phone API calls from JavaScript by invoking calls to the Windows  Reflection API.    </p>
+<p>
+This document assumes you are familiar with the <a class="external-link external-link" href="https://dev.windowsphone.com/en-us/develop" target="_blank">Windows Phone 8 SDK</a> and building Titanium Windows Hybrid applications.  For more information regarding building and creating a Window Phone Hybrid application, refer to the <a class="document-link " href="#!/guide/Getting_Started_with_the_Windows_Phone_SDK" Getting_Started_with_the_Windows_Phone_SDK.html="Getting_Started_with_the_Windows_Phone_SDK.html">Getting Started with the Windows Phone SDK</a> guide.    </p>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Prerequisites">
+<h3 class="heading "><span>Prerequisites</span></h3>
+<p>
+To incorporate native Windows Phone 8 components in your application, you need the same tools to create Titanium Windows Hybrid applications (Visual Studio and the Windows Phone SDK) and Titanium SDK 3.3.0 and later.    </p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-WindowsHybridApplicationandModuleArchitecture">
+<h3 class="heading "><span>Windows Hybrid Application and Module Architecture</span></h3>
+<p>
+Windows Hybrid applications run in a WebBrowser control.  When you build your application, Titanium creates a XAML file similar to the following syntax:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">MainPage.xaml</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;PhoneApplicationPage Name=</code><code class="string">"app"</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;Grid Name=</code><code class="string">"root"</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">        &lt;WebBrowser Name=</code><code class="string">"browser"</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/Grid&gt;</code></div>
+<div class="line"><code class="plain">&lt;/PhoneApplicationPage&gt;</code></div>
+</div>
+</div> <p>
+Your hybrid application runs in this basic UI, and your application code and the Titanium framework run within the WebBrowser control.    </p>
+<p>
+When loading modules that make use of the native Windows APIs, your module (running in the WebBrowser control) sends messages to the controller code (<tt class=" ">MainPage.xaml.cs</tt>).  The controller code parses these messages and uses the Windows Reflection API to invoke the Windows APIs.  To send messages back to the module, the controller code invokes scripts within the Titanium framework (in the browser).  Your module either receives primitive values or handles to reference the objects in the controller code.    </p>
+<p>
+When building your Windows Phone 8 modules, do <strong class=" ">NOT</strong> destroy any of the initial components, that is, the PhoneApplicationPage, Grid and WebBrowser controls.  Destroying these controls will cause unpredictable application behavior.    </p>
+</div>
+</div>
+<div class="section section-2 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-CreatingaWindowsPhone8Module">
+<h2 class="heading "><span>Creating a Windows Phone 8 Module</span></h2>
+<p>
+Creating a Window Phone 8 module is similar to creating a CommonJS module.  First, create a new JavaScript file for your module, then add your <a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI">Titanium Windows Phone 8 Reflection API</a> calls to the module to invoke the Windows Phone APIs.  Expose the API elements you want to make public by using the special <tt class=" ">exports</tt> variable.    </p>
+<p>
+Place assets in your project's <tt class=" ">Resources</tt> folder.  To reference these assets, prepend the resources with the <tt class=" ">/App/</tt> path without the <tt class=" ">Resources</tt> folder.  The leading slash is required.  For example, if you have a <tt class=" ">./Resources/myimage.png</tt> file, the URI to reference the file is <tt class=" ">/App/myimage.png</tt>.    </p>
+<p>
+In your application, load the module in to your Titanium project with the <tt class=" ">require</tt> method and invoke the public elements exposed by the <tt class=" ">exports</tt> variable.    </p>
+<p>
+To run and test your module, build your application the same way you build a Windows Phone Hybrid application.    </p>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Example">
+<h3 class="heading "><span>Example</span></h3>
+<p>
+The following example removes the WebBrowser control from the UI and replaces it with a StackPanel control containing four buttons with a blue background.  Pressing the close button on the StackPanel returns to the WebBrowser hosting the HTML 5 application.    </p>
+<p>
+Copy the icon files in the<tt class=" "> C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Icons\Dark</tt> folder to your project in the <tt class=" ">Resources\Icons</tt> folder.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">app.js</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Click the button to load the module and call the init method</code></div>
+<div class="line"><code class="plain">var win = Ti.UI.createWindow();</code></div>
+<div class="line"><code class="plain">var button = Ti.UI.createButton({title: </code><code class="string">'Go native.'</code><code class="plain">});</code></div>
+<div class="line"><code class="plain">button.addEventListener(</code><code class="string">"click"</code><code class="plain">, function(){ require(</code><code class="string">"foo"</code><code class="plain">).init() });</code></div>
+<div class="line"><code class="plain">win.add(button);</code></div>
+<div class="line"><code class="plain">win.open(); </code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">foo.js</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">exports.init = function () {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Retrieve the Grid control and remove anything attached to it</code></div>
+<div class="line"><code class="plain">    var grid = tiwp8.getRootGrid(),</code></div>
+<div class="line"><code class="plain">        gridProps = grid.property([</code><code class="string">'Children'</code><code class="plain">, </code><code class="string">'ActualHeight'</code><code class="plain">, </code><code class="string">'ActualWidth'</code><code class="plain">]),</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Get the blue enum, create a solid color brush and set the canvas background color</code></div>
+<div class="line"><code class="plain">        blue = tiwp8.getEnum(</code><code class="string">'System.Windows.Media.Colors'</code><code class="plain">, </code><code class="string">'Blue'</code><code class="plain">),</code></div>
+<div class="line"><code class="plain">        solidblue = tiwp8.createInstance(</code><code class="string">'System.Windows.Media.SolidColorBrush'</code><code class="plain">, [</code><code class="string">'System.Windows.Media.Color'</code><code class="plain">, blue]),</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a Canvas control that takes up the entire screen</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// This control acts like a Titanium View with an absolute layout</code></div>
+<div class="line"><code class="plain">        canvas = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Canvas'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    canvas.property({</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Height'</code><code class="plain">: gridProps.height,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Width'</code><code class="plain">: gridProps.width,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Background'</code><code class="plain">: solidblue</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain"> </code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create some buttons</code></div>
+<div class="line"><code class="plain">    var buttons = [</code><code class="string">'/App/Icons/add.png'</code><code class="plain">, </code><code class="string">'/App/Icons/favs.png'</code><code class="plain">, </code><code class="string">'/App/Icons/share.png'</code><code class="plain">, </code><code class="string">'/App/Icons/close.png'</code><code class="plain">].map(function (imagePath) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Reference assets in your Resources folder by prepending it with '/App/'</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// The leading slash is required</code></div>
+<div class="line"><code class="plain">        var button = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">),</code></div>
+<div class="line"><code class="plain">            bitmap = tiwp8.createInstance(</code><code class="string">'System.Windows.Media.Imaging.BitmapImage'</code><code class="plain">, [</code><code class="string">'System.Uri'</code><code class="plain">, imagePath]),</code></div>
+<div class="line"><code class="plain">            image = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Image'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">        image.property({</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Source'</code><code class="plain">: bitmap,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Height'</code><code class="plain">: </code><code class="value">50</code><code class="plain">,</code></div>
+<div class="line"><code class="plain"> </code><code class="string">'Width'</code><code class="plain">: </code><code class="value">50</code></div>
+<div class="line"><code class="plain">        });</code></div>
+<div class="line"><code class="plain">        button.property(</code><code class="string">'Content'</code><code class="plain">, image);</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> button;</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">0</code><code class="plain">].addEventListener(</code><code class="string">'Click'</code><code class="plain">, function (e) {</code></div>
+<div class="line"><code class="plain">        alert(e);</code></div>
+<div class="line"><code class="plain">    }); </code><code class="comments">// add</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">1</code><code class="plain">].addEventListener(</code><code class="string">'Click'</code><code class="plain">, function (e) {</code></div>
+<div class="line"><code class="plain">        alert(e);</code></div>
+<div class="line"><code class="plain">    }); </code><code class="comments">// favs</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">2</code><code class="plain">].addEventListener(</code><code class="string">'Click'</code><code class="plain">, function (e) {</code></div>
+<div class="line"><code class="plain">        alert(e);</code></div>
+<div class="line"><code class="plain">    }); </code><code class="comments">// share</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">3</code><code class="plain">].addEventListener(</code><code class="string">'Click'</code><code class="plain">, function () { </code><code class="comments">// close</code></div>
+<div class="line"><code class="plain">        gridProps.Children.invoke(</code><code class="string">'Remove'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.Canvas'</code><code class="plain">, canvas]);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Clean up</code></div>
+<div class="line"><code class="plain">        var handles = tiwp8.getHandles();</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">for</code><code class="plain"> (var key in handles) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Do not destroy the default components</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (key == </code><code class="string">'browser'</code><code class="plain"> || key == </code><code class="string">'app'</code><code class="plain"> || key == </code><code class="string">'root'</code><code class="plain">) </code><code class="keyword">continue</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">            handles[key].destroy();</code></div>
+<div class="line"><code class="plain">        }</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Create a StackPanel control</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// This control acts like a Titanium ButtonBar</code></div>
+<div class="line"><code class="plain">    var stackPanel = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.StackPanel'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    stackPanel.property(</code><code class="string">'Orientation'</code><code class="plain">, tiwp8.getEnum(</code><code class="string">'System.Windows.Controls.Orientation'</code><code class="plain">, </code><code class="string">'Horizontal'</code><code class="plain">));</code></div>
+<div class="line"><code class="plain">    var stackPanelChildren = stackPanel.property(</code><code class="string">'Children'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    buttons.forEach(function (button) {</code></div>
+<div class="line"><code class="plain">        stackPanelChildren.invoke(</code><code class="string">'Add'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">, button]);</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Add the StackPanel to the Canvas</code></div>
+<div class="line"><code class="plain">    var canvasChildren = canvas.property(</code><code class="string">'Children'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Place the StackPanel 40 pixels from the left edge of the Canvas</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Call this function before adding the control to adjust its location</code></div>
+<div class="line"><code class="plain">    canvas.invoke(</code><code class="string">'SetLeft'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.StackPanel'</code><code class="plain">, stackPanel, </code><code class="string">'System.Double'</code><code class="plain">, </code><code class="value">40</code><code class="plain">]);</code></div>
+<div class="line"><code class="plain">    canvasChildren.invoke(</code><code class="string">'Add'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.StackPanel'</code><code class="plain">, stackPanel]);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Add the Canvas to the Grid</code></div>
+<div class="line"><code class="plain">    gridProps.Children.invoke(</code><code class="string">'Add'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.Canvas'</code><code class="plain">, canvas]);</code></div>
+<div class="line"><code class="plain">};</code></div>
+</div>
+</div> <p>
+<img src="images/download/attachments/37547046/StackPanel.png" alt="images/download/attachments/37547046/StackPanel.png" class="confluence-embedded-image" />
+</p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Almost equivalent C# code </code></div>
+<div class="line"><code class="keyword">public</code><code class="plain"> MainPage()</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">    InitializeComponent();</code></div>
+<div class="line"><code class="plain">    Canvas canvas = </code><code class="keyword">new</code><code class="plain"> Canvas();</code></div>
+<div class="line"><code class="plain">    canvas.Background = </code><code class="keyword">new</code><code class="plain"> SolidColorBrush(Colors.Blue);</code></div>
+<div class="line"><code class="plain">    StackPanel stackPanel = </code><code class="keyword">new</code><code class="plain"> StackPanel();</code></div>
+<div class="line"><code class="plain">    stackPanel.Orientation = System.Windows.Controls.Orientation.Horizontal;</code></div>
+<div class="line"><code class="plain">    List&lt;Button&gt; buttons = </code><code class="keyword">new</code><code class="plain"> List&lt;Button&gt;();</code></div>
+<div class="line"><code class="plain">    string[] images = </code><code class="keyword">new</code><code class="plain"> string[]{</code><code class="string">"/Icons/add.png"</code><code class="plain">, </code><code class="string">"/Icons/favs.png"</code><code class="plain">, </code><code class="string">"/Icons/share.png"</code><code class="plain">, </code><code class="string">"/Icons/close.png"</code><code class="plain">};</code></div>
+<div class="line"><code class="plain">    foreach (string image in images) {</code></div>
+<div class="line"><code class="plain">        Button button = </code><code class="keyword">new</code><code class="plain"> Button();</code></div>
+<div class="line"><code class="plain">        BitmapImage img = </code><code class="keyword">new</code><code class="plain"> BitmapImage(</code><code class="keyword">new</code><code class="plain"> Uri(image, UriKind.Relative));</code></div>
+<div class="line"><code class="plain">        Image icon = </code><code class="keyword">new</code><code class="plain"> Image();</code></div>
+<div class="line"><code class="plain">        icon.Source = img;</code></div>
+<div class="line"><code class="plain">        icon.Height = icon.Width = </code><code class="value">50</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">        button.Content = icon;</code></div>
+<div class="line"><code class="plain">        stackPanel.Children.Add(button);</code></div>
+<div class="line"><code class="plain">        buttons.Add(button);</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">0</code><code class="plain">].Click += report;</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">1</code><code class="plain">].Click += report;</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">2</code><code class="plain">].Click += report;</code></div>
+<div class="line"><code class="plain">    buttons[</code><code class="value">3</code><code class="plain">].Click += delegate(Object sender, RoutedEventArgs args)</code></div>
+<div class="line"><code class="plain">    {</code></div>
+<div class="line"><code class="plain">        root.Children.Remove(canvas);</code></div>
+<div class="line"><code class="plain">    };</code></div>
+<div class="line"><code class="plain">    Canvas.SetLeft(stackPanel, </code><code class="value">40</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">    canvas.Children.Add(stackPanel);</code></div>
+<div class="line"><code class="plain">    root.Children.Add(canvas);</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="keyword">private</code><code class="plain"> </code><code class="keyword">void</code><code class="plain"> report(Object sender, RoutedEventArgs args)</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">    Console.WriteLine(</code><code class="string">"Click event triggered!"</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+</div>
+<div class="section section-2 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-UsingtheTitaniumWindowsPhone8ReflectionAPI">
+<h2 class="heading "><span>Using the Titanium Windows Phone 8 Reflection API</span></h2>
+<p>
+Unlike other Titanium native module development, you make calls in JavaScript using special Titanium Windows 8 (WP8) Reflection API calls to invoke the Windows Phone APIs rather than creating a completely native module using the native language as with the Android, BlackBerry and iOS platforms.  Use the APIs below to make calls to the <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj207211" target="_blank">Windows Phone API</a> to create and manipulate objects.  Note that you can only make calls to the .NET C# API and only certain APIs are exposed.  See the <a class="document-link " href="#!/guide/Windows_Phone_8_Module_Development_Guide-section-37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations" Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations="Windows_Phone_8_Module_Development_Guide.html#37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations">Limitations</a> section below.    </p>
+<p>
+As a general note, enclose strings in single quotes only.  The API calls will fail silently and stop execution of the JavaScript if you use double quotes.    </p>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Constructor">
+<h3 class="heading "><span>Constructor</span></h3>
+<p>
+To create an object, use the <tt class=" ">tiwp8.createInstance</tt> method to call the class' constructor:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">tiwp8.createInstance(String fullyQualifiedClassName, [Array&lt;Object&gt; parameters]): Object</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">fullyQualifiedClassName</tt> - The class' fully qualified name, that is, the name of the class prefixed with its complete namespace. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">parameters</tt> - An array of strings and objects to pass as the parameter type and parameter to the constructor, respectively.  The first element should be the parameter type as the fully qualified class name and the second parameter should be the object, for example, <tt class=" ">['System.Uri', 'http://www.appcelerator.com']</tt> specifies a URI. The order of the parameters must match the method signature.    </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+Returns a proxy handle to reference it in the Windows Phone API    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example creates a Button: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button.button(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button.button(v=vs.105).aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Creates a button</code></div>
+<div class="line"><code class="comments">// Abstracts a call to `new Button();` and returns a proxy handle to reference it in the C# code</code></div>
+<div class="line"><code class="plain">var button = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">);</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Setter">
+<h3 class="heading "><span>Setter</span></h3>
+<p>
+To set a property on a previously created object, use the object's <tt class=" ">property</tt> method to set multiple properties:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.property(Dictionary&lt;propertyName:parameter&gt;)</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<p>
+Dictionary where the property name is a key and parameter is the value.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">propertyName</tt> - Name of the property to set. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.    </p>
+</li><li class=" "> <p>
+<tt class=" ">parameter</tt> - Object or value or set to the property.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example sets the Button's Content property: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button_properties(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button_properties(v=vs.105).aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var button = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">);</code></div>
+<div class="line"><code class="comments">// Sets the Button's Content property</code></div>
+<div class="line"><code class="comments">// Abstracts a call to `Button.Content = "I am a button";`</code></div>
+<div class="line"><code class="plain">button.property({</code><code class="string">'Content'</code><code class="plain">:</code><code class="string">'I am a button'</code><code class="plain">});</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Getter">
+<h3 class="heading "><span>Getter</span></h3>
+<p>
+To retrieve a property value from a previously created object, use the object's <tt class=" ">property</tt> method to retrieve multiple properties:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.property(Array&lt;Strings&gt; propertyNames): Object</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">propertyName</tt> - Name of the property to retrieve. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.    </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+If the value is a primitive, the value is returned.  If the value is an object, a proxy handle is returned.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example retrieves the Grid's ActualHeight and ActualWidth properties: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.grid_properties(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.grid_properties(v=vs.105).aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Retrieves the dimensions of the Grid control</code></div>
+<div class="line"><code class="plain">var grid = tiwp8.getRootGrid();</code></div>
+<div class="line"><code class="plain">    gridProps = grid.property([</code><code class="string">'ActualHeight'</code><code class="plain">, </code><code class="string">'ActualWidth'</code><code class="plain">]);</code></div>
+<div class="line"><code class="plain">Ti.API.info(gridProps.ActualHeight + </code><code class="string">" x "</code><code class="plain"> + gridProps.ActualWidth); </code><code class="comments">// &gt;&gt; "480 x 768"</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveaStaticProperty">
+<h3 class="heading "><span>Retrieve a Static Property</span></h3>
+<p>
+To retrieve a static property, use the <tt class=" ">tiwp8.staticProperty</tt> method.  To check if a property is static, check the method signature in the C# Syntax section in the Windows Phone API docs to see if the property is declared as <tt class=" ">static</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">tiwp8.staticProperty(className, propertyName): Object</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">className</tt>: Name of the class of the property to retrieve. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.    </p>
+</li><li class=" "> <p>
+<tt class=" ">propertyName</tt>:  Name of the property to retrieve. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.    </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+If the value is a primitive, the value is returned.  If the value is an object, a proxy handle is returned.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example retrieves the current package information of the application: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/windows.applicationmodel.package.current.aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/windows.applicationmodel.package.current.aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var currentFolder = tiwp8.staticProperty(</code><code class="string">'Windows.ApplicationModel.Package'</code><code class="plain">, </code><code class="string">'Current'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">var installFolder = currentFolder.property(</code><code class="string">'InstalledLocation'</code><code class="plain">);</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeMethod">
+<h3 class="heading "><span>Invoke Method</span></h3>
+<p>
+To invoke a method of a previously created object, use the object's <tt class=" ">invoke</tt> method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.invoke(String methodName, Array&lt;Objects&gt; parameters): Object/</code><code class="keyword">void</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">methodName</tt> - Name of the method. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">parameters</tt> - An array of strings and objects to pass as the parameter type and parameter to the method, respectively.  The first element should be the parameter type as the fully qualified class name and the second parameter should be the object, for example, <tt class=" ">['System.Uri', 'http://www.appcelerator.com']</tt> specifies a URI. The order of the parameters must match the method signature.    </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+If the method returns a value, the value is returned if it is a primitive or a proxy handle is returned if it is an object.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example adds Buttons to the StackPanel.    </p>
+<ol class=" "><li class=" "> <p>
+First, get the StackPanel's Children property, which returns a UIElementCollection: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.stackpanel_properties(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.stackpanel_properties(v=vs.105).aspx</a> </p>
+</li><li class=" "> <p>
+Then, add the buttons to the UIElementCollection: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.uielementcollection_methods(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.uielementcollection_methods(v=vs.105).aspx</a> </p>
+</li></ol><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Get the Children property of the StackPanel control</code></div>
+<div class="line"><code class="comments">// Returns a Collection of UIElements</code></div>
+<div class="line"><code class="plain">var stackPanelChildren = stackPanel.getProp(</code><code class="string">'Children'</code><code class="plain">);</code></div>
+<div class="line"><code class="comments">// Add Buttons to the StackPanel using the Collection object's Add method</code></div>
+<div class="line"><code class="plain">stackPanelChildren.invoke(</code><code class="string">'Add'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">, button1]);</code></div>
+<div class="line"><code class="plain">stackPanelChildren.invoke(</code><code class="string">'Add'</code><code class="plain">, [</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">, button2]); </code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticMethod">
+<h3 class="heading "><span>Invoke a Static Method</span></h3>
+<p>
+To invoke a static method, use the <tt class=" ">tiwp8.invokeStatic</tt>. To check if a method is static, check the method signature in the C# Syntax section in the Windows Phone API docs to see if the method is declared as <tt class=" ">static</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">tiwp8.invokeStatic(String className, String methodName, Array&lt;Objects&gt; parameters): Object/</code><code class="keyword">void</code><code class="plain"> </code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">className</tt>: Name of the class of the property to retrieve. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.<tt class=" "></tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">methodName</tt> - Name of the method. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">parameters</tt> - An array of strings and objects to pass as the parameter type and parameter to the method, respectively.  The first element should be the parameter type as the fully qualified class name and the second parameter should be the object, for example, <tt class=" ">['System.Uri', 'http://www.appcelerator.com']</tt> specifies a URI. The order of the parameters must match the method signature.    </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+If the method returns a value, the value is returned if it is a primitive or a proxy handle is returned if it is an object.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeanAsyncMethod">
+<h3 class="heading "><span>Invoke an Async Method</span></h3>
+<p>
+To invoke an async method of a previously created object, use the <tt class=" ">invokeAsync</tt> method.  An async method will have <tt class=" ">Async</tt> appended to the end of the method name.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.invokeAsync(String methodName, Array&lt;Objects&gt; parameters, Function callback) </code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">methodName</tt> - Name of the method. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">parameters</tt> - An array of strings and objects to pass as the parameter type and parameter to the method, respectively.  The first element should be the parameter type as the fully qualified class name and the second parameter should be the object, for example, <tt class=" ">['System.Uri', 'http://www.appcelerator.com']</tt> specifies a URI. The order of the parameters must match the method signature.    </p>
+</li><li class=" "> <p>
+<tt class=" ">callback</tt> - Handler after the method completes.  The object passed to the callback depends on the method.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example retrieves a file from the  for the specified file: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefolder.getfileasync" target="_blank">http://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefolder.getfileasync</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Retrieve an instance of the StorageFolder that is the location of local storage for the application </code></div>
+<div class="line"><code class="plain">var currentFolder = tiwp8.staticProperty(</code><code class="string">'Windows.Storage.ApplicationData'</code><code class="plain">, </code><code class="string">'Current'</code><code class="plain">),</code></div>
+<div class="line"><code class="plain">    localFolder = currentFolder.property(</code><code class="string">'LocalFolder'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">localFolder.invokeAsync(</code><code class="string">'GetFileAsync'</code><code class="plain">, [</code><code class="string">'System.String'</code><code class="plain">, </code><code class="string">'somefile.pdf'</code><code class="plain">], function (file) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Do something with the StorageFile instance 'file'</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-InvokeaStaticAsyncMethod">
+<h3 class="heading "><span>Invoke a Static Async Method</span></h3>
+<p>
+To invoke a static method, use the <tt class=" ">tiwp8.invokeStaticAsync</tt> <span style="color: #000000;">
+ method    </span>
+. An async method will have <tt class=" ">Async</tt> appended to the end of the method name.  To check if a method is static, check the method signature in the C# Syntax section in the Windows Phone API docs to see if the method is declared as <tt class=" ">static</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain"> tiwp8.invokeStaticAsync(String className, String methodName, Array&lt;Objects&gt; parameters, Function callback) </code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">className</tt>: Name of the class of the property to retrieve. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.<tt class=" "></tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">methodName</tt> - Name of the method. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">parameters</tt> - An array of strings and objects to pass as the parameter type and parameter to the method, respectively.  The first element should be the parameter type as the fully qualified class name and the second parameter should be the object, for example, <tt class=" ">['System.Uri', 'http://www.appcelerator.com']</tt> specifies a URI. The order of the parameters must match the method signature.    </p>
+</li><li class=" "> <p>
+<tt class=" ">callback</tt> - Handler after the method completes.  The object passed to the callback depends on the method.    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example retrieves a file from local storage then launches it: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh701471.aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windows/apps/hh701471.aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain"> </code><code class="comments">// Retrieve an instance of the StorageFolder that is the location of local storage for the application </code></div>
+<div class="line"><code class="plain">var currentFolder = tiwp8.staticProperty(</code><code class="string">'Windows.Storage.ApplicationData'</code><code class="plain">, </code><code class="string">'Current'</code><code class="plain">),</code></div>
+<div class="line"><code class="plain">    localFolder = currentFolder.property(</code><code class="string">'LocalFolder'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">localFolder.invokeAsync(</code><code class="string">'GetFileAsync'</code><code class="plain">, [</code><code class="string">'System.String'</code><code class="plain">, </code><code class="string">'somefile.pdf'</code><code class="plain">], function (file) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// GetFileAsync returns a StorageFile handle of the file to retrieve</code></div>
+<div class="line"><code class="plain">        tiwp8.invokeStaticAsync(</code><code class="string">'Windows.System.Launcher'</code><code class="plain">, </code><code class="string">'LaunchFileAsync'</code><code class="plain">, [</code><code class="string">'Windows.Storage.IStorageFile'</code><code class="plain">, file], function (success) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// LaunchFileAsync returns a boolean of whether the call succeeded or not.</code></div>
+<div class="line"><code class="plain">            console.log(</code><code class="string">'LaunchFileAsync success?'</code><code class="plain">, success);</code></div>
+<div class="line"><code class="plain">            currentFolder.destroy();</code></div>
+<div class="line"><code class="plain">            localFolder.destroy();</code></div>
+<div class="line"><code class="plain">            file.destroy();</code></div>
+<div class="line"><code class="plain">        });</code></div>
+<div class="line"><code class="plain">    });</code></div>
+<div class="line"><code class="plain">});</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-EventHandling">
+<h3 class="heading "><span>Event Handling</span></h3>
+<p>
+To add or remove event handlers from an object, use the object's <tt class=" ">addEventListener</tt> or<tt class=" "> removeEventListener</tt> methods:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.addEventListener(String eventName, Function callback)</code></div>
+<div class="line"><code class="plain">Object.removeEventListener(String eventName, Function callback)</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">eventName</tt> - Name of the event to monitor. <strong class=" ">Enclose the name with single quotes only</strong>.  <strong class=" ">Do not use double quotes</strong>.    </p>
+</li><li class=" "> <p>
+<tt class=" ">callback</tt> - Function to bind or unbind from the event.    </p>
+</li></ul> <p>
+</p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+The callback function executes in a different context than the one that it is declared in. The function does not have access to anything declared outside the function unless you use a CommonJS module to require it in.    </p>
+</div>
+<p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example binds a function to the Button's Click event, then unbinds the function after it has been clicked once: <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button_events(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.controls.button_events(v=vs.105).aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Hooks the callback to the Click event</code></div>
+<div class="line"><code class="comments">// Abstracts a call to `Button.Click += callback;`</code></div>
+<div class="line"><code class="plain">button.addEventListener(</code><code class="string">'Click'</code><code class="plain">, callback);</code></div>
+<div class="line"><code class="plain">function callback(e) {</code></div>
+<div class="line"><code class="plain">    e.source.setProp(</code><code class="string">'Content'</code><code class="plain">, </code><code class="string">'Stop clicking me!'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Remove the callback from the event</code></div>
+<div class="line"><code class="plain">    e.source.removeEventListener(</code><code class="string">'Click'</code><code class="plain">, callback);</code></div>
+<div class="line"><code class="plain">};</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Destructor">
+<h3 class="heading "><span>Destructor</span></h3>
+<p>
+To free resources used by an object and mark it available to be destroyed by the garbage collector, use the object's <tt class=" ">destroy</tt> method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Object.destroy()</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain"> var button = tiwp8.createInstance(</code><code class="string">'System.Windows.Controls.Button'</code><code class="plain">, [], []);</code></div>
+<div class="line"><code class="plain">...</code></div>
+<div class="line"><code class="plain">button.destroy();</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Enumeration">
+<h3 class="heading "><span>Enumeration</span></h3>
+<p>
+To get a value of an enumeration item, use the <tt class=" ">tiwp8</tt><tt class=" ">.getEnum</tt> method:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">tiwp8.getEnum(String className, String itemName): Object</code></div>
+</div>
+</div> <p>
+<strong class=" ">Parameters:</strong> </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">className</tt> - Name of the enumeration class. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li><li class=" "> <p>
+<tt class=" ">itemName</tt> -  Name of the enumeration item. <strong class=" ">Enclose the name with single quotes only.  Do not use double quotes.</strong> </p>
+</li></ul> <p>
+<strong class=" ">Returns:</strong> </p>
+<ul class=" "><li class=" "> <p>
+Returns a proxy handle to reference the enumeration item in the Windows Phone API    </p>
+</li></ul> <p>
+<strong class=" ">Example:</strong> </p>
+<p>
+The following example retrieves the Colors.Blue property.  Technically, it is not an enumeration but a property of the Colors class:  <a class="external-link external-link" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.media.colors.blue(v=vs.105).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/windowsphone/develop/system.windows.media.colors.blue(v=vs.105).aspx</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Gets the blue color property</code></div>
+<div class="line"><code class="plain">var blue = tiwp8.getEnum(</code><code class="string">'System.Windows.Media.Colors'</code><code class="plain">, </code><code class="string">'Blue'</code><code class="plain">)</code></div>
+</div>
+</div> <p>
+</p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-RetrieveComponents">
+<h3 class="heading "><span>Retrieve Components</span></h3>
+<p>
+To retrieve the underlining components of the application and module, use the following get methods:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Syntax</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">tiwp8.getPhoneApplicationPage(): Object</code></div>
+<div class="line"><code class="plain">tiwp8.getRootGrid(): Object</code></div>
+<div class="line"><code class="plain">tiwp8.getWebBrowser(): Object</code></div>
+<div class="line"><code class="plain">tiwp8.getProxyList(): ObjectDictionary</code></div>
+</div>
+</div> <p>
+The <tt class=" ">getPhoneApplicationPage</tt>, <tt class=" ">getRootGrid</tt>, and <tt class=" ">getWebBrowser</tt> methods retrieve the proxy handlers to underlining components that make up a default Titanium Windows Hybrid application, which are the PhoneApplicationPage, Grid and WebBrowser controls, respectively.  The HTML 5 application is presented in this components.    </p>
+<div class="confbox admonition admonition-warning aui-message problem shadowed information-macro">
+<p>
+Do not destroy any of the underlining components. Destroying these components may cause unpredictable behavior.    </p>
+</div>
+<p>
+The <tt class=" ">getProxyList</tt> method returns a dictionary that contains all of the proxy handlers that were created.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">var appPage = tiwp8.getPhoneApplicationPage();</code></div>
+<div class="line"><code class="plain">var grid = tiwp8.getRootGrid();</code></div>
+<div class="line"><code class="comments">// Upon initialization, the Grid control is set to the</code></div>
+<div class="line"><code class="comments">// PhoneApplicationPage control's Content property</code></div>
+<div class="line"><code class="comments">// var grid = appPage.getProp('Content');</code></div>
+<div class="line"><code class="plain"> </code></div>
+<div class="line"><code class="comments">// Outputs the class name of each proxy handler</code></div>
+<div class="line"><code class="plain">var handles = tiwp8.getProxyList();</code></div>
+<div class="line"><code class="keyword">for</code><code class="plain"> (var key in handles) {</code></div>
+<div class="line"><code class="plain">    Ti.API.info(handles[key].invoke(</code><code class="string">'ToString'</code><code class="plain">, [], []));</code></div>
+<div class="line"><code class="plain">} </code></div>
+</div>
+</div> <p>
+</p>
+</div>
+</div>
+<div class="section section-2 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Limitations">
+<h2 class="heading "><span>Limitations</span></h2>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-ReflectionAPI">
+<h3 class="heading "><span>Reflection API</span></h3>
+<p>
+The Titanium WP8 API utilizes the .NET reflection API to invoke the Windows Phone APIs.  Because of this, not all APIs may be accessible and may not run efficiently, that is, the application may run slowly depending on the complexity of your application.    </p>
+</div>
+<div class="section section-3 " id="37547046_WindowsPhone8ModuleDevelopmentGuide-Assemblies">
+<h3 class="heading "><span>Assemblies</span></h3>
+<p>
+The Windows Phone API is broken into different functionalities called assemblies.  The following assemblies are accessible by the Titanium WP8 Reflection API:    </p>
+<ul class=" "><li class=" "> <p>
+Microsoft.Phone.dll (Microsoft.Devices and Microsoft.Phone namespaces)    </p>
+</li><li class=" "> <p>
+System.dll    </p>
+</li><li class=" "> <p>
+System.Windows.dll (System.Windows namespace)    </p>
+</li></ul> <p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

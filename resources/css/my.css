@@ -1,0 +1,124 @@
+/* line 6, ../sass/my.scss */
+#north-region { background-image: url(../images/bkgd.png); background-repeat: repeat-x; }
+/* line 10, ../sass/my.scss */
+#north-region #search-field input { font-family: "Helvetica Neue" !important; }
+
+/* line 15, ../sass/my.scss */
+#header-content { padding: 10px 0 0 15px; }
+
+/* line 19, ../sass/my.scss */
+.x-border-layout-ct { background-color: #FFF !important; }
+
+/* line 23, ../sass/my.scss */
+#welcomeindex { overflow: hidden !important; }
+
+/* line 28, ../sass/my.scss */
+.thumb-list h2 { cursor: auto !important; }
+/* line 30, ../sass/my.scss */
+.thumb-list h2 div { background: none !important; padding: 4px !important; }
+
+/* line 37, ../sass/my.scss */
+#center-container h1 { color: #9b1c1f !important; font-size: 16pt !important; }
+/* line 40, ../sass/my.scss */
+#center-container h1 a { color: #9b1c1f !important; }
+/* line 44, ../sass/my.scss */
+#center-container h1 .typestr { font-weight: bold; }
+/* line 50, ../sass/my.scss */
+#center-container .thumb-list h2 { border-bottom: 2px solid #666666 !important; }
+/* line 53, ../sass/my.scss */
+#center-container .thumb-list h2 div { color: #314e64 !important; font-size: 14pt !important; }
+/* line 59, ../sass/my.scss */
+#center-container .thumb-list dd h4 { font-size: 10pt !important; padding: 5px 0 !important; }
+/* line 66, ../sass/my.scss */
+#center-container .class-categories .section { background: none; border: none; }
+/* line 70, ../sass/my.scss */
+#center-container .class-categories .section h1 { color: #666666 !important; }
+/* line 74, ../sass/my.scss */
+#center-container .class-categories .section h3 { color: black; font-size: 14pt; }
+
+/* line 87, ../sass/my.scss */
+.class-overview .x-toolbar-default { margin-left: 5px !important; background-image: none !important; background-color: #f1f1f1 !important; border-color: #f1f1f1 !important; }
+/* line 93, ../sass/my.scss */
+.class-overview .x-toolbar-default .hover-menu-button { background: none; }
+
+/* line 97, ../sass/my.scss */
+.hover-menu { background-color: #f1f1f1 !important; }
+
+/* line 101, ../sass/my.scss */
+.x-grid-row-selected .x-grid-cell, .x-grid-row-selected .x-grid-rowwrap-div { border-style: none !important; border-color: transparent !important; background-color: transparent !important; }
+/* line 105, ../sass/my.scss */
+.x-grid-row-selected .x-grid-cell div, .x-grid-row-selected .x-grid-cell a, .x-grid-row-selected .x-grid-rowwrap-div div, .x-grid-row-selected .x-grid-rowwrap-div a { color: #9b1c1f !important; font-weight: bold; }
+
+/* line 111, ../sass/my.scss */
+.platform-android { background-image: url(../images/icon_android.png); }
+
+/* line 115, ../sass/my.scss */
+.platform-iphone { background-image: url(../images/icon_iphone.png); }
+
+/* line 119, ../sass/my.scss */
+.platform-ipad { background-image: url(../images/icon_ipad.png); }
+
+/* line 123, ../sass/my.scss */
+.platform-mobileweb { background-image: url(../images/icon_mobileweb.png); }
+
+/* line 127, ../sass/my.scss */
+.platform-tizen { background-image: url(../images/icon_tizen.png); }
+
+/* line 131, ../sass/my.scss */
+.platform-blackberry { background-image: url(../images/icon_blackberry.png); }
+
+/* line 135, ../sass/my.scss */
+.sidebar { width: 20%; float: right; }
+/* line 138, ../sass/my.scss */
+.sidebar .sidebar-platforms { clear: right; float: right; color: #666666 !important; }
+/* line 143, ../sass/my.scss */
+.sidebar .sidebar-platforms li { list-style: none !important; height: 40px; background-position: 100% 50%; background-repeat: no-repeat; padding: 12px 40px 0 0; text-align: right; font-size: 12pt; }
+
+/* line 155, ../sass/my.scss */
+.hierarchy { width: 80%; clear: none; }
+
+/* line 161, ../sass/my.scss */
+.doc-contents .platforms, .members .platforms { zoom: 1; }
+/* line 162, ../sass/_mixins.scss */
+.doc-contents .platforms:before, .doc-contents .platforms:after, .members .platforms:before, .members .platforms:after { display: table; content: ""; zoom: 1; *display: inline; }
+/* line 168, ../sass/_mixins.scss */
+.doc-contents .platforms:after, .members .platforms:after { clear: both; }
+/* line 164, ../sass/my.scss */
+.doc-contents .platforms li, .members .platforms li { width: 40px; height: 40px; background-repeat: no-repeat; float: left; list-style: none !important; padding-left: 26px; padding-right: 34px; padding-top: 6px; }
+
+/* line 179, ../sass/my.scss */
+.doc-contents .platforms { display: none; }
+
+/* line 184, ../sass/my.scss */
+.container ol, .container ul { padding-left: 1em !important; }
+
+/* line 187, ../sass/my.scss */
+#videoindex .thumb-list dd .thumb img { border: none !important; }
+
+/* line 192, ../sass/my.scss */
+.doc-table table, .doc-table th, .doc-table td { border: 1px solid #ccc; }
+/* line 195, ../sass/my.scss */
+.doc-table th { font-weight: bold; text-align: left; padding: 3px 5px 3px 5px; }
+/* line 200, ../sass/my.scss */
+.doc-table th, .doc-table td { padding: 3px 5px 3px 5px; }
+
+/* line 206, ../sass/my.scss */
+.note { background-color: #FFFFDD; border-color: #F7DF92; padding: 1em 1em 1em 3em !important; border-radius: 5px; padding-top: 1em !important; padding-bottom: 1em !important; padding-left: 1em !important; width: 95%; }
+
+/* line 217, ../sass/my.scss */
+.note:before { content: "Note: "; padding-left: 0px; color: red; font-weight: bold; }
+
+/* line 224, ../sass/my.scss */
+#editButton { background-image: url(../images/pencil.png); background-position: 10px; background-repeat: no-repeat; background-size: 20px 20px; border-radius: 5px; color: #555555; display: block; height: 30px; position: absolute; right: 50px; text-align: center; top: 18px; width: 75px; }
+
+/* line 240, ../sass/my.scss */
+#editButton span { font-family: Arial, Helvetica, FreeSans, sans-serif; font-size: 15px; font-weight: normal; right: 15px; position: absolute; text-align: center; top: 5px; }
+
+/* line 250, ../sass/my.scss */
+#editButton:hover { background-color: #555555; color: #ffffff; }
+
+/* line 255, ../sass/my.scss */
+#platformComparison { margin: 0 0 0 25px; }
+
+/* line 259, ../sass/my.scss */
+#platformComparison th, #platformComparison td { text-align: center; font-family: 'Helvetica Neue', helvetica, arial, sans-serif; font-size: 13px; font-weight: bold; border-width: 0; color: #555; padding: 5px; }

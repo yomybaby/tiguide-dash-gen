@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Android Intent Filters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004806" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004806"><span>Edit</span></a>
+<h1>Android Intent Filters</h1>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<p>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-Overview" Android_Intent_Filters.html#29004806_AndroidIntentFilters-Overview="Android_Intent_Filters.html#29004806_AndroidIntentFilters-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-app.js" Android_Intent_Filters.html#29004806_AndroidIntentFilters-app.js="Android_Intent_Filters.html#29004806_AndroidIntentFilters-app.js">app.js</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-CustomAndroidManifest.xml" Android_Intent_Filters.html#29004806_AndroidIntentFilters-CustomAndroidManifest.xml="Android_Intent_Filters.html#29004806_AndroidIntentFilters-CustomAndroidManifest.xml">Custom AndroidManifest.xml</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-AndroidManifest.xml" Android_Intent_Filters.html#29004806_AndroidIntentFilters-AndroidManifest.xml="Android_Intent_Filters.html#29004806_AndroidIntentFilters-AndroidManifest.xml">AndroidManifest.xml</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-SampleProject" Android_Intent_Filters.html#29004806_AndroidIntentFilters-SampleProject="Android_Intent_Filters.html#29004806_AndroidIntentFilters-SampleProject">Sample Project</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Intent_Filters-section-29004806_AndroidIntentFilters-HelpfulLinks" Android_Intent_Filters.html#29004806_AndroidIntentFilters-HelpfulLinks="Android_Intent_Filters.html#29004806_AndroidIntentFilters-HelpfulLinks">Helpful Links</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+Android Intent Filters give Appcelerator apps the ability to receive Intents from other Android applications. If you are an Android device user, you're probably familiar with the SEND Intent. It's the one that pops up a &quot;Share via&quot; list of apps when you attempt to share links, pictures, videos, etc.    </p>
+<p>
+<img src="images/download/attachments/29004806/share_intent.png" alt="images/download/attachments/29004806/share_intent.png" class="confluence-embedded-image" />
+</p>
+<p>
+Here we are going to create a very simple app that will make itself available to a very specific Intent via Android Intent Filters. The app will present itself in the Intent list anytime we click on a link that is destined to <a class="external-link external-link" href="http://www.appcelerator.com" target="_blank">http://www.appcelerator.com</a>. This app was inspired by a <a class="external-link external-link" href="http://developer.appcelerator.com/question/124687/use-an-intent-filter-to-open-app-from-weblink" target="_blank">Q&amp;A entry</a> that requested this exact behavior.    </p>
+</div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-app.js">
+<h2 class="heading "><span>app.js</span></h2>
+<p>
+Let's first look at the code for our app. We're simply going to display a label to the user that tells them we know they just clicked on a link to www.appcelerator.com. Nothing fancy here.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Ti.UI.backgroundColor = </code><code class="string">'#fff'</code><code class="plain">;</code></div>
+<div class="line"><code class="plain">var win = Ti.UI.createWindow();</code></div>
+<div class="line"><code class="plain">var label = Ti.UI.createLabel({</code></div>
+<div class="line"><code class="plain">	text:</code><code class="string">"I'll bet you just clicked on a link to http://www.appcelerator.com"</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">	color:</code><code class="string">'#000'</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">	font: {</code></div>
+<div class="line"><code class="plain">		fontSize:</code><code class="value">32</code></div>
+<div class="line"><code class="plain">	},</code></div>
+<div class="line"><code class="plain">	width:</code><code class="string">'80%'</code></div>
+<div class="line"><code class="plain">});</code></div>
+<div class="line"><code class="plain">win.add(label);</code></div>
+<div class="line"><code class="plain">win.open();</code></div>
+</div>
+</div> <p>
+If you build and run it, your output should look roughly like this:    </p>
+<p>
+<img src="images/download/attachments/29004806/app.png" alt="images/download/attachments/29004806/app.png" class="confluence-embedded-image" />
+</p>
+</div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-CustomAndroidManifest.xml">
+<h2 class="heading "><span>Custom AndroidManifest.xml</span></h2>
+<p>
+In order for our Appcelerator app to leverage Intent Filter functionality, we need to make a few changes to our AndroidManifest.xml. As you may or may not know, unless you define a custom AndroidManifest.xml file for your project, Studio will generate a new one for you on each build. Here's how you create a persistent manifest that you can manage yourself.    </p>
+<ol class=" "><li class=" "> <p>
+Create a default mobile project in Studio.    </p>
+</li><li class=" "> <p>
+Replace the existing app.js code with the code above.    </p>
+</li><li class=" "> <p>
+Build and run your app on either an Android device or emulator.    </p>
+</li><li class=" "> <p>
+In your project's root directory create a <strong class=" "><i class=" ">platform/android</i></strong> directory    </p>
+</li><li class=" "> <p>
+Go to your project's <strong class=" "><i class=" ">build/android</i></strong> directory and copy AndroidManifest.xml    </p>
+</li><li class=" "> <p>
+Paste the AndroidManifest.xml into your newly create <strong class=" "><i class=" ">platform/android</i></strong> directory    </p>
+</li></ol> <p>
+In the end, your project structure in Studio should look something like this:    </p>
+<p>
+<img src="images/download/attachments/29004806/proj.jpg" alt="images/download/attachments/29004806/proj.jpg" class="confluence-embedded-image" />
+</p>
+<p>
+OK, now you have a custom AndroidManifest.xml that will persist between builds. We can now make the necessary changes to allow it to receive Intents from other Android apps.    </p>
+<p>
+Open up your custom AndroidManifest.xml and find the main activity for your app. It should be directly under the <i class=" ">&lt;!</i><i class=" ">-- TI_APPLICATION --</i>&gt; comment. As you can see, it already includes an Intent Filter for launching the app. We are going to add one more to handle links to <a class="external-link external-link" href="http://www.appcelerator.com" target="_blank">http://www.appcelerator.com</a>.    </p>
+</div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-AndroidManifest.xml">
+<h2 class="heading "><span>AndroidManifest.xml</span></h2>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;!-- TI_APPLICATION --&gt;</code></div>
+<div class="line"><code class="plain">&lt;activity android:name=</code><code class="string">".IntentFilterTestActivity"</code></div>
+<div class="line"><code class="plain">	android:label=</code><code class="string">"Intent Filter Test"</code><code class="plain"> android:theme=</code><code class="string">"@style/Theme.Titanium"</code></div>
+<div class="line"><code class="plain">	android:configChanges=</code><code class="string">"keyboardHidden|orientation"</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">	&lt;intent-filter&gt;</code></div>
+<div class="line"><code class="plain">		&lt;action android:name=</code><code class="string">"android.intent.action.MAIN"</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">		&lt;category android:name=</code><code class="string">"android.intent.category.LAUNCHER"</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">	&lt;/intent-filter&gt;</code></div>
+<div class="line"><code class="plain">	&lt;intent-filter&gt;</code></div>
+<div class="line"><code class="plain">	    &lt;data android:scheme=</code><code class="string">"http"</code><code class="plain"> android:host=</code><code class="string">"www.appcelerator.com"</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">	    &lt;category android:name=</code><code class="string">"android.intent.category.DEFAULT"</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">	    &lt;category android:name=</code><code class="string">"android.intent.category.BROWSABLE"</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">	    &lt;action android:name=</code><code class="string">"android.intent.action.VIEW"</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">	&lt;/intent-filter&gt;</code></div>
+<div class="line"><code class="plain">&lt;/activity&gt;</code></div>
+</div>
+</div> <p>
+Very briefly, the <strong class=" "><i class=" ">data</i></strong> subelement tells the <strong class=" "><i class=" ">intent-filter</i></strong> that we are handling for HTTP requests targeted at the host www.appcelerator.com. The 2 <strong class=" "><i class=" ">category</i></strong> subelements tell Android that we want to receive implicit Intents and that they can come from the browser, respectively. Finally, <strong class=" "><i class=" ">action</i></strong> states that we will be handling VIEW intents. For more information on the specifics of Intents and Intent Filters, be sure to check the <a class="external-link external-link" href="http://developer.android.com/guide/topics/intents/intents-filters.html" target="_blank">Android developer documentation</a> on the subject.    </p>
+<p>
+You now have an app that is ready to receive Intents. Install it on either an Android device or emulator and make sure it runs. Now you can test the Intent Filter by doing the following:    </p>
+<ol class=" "><li class=" "> <p>
+Open your Android browser    </p>
+</li><li class=" "> <p>
+Search for &quot;appcelerator&quot; on google.com    </p>
+</li><li class=" "> <p>
+Click the link for <a class="external-link external-link" href="http://www.appcelerator.com" target="_blank">http://www.appcelerator.com</a> </p>
+</li></ol> <p>
+You should be greeted with an Intent list that looks something like this:    </p>
+<p>
+<img src="images/download/attachments/29004806/intent_test.png" alt="images/download/attachments/29004806/intent_test.png" class="confluence-embedded-image" />
+</p>
+<p>
+Select your app in the list and you will then be directed to your app containing the &quot;I'll bet you just clicked on a link to www.appcelerator.com&quot; label.    </p>
+</div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-SampleProject">
+<h2 class="heading "><span>Sample Project</span></h2>
+<p>
+Download the full Intent Filter Test project at the <a class="external-link external-link" href="https://github.com/appcelerator/Documentation-Examples/tree/master/Intent%20Filter%20Test" target="_blank">Appcelerator Documentation Examples Github repository</a> </p>
+</div>
+<div class="section section-2 " id="29004806_AndroidIntentFilters-HelpfulLinks">
+<h2 class="heading "><span>Helpful Links</span></h2>
+<p>
+<a class="external-link external-link" href="http://developer.android.com/guide/topics/intents/intents-filters.html" target="_blank">Android Dev Guide: Intents and Intent Filters</a> </p>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>

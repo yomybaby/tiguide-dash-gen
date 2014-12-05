@@ -1,0 +1,234 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="37551713" class="content">
+<h1>Configuring push services</h1>
+<p>
+To send push notifications, Appcelerator Cloud Services relies on the Google Cloud Messaging (GCM) for Android applications, and the Apple Push Notification (APN) service for iOS applications. To use these services in your Titanium application, you first need to enable GCM or APN for your application, and then configure ACS with information about your push service. This guide walks you through the process of creating and configuring push services for your application.    </p>
+<p>
+<span style="color: #222222;">
+</span>
+</p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-ConfiguringpushservicesforiOSdevices" configuring_push_services.html#37551713_configuringpushservices-configuringpushservicesforiosdevices="Configuring_push_services.html#37551713_Configuringpushservices-ConfiguringpushservicesforiOSdevices">Configuring push services for iOS devices</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-ConfiguringpushservicesforAndroiddevices" configuring_push_services.html#37551713_configuringpushservices-configuringpushservicesforandroiddevices="Configuring_push_services.html#37551713_Configuringpushservices-ConfiguringpushservicesforAndroiddevices">Configuring push services for Android devices</a> </p>
+</li></ul> <p>
+</p>
+<div class="section section-2 " id="37551713_Configuringpushservices-ConfiguringpushservicesforiOSdevices">
+<h2 class="heading "><span>Configuring push services for iOS devices</span></h2>
+<p>
+To enable Apple Push Notification service for your application, you need to create an Apple Push Notification certificate and upload the certificate to the ACS server. Note that iOS simulators cannot receive Apple push notifications.    </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-CreateandUploadaPushNotificationCertificate" configuring_push_services.html#37551713_configuringpushservices-createanduploadapushnotificationcertificate="Configuring_push_services.html#37551713_Configuringpushservices-CreateandUploadaPushNotificationCertificate">Create and Upload a Push Notification Certificate</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-RegisteranAppID" configuring_push_services.html#37551713_configuringpushservices-registeranappid="Configuring_push_services.html#37551713_Configuringpushservices-RegisteranAppID">Register an App ID</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-GenerateanApplePushNotificationCertificate" configuring_push_services.html#37551713_configuringpushservices-generateanapplepushnotificationcertificate="Configuring_push_services.html#37551713_Configuringpushservices-GenerateanApplePushNotificationCertificate">Generate an Apple Push Notification Certificate</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-ExporttheCertificate" configuring_push_services.html#37551713_configuringpushservices-exportthecertificate="Configuring_push_services.html#37551713_Configuringpushservices-ExporttheCertificate">Export the Certificate</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-UploadcertificatetoACS" configuring_push_services.html#37551713_configuringpushservices-uploadcertificatetoacs="Configuring_push_services.html#37551713_Configuringpushservices-UploadcertificatetoACS">Upload certificate to ACS</a> </p>
+</li></ul></li></ul> <div class="section section-3 " id="37551713_Configuringpushservices-CreateandUploadaPushNotificationCertificate">
+<h3 class="heading "><span>Create and Upload a Push Notification Certificate</span></h3>
+<p>
+To create an Apple Push Notification certificate, you need to first create an Explicit App ID. The App ID identifies where to send the push notification, which is tied to the certificate when you create it. After you create the certificate, export the certificate to PKCS #12 format and upload it to the ACS server. This certificate allows the ACS server to communicate with the Apple Push Notification server.    </p>
+<div class="section section-4 " id="37551713_Configuringpushservices-RegisteranAppID">
+<h4 class="heading "><span>Register an App ID</span></h4>
+<p>
+You first need to register an App ID for your application.    </p>
+<ol class=" "><li class=" "> <p>
+Log in to the <a class="external-link external-link" href="https://developer.apple.com/membercenter/" target="_blank">Apple Developer Member Center</a> as the Team Agent or Admin.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Certificates, Identifiers &amp; Profiles</strong>.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Identifiers</strong>, then click the add (<strong class=" ">+</strong>) button near the top-right corner.    </p>
+</li><li class=" "> <p>
+Under <strong class=" ">App ID Description</strong>, enter a value in the <strong class=" ">Name</strong> field.    </p>
+</li><li class=" "> <p>
+Select the <strong class=" ">App ID Prefix</strong> to use. (You cannot use a Wildcard App ID for an application with push notifications.)    </p>
+</li><li class=" "> <p>
+In the the <strong class=" ">App ID Suffix</strong> section, select <strong class=" ">Explicit App ID</strong> and enter your application&apos;s ID.    </p>
+<div class="confbox admonition admonition-tip aui-message success shadowed information-macro">
+<p>
+This is the value of the <tt class=" ">&lt;id&gt;</tt> element in your project&apos;s <strong class=" ">tiapp.xml</strong> file.    </p>
+</div>
+</li><li class=" "> <p>
+Under <strong class=" ">App Services</strong>, check the <strong class=" ">Push Notifications</strong> checkbox.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Continue</strong>, <strong class=" ">Submit</strong>, and <strong class=" ">Done</strong> to complete the process.    </p>
+</li></ol> <p>
+The next step is to generate a certificate that approves your application for the Apple Push Notification service.    </p>
+</div>
+<div class="section section-4 " id="37551713_Configuringpushservices-GenerateanApplePushNotificationCertificate">
+<h4 class="heading "><span>Generate an Apple Push Notification Certificate</span></h4>
+<p>
+These directions cover how to generate an Apple Push Notification certificate for both testing (Development) and production (Distribution). Only step #4 differs based on which certificate you create.    </p>
+<ol class=" "><li class=" "> <p>
+Log in to the <a class="external-link external-link" href="https://developer.apple.com/membercenter/" target="_blank">Apple Developer Member Center</a> as the Team Agent or Admin.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Certificates, Identifiers &amp; Profiles</strong>.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Certificates</strong>, then click the add (<strong class=" ">+</strong>) button near the top-right corner.    </p>
+</li><li class=" "> <p>
+For application in development, select <strong class=" ">Apple Push Notification service SSL (Sandbox)</strong>. For production applications,  select <strong class=" ">Apple Push Notification service SSL (Production)</strong>, then click <strong class=" ">Continue</strong>.    </p>
+</li><li class=" "> <p>
+Select the App ID that you created previously from the drop-down list, then click <strong class=" ">Continue</strong>.    </p>
+</li><li class=" "> <p>
+Follow the instructions provided for creating a Certificate Signing Request (CSR). Click <strong class=" ">Continue</strong> once you&apos;ve created the CSR.    </p>
+</li><li class=" "> <p>
+Locate the CSR you created and click <strong class=" ">Generate</strong>.  You are returned to the Certificates page with the status listed as Pending. Wait a moment then refresh the page in your browser. If asked to approve the request, click <strong class=" ">Approve</strong>.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Download</strong> to download the certificate (.cer) file to your computer.    </p>
+</li><li class=" "> <p>
+Double-click the file to install it into your keychain.    </p>
+</li></ol> <p>
+Now that you&apos;ve created the push notification certificate, you need to export it in a format that you provide ACS.    </p>
+</div>
+<div class="section section-4 " id="37551713_Configuringpushservices-ExporttheCertificate">
+<h4 class="heading "><span>Export the Certificate</span></h4>
+<p>
+Once you&apos;ve created the certificate, you need to export it in a format that you can provide to ACS.    </p>
+<ol class=" "><li class=" "> <p>
+Open <strong class=" ">Keychain Access</strong> (Applications &gt; Utilities &gt; Keychain Access).    </p>
+</li><li class=" "> <p>
+Under <strong class=" ">Categories</strong> in the the left side navigation, click <strong class=" ">My Certificates</strong>.    </p>
+</li><li class=" "> <p>
+Select the certificate you installed previously and select <strong class=" ">File &gt; Export Items...</strong>.    </p>
+</li><li class=" "> <p>
+Select <strong class=" ">Personal Information Exchange (.p12)</strong> from the File Format menu and click   <strong class=" ">Save</strong>.    </p>
+</li><li class=" "> <p>
+Enter a password for the certificate, then click <strong class=" ">Save</strong>.    </p>
+</li></ol> <p>
+Keychain exports your certificate as a PKCS #12 file that you upload to ACS to enable Apple Push Notification for your application.    </p>
+</div>
+<div class="section section-4 " id="37551713_Configuringpushservices-UploadcertificatetoACS">
+<h4 class="heading "><span>Upload certificate to ACS</span></h4>
+<p>
+You use <a class="external-link external-link" href="http://dashboard.appcelerator.com/" target="_blank">Dashboard</a> (or <a class="external-link external-link" href="http://cloud.appcelerator.com/" target="_blank">My Apps</a> for Community users) to upload the .p12 certificate file to ACS and enable notifications within your application.    </p>
+<p>
+<strong class=" ">To upload the certificate using Dashboard (Enterprise developers):</strong> </p>
+<ol class=" "><li class=" "> <p>
+Open <a class="external-link external-link" href="https://dashboard.appcelerator.com/" target="_blank">Dashboard</a> and select your application from the drop-down list of applications.    </p>
+</li><li class=" "> <p>
+Select <strong class=" ">Cloud</strong> tab.    </p>
+</li><li class=" "> <p>
+Select <strong class=" ">Settings &amp; Configuration</strong> from the left-hand navigation.    </p>
+</li><li class=" "> <p>
+Select the <strong class=" ">iOS Push</strong> tab in the Settings &amp; Configuration dialog.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Choose File</strong>,  locate the .p12 file you exported previously, and click <strong class=" ">Open</strong>.    </p>
+</li><li class=" "> <p>
+In the <strong class=" ">Certificate Password</strong> field enter the password you selected when you generated the certificate.<br> </p>
+<img src="images/download/attachments/37551713/ios_cert_enterprise.png" alt="images/download/attachments/37551713/ios_cert_enterprise.png" class="confluence-embedded-image confluence-content-image-border" width="500">
+<p>
+</p>
+</li><li class=" "> <p>
+Click <strong class=" ">Save Changes</strong>. If the password you entered was incorrect, an error dialog will alert you.    </p>
+</li></ol> <p>
+<strong class=" ">To upload the certificate using My Apps (Community developers):</strong> </p>
+<ol class=" "><li class=" "> <p>
+Open <a class="external-link external-link" href="https://cloud.appcelerator.com/apps" target="_blank">My Apps</a>  .    </p>
+</li><li class=" "> <p>
+Locate your application in the list of apps and click <strong class=" ">Manage ACS</strong>.    </p>
+</li><li class=" "> <p>
+Click the <strong class=" ">Settings</strong> tab.    </p>
+</li><li class=" "> <p>
+In the <strong class=" ">Apple iOS Push Certificates</strong> section, click <strong class=" ">Choose File</strong> and  locate the .p12 file your exported previously.    </p>
+</li><li class=" "> <p>
+In the Password field enter the password you selected when you generated the certificate.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Save Changes</strong>.    </p>
+</li></ol> </div>
+</div>
+</div>
+<div class="section section-2 " id="37551713_Configuringpushservices-ConfiguringpushservicesforAndroiddevices">
+<h2 class="heading "><span>Configuring push services for Android devices</span></h2>
+<p>
+To enable push services for your Android application, you need to create a Google API project and enable its GSM service, and obtain a send    </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-CreatingaGoogleAPIproject" configuring_push_services.html#37551713_configuringpushservices-creatingagoogleapiproject="Configuring_push_services.html#37551713_Configuringpushservices-CreatingaGoogleAPIproject">Creating a Google API project</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Configuring_push_services-section-37551713_Configuringpushservices-ConfiguringACSapplicationforGCMservice" configuring_push_services.html#37551713_configuringpushservices-configuringacsapplicationforgcmservice="Configuring_push_services.html#37551713_Configuringpushservices-ConfiguringACSapplicationforGCMservice">Configuring ACS application for GCM service</a> </p>
+</li></ul> <div class="section section-3 " id="37551713_Configuringpushservices-CreatingaGoogleAPIproject">
+<h3 class="heading "><span>Creating a Google API project</span></h3>
+<p>
+The first step is creating a Google API project and enabling its GCM service. You also need to obtain a <strong class=" ">GCM sender ID </strong>and create a <strong class=" ">Google API server key</strong>.    </p>
+<p>
+<strong class=" ">To create a Google API project for push notifications</strong>:    </p>
+<ol class=" "><li class=" "> <p>
+Follow the steps in <a class="external-link external-link" href="http://developer.android.com/google/gcm/gs.html#create-proj" target="_blank">Creating a Google API Project</a>. Note the <strong class=" ">Project Number</strong> generated for your application. This is the &quot;sender ID&quot; you will need later.    </p>
+<img src="images/plugins/servlet/confluence/placeholder/unknown-attachment0." alt="images/plugins/servlet/confluence/placeholder/unknown-attachment0." class="confluence-embedded-image confluence-content-image-border" width="500">
+<br><span class="caption">projectid.png</span>
+</li><li class=" "> <p>
+In the sidebar on the left, select <strong class=" ">APIs &amp; auth</strong>.    </p>
+</li><li class=" "> <p>
+In the displayed list of APIs, toggle the <strong class=" ">Google Cloud Messaging for Android</strong> to ON.    </p>
+<img src="images/download/attachments/37551713/enable_gcm.png" alt="images/download/attachments/37551713/enable_gcm.png" class="confluence-embedded-image confluence-content-image-border" width="585">
+</li><li class=" "> <p>
+To generate a Google API Server key:    </p>
+<ol class=" "><li class=" "> <p>
+Select <strong class=" ">APIs &amp; auth &gt; Credentials</strong> from the left sidebar.    </p>
+</li><li class=" "> <p>
+Under <strong class=" ">Public API access</strong>, click <strong class=" ">Create new key</strong>.    </p>
+</li><li class=" "> <p>
+In the <strong class=" ">Create a new key</strong> dialog, click <strong class=" ">Server key</strong>.    </p>
+</li><li class=" "> <p>
+In the dialog that appears, leave blank the     <span style="color: #000000;">
+<strong class=" ">Accept requests from these server IP addresses</strong> field.    </span>
+</p>
+</li><li class=" "> <p>
+Click <strong class=" ">Create</strong>.    </p>
+</li><li class=" "> <p>
+In the refreshed page, copy the <a class="external-link external-link" href="http://developer.android.com/google/gcm/gcm.html#apikey" target="_blank">API key</a> to your clipboard.    </p>
+<img src="images/download/attachments/37551713/server_key.png" alt="images/download/attachments/37551713/server_key.png" class="confluence-embedded-image confluence-content-image-border" width="521">
+</li></ol></li></ol> </div>
+<div class="section section-3 " id="37551713_Configuringpushservices-ConfiguringACSapplicationforGCMservice">
+<h3 class="heading "><span>Configuring ACS application for GCM service</span></h3>
+<p>
+Once you&apos;ve created a Google API project with GCM enabled, you need to update your application&apos;s settings page in <a class="external-link external-link" href="https://dashboard.appcelerator.com/" target="_blank">Dashboard</a> (or <a class="external-link external-link" href="https://cloud.appcelerator.com/apps" target="_blank">My Apps</a> page for community users) with the API key and sender ID you generated.    </p>
+<p>
+<strong class=" ">To configure ACS for push notifications using Dashboard (Enterprise developers):</strong> </p>
+<ol class=" "><li class=" "> <p>
+Open <a class="external-link external-link" href="https://dashboard.appcelerator.com/" target="_blank">Dashboard</a> in your web browser and select your application from the Apps drop-down menu.    </p>
+</li><li class=" "> <p>
+Select the <strong class=" ">Cloud</strong> tab.    </p>
+</li><li class=" "> <p>
+Click <strong class=" ">Settings &amp; Configuration</strong> on the left-side navigation.    </p>
+</li><li class=" "> <p>
+Select the <strong class=" ">Android Push</strong> tab.    </p>
+</li><li class=" "> <p>
+Enter the server key in the <strong class=" ">GCM API Key</strong> field and the GCM sender ID in the <strong class=" ">GCM Sender ID</strong> field.    </p>
+<img src="images/plugins/servlet/confluence/placeholder/unknown-attachment0." alt="images/plugins/servlet/confluence/placeholder/unknown-attachment0." class="confluence-embedded-image confluence-content-image-border" width="500">
+<br><span class="caption">android_push_dashboard.png</span>
+</li><li class=" "> <p>
+Click <strong class=" ">Save Changes</strong>.    </p>
+</li></ol> <p>
+<strong class=" ">To configure ACS for push notifications using My Apps (Community developers):</strong> </p>
+<ol class=" "><li class=" "> <p>
+Open <a class="external-link external-link" href="https://cloud.appcelerator.com/apps" target="_blank">My Apps</a>.    </p>
+</li><li class=" "> <p>
+Find your application in the list of apps and click <strong class=" ">Manage ACS.</strong> </p>
+</li><li class=" "> <p>
+In the <strong class=" ">Android Push Configuration</strong> section, enter your Google API key in the <strong class=" ">Google Cloud Messaging (GCM) API Key</strong> field and your GCM sender ID in the <strong class=" ">Google Cloud Messaging (GCM) Sender ID</strong> field.    </p>
+<img src="images/plugins/servlet/confluence/placeholder/unknown-attachment0." alt="images/plugins/servlet/confluence/placeholder/unknown-attachment0." class="confluence-embedded-image" width="500">
+<br><span class="caption">myapps-config-push.png</span>
+</li><li class=" "> <p>
+Click <strong class=" ">Save Android Push Configuration Changes</strong>.    </p>
+</li></ol> </div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

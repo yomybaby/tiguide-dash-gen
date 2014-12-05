@@ -1,0 +1,522 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="29004732" class="content">
+<h1>How to Submit a Bug Report</h1>
+<div class="section section-2 " id="29004732_HowtoSubmitaBugReport-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-Overview" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-overview="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-IntroducingJIRA" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-introducingjira="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-IntroducingJIRA">Introducing JIRA</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-SearchingJIRA" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-searchingjira="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-SearchingJIRA">Searching JIRA</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-ProjectsOverview" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-projectsoverview="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-ProjectsOverview">Projects Overview</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-Titanium%28Community%29Project" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-titanium%28community%29project="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-Titanium%28Community%29Project">Titanium (Community) Project</a> </p>
+</li></ul></li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-SubmittingTickets" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-submittingtickets="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-SubmittingTickets">Submitting Tickets</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-TheBug-ReportingLifecycle" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-thebug-reportinglifecycle="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-TheBug-ReportingLifecycle">The Bug-Reporting Lifecycle</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-CreatingaTestCase" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-creatingatestcase="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-CreatingaTestCase">Creating a Test Case</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-CreatingaJIRAticket" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-creatingajiraticket="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-CreatingaJIRAticket">Creating a JIRA ticket</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-JIRATicketChecklist" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-jiraticketchecklist="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-JIRATicketChecklist">JIRA Ticket Checklist</a> </p>
+</li></ul></li></ul> </div>
+<div class="section section-2 " id="29004732_HowtoSubmitaBugReport-RelatedTopics">
+<h2 class="heading "><span>Related Topics</span></h2>
+<ul class="childpages-macro "><li class=" "> <p>
+<a class="document-link " href="#!/guide/JIRA_Ticket_Template" jira_ticket_template.html="JIRA_Ticket_Template.html">JIRA Ticket Template</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004732_HowtoSubmitaBugReport-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+Spotting and reporting genuine bugs in Titanium is one of the most accessible ways to contribute, but there are a few challenges to writing a good bug report. Use this guide as reference to help ensure that your bug gets looked at promptly.    </p>
+</div>
+<div class="section section-2 " id="29004732_HowtoSubmitaBugReport-IntroducingJIRA">
+<h2 class="heading "><span>Introducing JIRA</span></h2>
+<p>
+Titanium bugs are tracked using the Atlassian&apos;s JIRA Issue Tracker, at <a class="external-link external-link" href="http://jira.appcelerator.org" target="_blank">http://jira.appcelerator.org</a>.    </p>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-SearchingJIRA">
+<h3 class="heading "><span>Searching JIRA</span></h3>
+<p>
+Before reporting a bug, you should try to determine whether it&apos;s already been filed.    </p>
+<p>
+Tickets for outstanding issues often contain workarounds or other relevant information. For fixed bug, a ticket tells you when a fix for a bug was created and the build you need to obtain in order to take advantage of it. A useful feature is the ability to &quot;watch&quot; issues, which means you will be notified by email of any developments.    </p>
+<p>
+For information on searching JIRA, see Atlassian&apos;s official <a class="external-link external-link" href="http://confluence.atlassian.com/display/JIRA043/Searching+for+Issues" target="_blank">Searching for Issues</a> guide. You&apos;ll see when you run a simple search <a class="external-link external-link" href="http://jira.appcelerator.org/secure/IssueNavigator!switchView.jspa?navType=simple" target="_blank">on our server</a>.    </p>
+<p>
+For more control over the results, the <a class="external-link external-link" href="http://jira.appcelerator.org/secure/IssueNavigator%21switchView.jspa?navType=advanced" target="_blank">advanced search interface</a> is very useful. See Atlassian&apos;s documentation for the <a class="external-link external-link" href="http://confluence.atlassian.com/display/JIRA044/Advanced+Searching" target="_blank">JIRA Query Language (JQL)</a>, for information on entering complex search queries.    </p>
+</div>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-ProjectsOverview">
+<h3 class="heading "><span>Projects Overview</span></h3>
+<p>
+To help organize the information, every JIRA ticket is assigned to one of a small number of Appcelerator projects. The following table shows the project permissions that community members are granted by default.    </p>
+<p>
+<strong class=" ">JIRA Project Permissions</strong> <strong class=" ">for Community Members</strong> </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Project    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Key    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+View    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Create    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Comment    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/APSTUD" target="_blank">Aptana Studio</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+APSTUD    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" class="emoticon emoticon-cross">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/TC" target="_blank">Titanium (Community)</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TC    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIDESK" target="_blank">Titanium Desktop</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TIDESK    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" class="emoticon emoticon-cross">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIDOC" target="_blank">Titanium Documentation</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TIDOC    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" class="emoticon emoticon-cross">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIMOB" target="_blank">Titanium Mobile</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TIMOB    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" class="emoticon emoticon-cross">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<a class="external-link external-link" href="http://jira.appcelerator.org/browse/TISTUD" target="_blank">Titanium Studio</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+TISTUD    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/error.png" class="emoticon emoticon-cross">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" alt="images/s/en_GB/5637/e1ef10868e8fe2f234a1a0b171b01cde1d9717c4.31/_/images/icons/emoticons/check.png" class="emoticon emoticon-tick">
+</p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<p>
+You can drill down via the <a class="external-link external-link" href="https://jira.appcelerator.org/secure/BrowseProjects.jspa#all" target="_blank">Browse Projects</a> page to obtain a summary of the recent achievements of each project.    </p>
+<div class="section section-4 " id="29004732_HowtoSubmitaBugReport-Titanium(Community)Project">
+<h4 class="heading "><span>Titanium (Community) Project</span></h4>
+<p>
+You will notice from the above table that only the Titanium Community project is open for ticket creation. All new tickets are created in the TC project so that our Developer Relations team may check them for validity and completeness. Once a ticket is validated, it is moved to the appropriate project, ready to be reviewed and prioritized by the engineering teams.    </p>
+<div class="confbox admonition admonition-info aui-message hint shadowed information-macro">
+<p>
+</p>
+<p>
+If you are new to Titanium, we understand if you are unfamiliar with the process of raising a well-defined ticket. Don&apos;t worry; we&apos;re here to help. Once you&apos;ve gone through the process once or twice, the time it takes to write a good ticket drops considerably.    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="section section-2 " id="29004732_HowtoSubmitaBugReport-SubmittingTickets">
+<h2 class="heading "><span>Submitting Tickets</span></h2>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-TheBug-ReportingLifecycle">
+<h3 class="heading "><span>The Bug-Reporting Lifecycle</span></h3>
+<p>
+Community-reported bugs are crucial to improving the Titanium platform. However, managing tickets can consume considerable resources, so inaccurate or duplicate submissions take time away from the crucial work of improving the code.    </p>
+<p>
+The most useful tickets are concise, complete and objective. If you are tempted to ask a question in a JIRA ticket, consider using <a class="external-link external-link" href="http://developer.appcelerator.com/questions" target="_blank">Q&amp;A</a> instead.    </p>
+<p>
+<img src="images/download/attachments/29004732/bug-reporting-lifecycle-v2.png" alt="images/download/attachments/29004732/bug-reporting-lifecycle-v2.png" class="confluence-embedded-image">
+</p>
+<p>
+To summarize the process you should follow if you encounter unexplained Titanium behavior:    </p>
+<ol class=" "><li class=" "> <p>
+<strong class=" ">review the documentation</strong> </p>
+</li><li class=" "> <p>
+<strong class=" ">search</strong> <strong class=" "><a class="external-link external-link" href="http://jira.appcelerator.org/secure/IssueNavigator!switchView.jspa?navType=simple" target="_blank">JIRA</a></strong> for similar known issues    </p>
+</li><li class=" "> <p>
+<strong class=" ">search the</strong> <strong class=" "><a class="external-link external-link" href="http://developer.appcelerator.com/questions" target="_blank">Q&amp;A</a></strong> for discussions about the issue between our community members    </p>
+</li><li class=" "> <p>
+<strong class=" ">create a test case</strong> (it&apos;s a prerequisite for posting to the Q&amp;A and JIRA). Follow the guidance in <a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-CreatingaTestCase" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-creatingatestcase="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-CreatingaTestCase">Creating a Test Case</a> </p>
+</li><li class=" "> <p>
+<strong class=" ">post a question in the Q&amp;A</strong> to garner the community&apos;s opinion about the issue and collaborate on a workaround. Follow the guidance in <a class="document-link " href="#!/guide/Using_Questions_and_Answers-section-29004879_UsingQuestionsandAnswers-Jumpingthequeue" using_questions_and_answers.html#29004879_usingquestionsandanswers-jumpingthequeue="Using_Questions_and_Answers.html#29004879_UsingQuestionsandAnswers-Jumpingthequeue">Using the Q&amp;A &gt; Jumping the queue</a>. Include your test case with the rest of the information described in the Q&amp;A <a class="document-link " href="#!/guide/Using_Questions_and_Answers-section-29004879_UsingQuestionsandAnswers-QuestionChecklist" using_questions_and_answers.html#29004879_usingquestionsandanswers-questionchecklist="Using_Questions_and_Answers.html#29004879_UsingQuestionsandAnswers-QuestionChecklist">Question Checklist</a> </p>
+</li><li class=" "> <p>
+<strong class=" ">create a JIRA ticket</strong>, only after there is no doubt about the bug&apos;s existence, Create one ticket per bug, bearing the following in mind:    </p>
+<ul class=" "><li class=" "> <p>
+<strong class=" ">keep to the point:</strong> concise, complete and factual tickets are the most appreciated    </p>
+</li><li class=" "> <p>
+<strong class=" ">include all the information:</strong> without a test case and all the information described in the <a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-JIRATicketChecklist" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-jiraticketchecklist="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-JIRATicketChecklist">JIRA Ticket Checklist</a>, we cannot accept your ticket    </p>
+</li><li class=" "> <p>
+<strong class=" ">watch your ticket:</strong> This makes us aware of your vote for the ticket&apos;s quick resolution    </p>
+</li></ul></li><li class=" "> <p>
+<strong class=" ">post the ticket&apos;s URL to your Q&amp;A question.</strong> Add this as a comment under the question that helped you most and mark it as &quot;best&quot; to make it easy for everyone to find    </p>
+</li></ol> </div>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-CreatingaTestCase">
+<h3 class="heading "><span>Creating a Test Case</span></h3>
+<p>
+A &quot;test case&quot; is working code that reliably reproduces a specific bug. What sets the <i class=" ">quality</i> test cases apart from the rest is that they contain the <i class=" ">least possible</i> code while still demonstrating the bug. Take pride in your test case; make it an art!    </p>
+<p>
+Being in the habit of writing test cases as part of your troubleshooting process can significantly increase your coding efficiency. This is because it can differentiate user coding errors from bugs in the platform.    </p>
+<p>
+As a simple example, you observe in your app that the <tt class=" ">layout:&apos;vertical&apos;</tt> property of the <a class="external-link external-link" href="#!/api/Titanium.UI.Window">Titanium.UI.Window</a> object does not work as expected for its child views. In the process of producing a test case, you remove all the properties from both the window and its sub-views except for those that are absolutely necessary. With less code, it is often easier to notice a mistake and, in this case, you realize that the child view&apos;s top property had been inadvertently set, which caused the views to be positioned absolutely rather than relatively.    </p>
+<p>
+Syntax errors can be the cause of unusual behavior too. Therefore, there is no point escalating an issue to the community or JIRA until you have ensured it validates properly. Of course, our <a class="document-link " href="#!/guide/Studio" studio.html="Studio.html">Studio</a> IDE can help you correct these types of problems, with its built-in Javascript validator. Otherwise. you could use an online tool such as <a class="external-link external-link" href="http://www.jslint.com" target="_blank">JSLint</a>.    </p>
+<p>
+In summary, to create a test case:    </p>
+<ul class=" "><li class=" "> <p>
+<strong class=" ">use a sequential set of Titanium API calls:</strong> Don&apos;t worry about polluting the global scope; there is no need to use namespaces or custom functions. A test case should be too small for this to be significant    </p>
+</li><li class=" "> <p>
+<strong class=" ">remove any superfluous objects:</strong> this includes UI elements such as windows, views and controls    </p>
+</li><li class=" "> <p>
+<strong class=" ">use default values where possible:</strong> remove any properties that are not absolutely necessary    </p>
+</li><li class=" "> <p>
+<strong class=" ">use a Javascript validator:</strong> ensure that your code is free of syntax errors    </p>
+</li><li class=" "> <p>
+<strong class=" ">ensure your code runs without any modification:</strong> test your code by copying it into a blank <tt class=" ">app.js</tt> file and launching    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-CreatingaJIRAticket">
+<h3 class="heading "><span>Creating a JIRA ticket</span></h3>
+<p>
+Assuming you have consulted the community via the Q&amp;A, and you have your <a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-CreatingaTestCase" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-creatingatestcase="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-CreatingaTestCase">test case</a> to hand, you are ready to create a ticket:    </p>
+<ul class=" "><li class=" "> <p>
+open the JIRA <a class="external-link external-link" href="http://jira.appcelerator.org/browse/TC" target="_blank">Titanium Community</a> project page. See the <a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-ProjectsOverview" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-projectsoverview="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-ProjectsOverview">#Projects Overview</a> section for more information about the projects.    </p>
+</li><li class=" "> <p>
+select from the list of ticket types in the top right-hand corner, although usually only <strong class=" ">Bug</strong>, <strong class=" ">Improvement</strong> or <strong class=" ">New Feature</strong> will be applicable    </p>
+</li><li class=" "> <p>
+complete as many fields as you can. Use the <a class="document-link " href="#!/guide/JIRA_Ticket_Template" jira_ticket_template.html="JIRA_Ticket_Template.html">JIRA Ticket Template</a> as a starting point, and refer to the <a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-JIRATicketChecklist" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-jiraticketchecklist="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-JIRATicketChecklist">#JIRA Ticket Checklist</a> below for the information that is required    </p>
+</li><li class=" "> <p>
+as the reporter, you will automatically receive any updates to the ticket. However, it&apos;s always a good idea to also watch all tickets where the resolution is crucial to your projects. This helps our team gauge the issue&apos;s impact on the community, from the total number watchers in the list    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004732_HowtoSubmitaBugReport-JIRATicketChecklist">
+<h3 class="heading "><span>JIRA Ticket Checklist</span></h3>
+<p>
+The following table explains what information must be included in which fields in order for a ticket to be accepted.    </p>
+<div class="confbox admonition admonition-info aui-message hint shadowed information-macro">
+<p>
+</p>
+<p>
+If you have been directed to this section after creating a ticket in JIRA, it likely means that you have omitted some information or not provided it in a suitable <a class="external-link external-link" href="http://wiki.appcelerator.org/renderer/notationhelp.action" target="_blank">format</a>. Please correct the ticket using the instructions below, to enable us to pass it to our engineering teams.    </p>
+</div>
+<p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Field    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Required    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Information to include    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Summary    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">A concise summary</strong> that distinguishes it from other tickets, making it easy for the core team to determine at a glance the nature of the issue.<br>Format: <tt class=" ">&lt;COMPONENT&gt;</tt>: <tt class=" ">&lt;SUB-COMPONENT&gt;</tt> - Description. <i class=" ">(eg. &quot;iOS: Facebook - Unable to login on iPod&quot;)</i> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Assignee    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Leave as default    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Reporter    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Leave as default    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Severity    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/error.png" alt="images/images/icons/emoticons/error.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Optionally, one of the following descriptions may be chosen to reflect the issue&apos;s impact on your project :    </p>
+<ul class=" "><li class=" "> <p>
+<strong class=" ">Blocker:</strong> issue is blocking project    </p>
+</li><li class=" "> <p>
+<strong class=" ">Major:</strong> crashing or incorrect behavior issue that may have a workaround or is not stopping ship    </p>
+</li><li class=" "> <p>
+<strong class=" ">Minor:</strong> crash or incorrect behavior that does have a reasonable workaround or low impact    </p>
+</li><li class=" "> <p>
+<strong class=" ">Trivial:</strong> functions correctly, but appearance/functionality needs improvement    </p>
+</li><li class=" "> <p>
+<strong class=" ">None:</strong> default    </p>
+</li></ul> </td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Components    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Choose a component from the list    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Environment    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<i class=" ">The tested environment (only include the versions of each component that exhibit the problem and have been physically tested)</i><br><strong class=" ">Titanium SDK version:</strong> number, build date and build hash, output to the console output at application launch<br><strong class=" ">Javascript Engine:</strong> Rhino / V8<br><strong class=" ">Platform &amp; version:</strong> iOS x.x, Android x.x, Blackberry x.x, OS X x.x, Windows x, Ubuntu x.x<br><strong class=" ">Device Details:</strong> iOS simulator, Android emulator or physical device model<br><strong class=" ">Host Operating System:</strong> OS X x.x, Windows x, Ubuntu x.x<br><strong class=" ">Titanium Studio version:</strong> available in Help &gt; About    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/check.png" alt="images/images/icons/emoticons/check.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+A concise, factual, description containing the following sections (use the <a class="document-link " href="#!/guide/JIRA_Ticket_Template" jira_ticket_template.html="JIRA_Ticket_Template.html">JIRA Ticket Template</a> as a starting point):<br><strong class=" "><u class=" ">Problem</u></strong><br><i class=" ">Explanation of the problem, including the actual behavior and the expected behavior</i><br><strong class=" "><u class=" ">Test case</u></strong><br><i class=" ">Steps to reproduce plus simple working code that demonstrates the issue and follows the</i> <i class=" "><a class="document-link " href="#!/guide/How_to_Submit_a_Bug_Report-section-29004732_HowtoSubmitaBugReport-CreatingaTestCase" how_to_submit_a_bug_report.html#29004732_howtosubmitabugreport-creatingatestcase="How_to_Submit_a_Bug_Report.html#29004732_HowtoSubmitaBugReport-CreatingaTestCase">Creating a Test Case</a></i> <i class=" ">guidelines, placed within a {code} markup block in the body of the ticket</i><br><strong class=" "><u class=" ">Community Discussion</u></strong><br><i class=" ">A link to the Q&amp;A question in which you asked the community to verify the observed behavior</i><br><strong class=" "><u class=" ">Log</u></strong><br><i class=" ">Logged messages from the following locations, depending on the problem, placed within a {code} markup block in the body of the ticket:</i> </p>
+<ul class=" "><li class=" "> <p>
+<strong class=" ">Android and iOS Development:</strong> Titanium Studio console output of exceptions    </p>
+</li><li class=" "> <p>
+<strong class=" ">Packaging:</strong> contents of <tt class=" ">build.log</tt> (<tt class=" ">Android: &lt;PROJECT&gt;/build.log</tt>, iOS: <tt class=" ">build/iphone/build/build.log</tt>)    </p>
+</li><li class=" "> <p>
+<strong class=" ">Titanium Studio:</strong> contents of menu item <tt class=" ">Help &gt; Titanium Studio &gt; View Log File</tt> (contents of <tt class=" ">&lt;workspace-dir&gt;/log</tt> file)    </p>
+</li></ul> </td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Attachment    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/error.png" alt="images/images/icons/emoticons/error.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Attach images and assets, but try to <strong class=" ">keep code in the description field</strong> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Labels    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<img src="images/images/icons/emoticons/error.png" alt="images/images/icons/emoticons/error.png" class="emoticon" width="16">
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The only valid labels are <tt class=" ">regression</tt> for regressions and <tt class=" ">parity</tt> for differences between platforms. All others will be removed before the ticket is accepted    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</p>
+<p>
+We do not underestimate the time and conscientiousness involved in raising good tickets, and we very much appreciate it. Thank you for all your efforts!    </p>
+<p>
+If you find a ticket that describes a bug that is important to your project, <strong class=" ">watch the ticket!</strong> This will notify you by email of any developments, and the total number of watchers helps us prioritize our work.    </p>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

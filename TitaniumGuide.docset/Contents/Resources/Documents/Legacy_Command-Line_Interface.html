@@ -1,0 +1,295 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="29004835" class="content">
+<h1>Legacy Command-Line Interface</h1>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-EnvironmentSetup" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-environmentsetup="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-EnvironmentSetup">Environment Setup</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-Windows" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-windows="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-Windows">Windows</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-OSX" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-osx="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-OSX">OS X</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-Linux" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-linux="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-Linux">Linux</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-Testing" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-testing="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-Testing">Testing</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-Commands" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-commands="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-Commands">Commands</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-iOSBuilderCommands" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-iosbuildercommands="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-iOSBuilderCommands">iOS Builder Commands</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Legacy_Command-Line_Interface-section-29004835_LegacyCommand-LineInterface-Examples" legacy_command-line_interface.html#29004835_legacycommand-lineinterface-examples="Legacy_Command-Line_Interface.html#29004835_LegacyCommand-LineInterface-Examples">Examples</a> </p>
+</li></ul> <p>
+The <tt class=" ">titanium.py</tt> script in the Mobile SDK provides a command line interface to various common tasks such as creating, building, and running Titanium Mobile projects and modules.    </p>
+<p>
+For creating and building projects, you can also use the new Titanium CLI (see <a class="document-link " href="#!/guide/Titanium_Command-Line_Interface_Reference" titanium_command-line_interface_reference.html="Titanium_Command-Line_Interface_Reference.html">Titanium Command-Line Interface Reference</a>). In this release, the legacy CLI is still required for creating and building module projects.    </p>
+<p>
+To run apps in the iOS simulator or package apps for iOS distribution, you must use a separate, iOS-specific <tt class=" ">builder</tt> script.    </p>
+<div class="section section-2 " id="29004835_LegacyCommand-LineInterface-EnvironmentSetup">
+<h2 class="heading "><span>Environment Setup</span></h2>
+<p>
+It&apos;s recommended that you setup an alias or add the SDK to your <tt class=" ">PATH</tt> so you can call it directly.    </p>
+<p>
+If you&apos;re installing the Titanium Mobile SDK from Titanium Studio, the location of the Mobile SDK is controlled by the <strong class=" ">Titanium SDK Home</strong> preference setting. To find this setting in Titanium Studio:    </p>
+<ol class=" "><li class=" "> <p>
+Click <strong class=" ">Window</strong> &gt; <strong class=" ">Preferences</strong>. On OS X, use <strong class=" ">Titanium Studio</strong> &gt; <strong class=" ">Preferences</strong> instead.    </p>
+</li><li class=" "> <p>
+Expand the <strong class=" ">Titanium Studio</strong> item and click on <strong class=" ">Titanium</strong>.    </p>
+</li><li class=" "> <p>
+Check the value of <strong class=" ">Titanium SDK Home</strong>.    </p>
+</li></ol> <p>
+If you did not install the Mobile SDK using Studio, use the path where you installed the Mobile SDK.    </p>
+<p>
+The following sections provide steps for setting up the environment on different development OSes:    </p>
+<div class="section section-3 " id="29004835_LegacyCommand-LineInterface-Windows">
+<h3 class="heading "><span>Windows</span></h3>
+<p>
+Open your environment variable settings by going to:    </p>
+<ul class=" "><li class=" "> <p>
+Start Menu &gt; Right click on &quot;Computer&quot; &gt; Properties &gt; Advanced System Settings    </p>
+</li><li class=" "> <p>
+Click on the &quot;Advanced&quot; tab, and the &quot;Environment Variables&quot; button near the bottom    </p>
+</li><li class=" "> <p>
+Double click or create a new entry for <tt class=" ">PATH</tt> under User Variables.    </p>
+</li><li class=" "> <p>
+in Window Vista or Windows 7:    </p>
+<ul class=" "><li class=" "> <p>
+Add the Mobile SDK path you looked up in Titanium Studio.    </p>
+</li><li class=" "> <p>
+If you didn&apos;t install the SDK from Studio, use the path where you installed the SDK, such as:<br><tt class=" ">C:\ProgramData\Titanium\mobilesdk\win32\&lt;VERSION&gt;</tt><br>Where &lt;VERSION&gt; is the version of the SDK you have installed.    </p>
+</li></ul></li><li class=" "> <p>
+In Windows XP:    </p>
+<ul class=" "><li class=" "> <p>
+Add the Mobile SDK path you looked up in Titanium Studio.    </p>
+</li><li class=" "> <p>
+If you didn&apos;t install the SDK from Studio, use the path where you installed the SDK, such as:<br><tt class=" ">C:\Documents and Settings\All Users\Application Data\Titanium\mobilesdk\win32\&lt;VERSION&gt;</tt><br>Where &lt;VERSION&gt; is the version of the SDK you have installed.    </p>
+</li></ul></li></ul> </div>
+<div class="section section-3 " id="29004835_LegacyCommand-LineInterface-OSX">
+<h3 class="heading "><span>OS X</span></h3>
+<p>
+Add aliases for <tt class=" ">titanium.py</tt> and <tt class=" ">builder.py</tt> to your <tt class=" ">~/.bash_profile</tt>, or create a <tt class=" ">~/.bash_profile</tt> file if you don&apos;t already have one.    </p>
+<p>
+Depending on where your mobile SDKs are installed, this will probably look like:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alias titanium.py=</code><code class="string">&quot;/Library/Application\&#xA0;Support/Titanium/mobilesdk/osx/&lt;VERSION&gt;/titanium.py&quot;</code></div>
+<div class="line"><code class="plain">alias ios_builder=</code><code class="string">&quot;/Library/Application\&#xA0;Support/Titanium/mobilesdk/osx/&lt;VERSION&gt;/iphone/builder.py&quot;</code></div>
+</div>
+</div> <p>
+or    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alias titanium.py=</code><code class="string">&quot;$HOME/Library/Application\&#xA0;Support/Titanium/mobilesdk/osx/&lt;VERSION&gt;/titanium.py&quot;</code></div>
+<div class="line"><code class="plain">alias ios_builder=</code><code class="string">&quot;$HOME/Library/Application\&#xA0;Support/Titanium/mobilesdk/osx/&lt;VERSION&gt;/iphone/builder.py&quot;</code></div>
+</div>
+</div> <p>
+Where &lt;VERSION&gt; is the version of the SDK you have installed.    </p>
+<p>
+Note that previous versions of these instructions suggested using `titanium` as an alias for the `titanium.py` script. This is no longer recommended because it conflicts with the new Titanium CLI. In the current release, the legacy CLI is still useful for creating and building module projects.    </p>
+<p>
+The <tt class=" ">builder.py</tt> script is in the <tt class=" ">iphone</tt> subdirectory of the SDK folder.    </p>
+<p>
+To add the alias to your environment, run the following command:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">source ~/.bash_profile</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004835_LegacyCommand-LineInterface-Linux">
+<h3 class="heading "><span>Linux</span></h3>
+<p>
+Add this to your <tt class=" ">~/.bash_profile</tt> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">alias titanium.py=$HOME/.titanium/mobilesdk/linux/&lt;VERSION&gt;/titanium.py</code></div>
+</div>
+</div> <p>
+Where &lt;VERSION&gt; is the version of the SDK you have installed.    </p>
+</div>
+<div class="section section-3 " id="29004835_LegacyCommand-LineInterface-Testing">
+<h3 class="heading "><span>Testing</span></h3>
+<p>
+Once you have the environment setup, you should be able to run titanium in a console window, and see the following output:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">$ titanium.py</code></div>
+<div class="line"><code class="plain">Appcelerator Titanium</code></div>
+<div class="line"><code class="plain">Copyright (c) </code><code class="value">2010</code><code class="plain">-</code><code class="value">2011</code><code class="plain"> by Appcelerator, Inc.</code></div>
+<div class="line"><code class="plain">commands:</code></div>
+<div class="line"><code class="plain">  create      - create a project</code></div>
+<div class="line"><code class="plain">  run         - run an existing project</code></div>
+<div class="line"><code class="plain">  emulator    - start the emulator (android)</code></div>
+<div class="line"><code class="plain">  docgen      - generate html docs </code><code class="keyword">for</code><code class="plain"> a module (android)</code></div>
+<div class="line"><code class="plain">  fastdev     - management </code><code class="keyword">for</code><code class="plain"> the Android fastdev server</code></div>
+<div class="line"><code class="plain">  help        - get help</code></div>
+</div>
+</div> </div>
+</div>
+<div class="section section-2 " id="29004835_LegacyCommand-LineInterface-Commands">
+<h2 class="heading "><span>Commands</span></h2>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Command    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">create</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Creates a Titanium Mobile project (use --type=module for module projects).    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">create [--platform=p] [--type=t] [--dir=d] [--name=n] [--id=i] [--ver=v]</code></div>
+<div class="line"><code class="plain">--platform=p1,p2    	platform: iphone, ipad, android, blackberry, etc.</code></div>
+<div class="line"><code class="plain">--type=t            	type of project: project, module, plugin</code></div>
+<div class="line"><code class="plain">--dir=d             	directory to create New the project</code></div>
+<div class="line"><code class="plain">--name=n            	project name</code></div>
+<div class="line"><code class="plain">--id=i              	project id (ie com.companyName.project)</code></div>
+<div class="line"><code class="plain">--ver=i             	platform version</code></div>
+<div class="line"><code class="plain">--android=sdk_folder	For android module - the android sdk folder</code></div>
+</div>
+</div> </td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">run</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Runs a Titanium Mobile project or module &quot;example&quot; project.<br>Note: the iPad simulator cannot be run directly from titanium.py.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">run [--dir=d] [--platform=p] [--type=t]</code></div>
+<div class="line"><code class="plain">--dir=d                 project directory</code></div>
+<div class="line"><code class="plain">--platform=p            platform: iphone, android, mobileweb</code></div>
+<div class="line"><code class="plain">--type=t            	type of project: project, module</code></div>
+</div>
+</div> </td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">emulator</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Starts the Android emulator.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">docgen</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Generates HTML documentation from Markdown in an Android module.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">docgen [--dir=d] [--dest-dir=d]</code></div>
+<div class="line"><code class="plain">--dir=d                 project directory</code></div>
+<div class="line"><code class="plain">--dest-dir=d            destination directory</code></div>
+</div>
+</div> </td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">fastdev</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Management interface for the <a class="document-link " href="#!/guide/Fastdev_Reference_for_Android" fastdev_reference_for_android.html="Fastdev_Reference_for_Android.html">Android Fastdev server</a>.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">help</strong> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Shows help command    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-2 " id="29004835_LegacyCommand-LineInterface-iOSBuilderCommands">
+<h2 class="heading "><span>iOS Builder Commands</span></h2>
+<p>
+The iOS <tt class=" ">builder.py</tt> script can be used to run apps using the iPad simulator and build apps for distribution.    </p>
+<p>
+Run an app on iOS simulator:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ios_builder run &lt;full_path_to_project_folder&gt; &lt;ios_sdk_version&gt; &lt;app_id&gt; &lt;app_name&gt; [ ipad | iphone ] </code></div>
+</div>
+</div> <p>
+Where:    </p>
+<ul class=" "><li class=" "> <p>
+<i class=" ">&lt;app_id&gt;</i> is the Titanium/iOS app ID (for example, com.example.myapp).    </p>
+</li><li class=" "> <p>
+<i class=" ">&lt;app_name&gt;</i> is the application name (for example, MyApp).    </p>
+</li></ul> <p>
+Build an app for distribution:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ios_builder distribute &lt;ios_sdk_version&gt; &lt;full_path_to_project_folder&gt; &lt;app_id&gt; &lt;app_name&gt; &lt;provisioning_profile_id&gt; &lt;developer_id&gt; &lt;full_path_to_project_folder&gt;/build/iphone/ [ ipad | iphone | universal ]</code></div>
+</div>
+</div> <p>
+Where:    </p>
+<ul class=" "><li class=" "> <p>
+<i class=" ">&lt;app_id&gt;</i> is the Titanium/iOS app ID (for example, com.example.myapp).    </p>
+</li><li class=" "> <p>
+<i class=" ">&lt;app_name&gt;</i> is the application name (for example, MyApp).    </p>
+</li><li class=" "> <p>
+<i class=" ">&lt;provisioning_profile_id&gt;</i> is the ID of the distribution provisioning profile (find this in the Xcode Organizer window).    </p>
+</li><li class=" "> <p>
+<i class=" ">&lt;developer_id&gt;</i> is the ID of the developer, the string following &quot;iPhone Developer:&quot; on the Developer Profile tab of the Xcode Organizer window.    </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004835_LegacyCommand-LineInterface-Examples">
+<h2 class="heading "><span>Examples</span></h2>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Create an Android Project</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">$ titanium.py create --platform=android --android=/path/to/android-sdk --id=com.mycompany.myApp --name=myApp</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Run a project on the Android Emulator</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">$ titanium.py run --platform=android</code></div>
+</div>
+</div> <p>
+For examples of using the legacy CLI to create and build module projects, see:    </p>
+<ul class=" "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Android_Module_Development_Guide" android_module_development_guide.html="Android_Module_Development_Guide.html">Android Module Development Guide</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/iOS_Module_Development_Guide" ios_module_development_guide.html="iOS_Module_Development_Guide.html">iOS Module Development Guide</a> </p>
+</li></ul> </div>
+</div>
+
+</div>
+
+</body>
+</html>

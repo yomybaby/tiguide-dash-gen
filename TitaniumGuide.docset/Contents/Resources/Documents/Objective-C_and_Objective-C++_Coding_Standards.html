@@ -1,0 +1,406 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="30088343" class="content">
+<h1>Objective-C and Objective-C++ Coding Standards</h1>
+<div class="confbox panel panel">
+<div class="title">Contents</div>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Synopsis" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-synopsis="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Synopsis">Synopsis</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Basisforthisdocument" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-basisforthisdocument="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Basisforthisdocument">Basis for this document</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-AppceleratorC%2FC++standards" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-appceleratorc%2fc++standards="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-AppceleratorC%2FC++standards">Appcelerator C/C++ standards</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Standards" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-standards="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Standards">Standards</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-importvs.include" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-importvs.include="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-importvs.include">import vs. include</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-ClassNaming" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-classnaming="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-ClassNaming">Class Naming</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Protocols" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-protocols="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Protocols">Protocols</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Categorynaming" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-categorynaming="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Categorynaming">Category naming</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-ivars" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-ivars="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-ivars">ivars</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-%40public%2C%40protected%2Cand%40private" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-%40public%2c%40protected%2cand%40private="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-%40public%2C%40protected%2Cand%40private">@public, @protected, and @private</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-%40propertyand%40synthesize" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-%40propertyand%40synthesize="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-%40propertyand%40synthesize">@property and @synthesize</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Methods" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-methods="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Methods">Methods</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-init" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-init="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-init">init</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Blocks" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-blocks="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Blocks">Blocks</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Fastenumeration%28forxiny%29" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-fastenumeration%28forxiny%29="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Fastenumeration%28forxiny%29">Fast enumeration (for x in y)</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Filenames" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-filenames="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Filenames">File names</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-%40implementationordering" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-%40implementationordering="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-%40implementationordering">@implementation ordering</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-nilandNULL" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-nilandnull="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-nilandNULL">nil and NULL</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-BOOLtypes" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-booltypes="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-BOOLtypes">BOOL types</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-ExceptionstotheCstandard" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-exceptionstothecstandard="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-ExceptionstotheCstandard">Exceptions to the C standard</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Comments" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-comments="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Comments">Comments</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Orderofdeclarations" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-orderofdeclarations="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Orderofdeclarations">Order of declarations</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Braces" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-braces="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Braces">Braces</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Variables" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-variables="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Variables">Variables</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-ExceptionstotheC++standard" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-exceptionstothec++standard="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-ExceptionstotheC++standard">Exceptions to the C++ standard</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-OtherRules" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-otherrules="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-OtherRules">Other Rules</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-3rdpartylibraries" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-3rdpartylibraries="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-3rdpartylibraries">3rd party libraries</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-Deprecatedclassesandmethods" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-deprecatedclassesandmethods="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-Deprecatedclassesandmethods">Deprecated classes and methods</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-%40compatibility_alias" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-%40compatibility_alias="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-%40compatibility_alias">@compatibility_alias</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Objective-C_and_Objective-C++_Coding_Standards-section-30088343_Objective-CandObjective-C++CodingStandards-pragmamark" objective-c_and_objective-c++_coding_standards.html#30088343_objective-candobjective-c++codingstandards-pragmamark="Objective-C_and_Objective-C++_Coding_Standards.html#30088343_Objective-CandObjective-C++CodingStandards-pragmamark">pragma mark</a> </p>
+</li></ul></li></ul></li></ul> </div>
+<div class="section section-2 " id="30088343_Objective-CandObjective-CCodingStandards-Synopsis">
+<h2 class="heading "><span>Synopsis</span></h2>
+<p>
+This document is for the Objective-C and Objective-C++ coding standards at Appcelerator. As with other coding standards documents, the primary goal is clean, readable code, which is comprable to common existing conventions.    </p>
+</div>
+<div class="section section-2 " id="30088343_Objective-CandObjective-CCodingStandards-Basisforthisdocument">
+<h2 class="heading "><span>Basis for this document</span></h2>
+<p>
+We attempt to follow the <a class="external-link external-link" href="http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml" target="_blank">Google coding standards</a> and <a class="external-link external-link" href="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.pdf" target="_blank">Apple Cocoa guidelines</a>. The remainder of this document reiterates information from these where appropriate, and otherwise provides exceptions to their standards.    </p>
+<p>
+We use &quot;Modern Objective-C&quot;, the features of which are described in these documents.    </p>
+<ul class=" "><li class=" "> <p>
+<a class="external-link external-link" href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank">Programming with Objective-C</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html" target="_blank">Adopting Modern Objective-C</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://developer.apple.com/library/ios/releasenotes/ObjectiveC/ObjCAvailabilityIndex/index.html" target="_blank">Objective-C Feature Availability Index</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://developer.apple.com/library/ios/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html" target="_blank">Transitioning to ARC Release Notes</a> </p>
+</li><li class=" "> <p>
+<a class="external-link external-link" href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html" target="_blank">Blocks Programming Topics</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="30088343_Objective-CandObjective-CCodingStandards-AppceleratorC/Cstandards">
+<h2 class="heading "><span>Appcelerator C/C++ standards</span></h2>
+<p>
+You are expected to follow the <a class="document-link " href="#!/guide/C_and_C++_Coding_Standards" c_and_c++_coding_standards.html="C_and_C++_Coding_Standards.html">C/C++ coding guidelines</a> when writing Objective-C except where explicitly specified. These standards take precedence over any generic rules listed in the style guidelines above, although we have our own exceptions.    </p>
+<p>
+However, for consistency, any pure-C functions you write in Objective-C source files are to follow the Objective-C rules with C exceptions.    </p>
+</div>
+<div class="section section-2 " id="30088343_Objective-CandObjective-CCodingStandards-Standards">
+<h2 class="heading "><span>Standards</span></h2>
+<p>
+The following are the standard set of spacing, formatting, and naming conventions we expect for Objective-C(++) code.    </p>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-importvs.include">
+<h3 class="heading "><span>import  vs.  include</span></h3>
+<p>
+Always @import (not <tt class=" ">#import)</tt> Objective-C headers, and <tt class=" ">#include</tt> C (or C++) headers.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-ClassNaming">
+<h3 class="heading "><span>Class Naming</span></h3>
+<ul class=" "><li class=" "> <p>
+Objective-C classes are to be named with:    </p>
+<ul class=" "><li class=" "> <p>
+The prefix <tt class=" ">Ti</tt>, or another project-appropriate prefix    </p>
+</li><li class=" "> <p>
+Camelcase    </p>
+</li></ul></li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="color2">@interface</code><code class="plain"> TiExampleClass : NSObject {</code></div>
+<div class="line"><code class="comments">// ivars</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="comments">// properties</code></div>
+<div class="line"><code class="comments">// methods</code></div>
+</div>
+</div> <p>
+The <tt class=" ">@interface</tt> directive should not be indented, and neither should <tt class=" ">@property</tt> or method declarations.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Protocols">
+<h3 class="heading "><span>Protocols</span></h3>
+<p>
+Protocols follow the same naming conventions as classes, with the following exceptions:    </p>
+<ul class=" "><li class=" "> <p>
+Protocols which reference a <i class=" ">behavior type</i> should end with a gerund (-ing).    </p>
+</li><li class=" "> <p>
+Protocols which describe a <i class=" ">set of actions</i> should describe the functional property of these collective actions.    </p>
+</li><li class=" "> <p>
+Protocols which are a <i class=" ">delegate</i> should end with the word <tt class=" ">Delegate</tt>.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="color1">@protocol</code><code class="plain"> TiScrolling; </code><code class="comments">// Gerund; behavior type is &quot;this object scrolls&quot;</code></div>
+<div class="line"><code class="color1">@protocol</code><code class="plain"> TiFocusable; </code><code class="comments">// Action set; describes actions related to &quot;focusing&quot; and &quot;TiFocusing&quot; seems inappropraite (&quot;this object focuses&quot; vs. &quot;this object performs actions related to focusing&quot;)</code></div>
+<div class="line"><code class="color1">@protocol</code><code class="plain"> TiScrollViewDelegate; </code><code class="comments">// Delegate</code></div>
+</div>
+</div> <p>
+Protocols must always include the <tt class=" ">@required</tt> directive explicitly.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Categorynaming">
+<h3 class="heading "><span>Category naming</span></h3>
+<p>
+Header files which define an interface for a category only should be named <tt class=" ">&lt;base class&gt;+&lt;category&gt;.h</tt>.    </p>
+<ul class=" "><li class=" "> <p>
+Categories on existing classes should be named appropriately, with the category describing the set of extensions.    </p>
+</li><li class=" "> <p>
+Categories which are intended to describe a private API within an implementation file should be the empty category <tt class=" ">()</tt>.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-ivars">
+<h3 class="heading "><span>ivars</span></h3>
+<p>
+Prefer private properties to ivars. If you do have a valid use case for an ivar, then declare them in the @implementation block (not the @interface block).    </p>
+<p>
+Instance variables for a class should be intended one tabstop.    </p>
+<p>
+Instance variables should be named in camelcase, and are not required to follow any other specific naming convention.    </p>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-@public,@protected,and@private">
+<h4 class="heading "><span>@public ,  @protected , and  @private</span></h4>
+<p>
+Use of access specifiers is discouraged (use publicly-declared and private-category <tt class=" ">@property</tt> instead).    </p>
+</div>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-@propertyand@synthesize">
+<h3 class="heading "><span>@property  and  @synthesize</span></h3>
+<p>
+Use the default synthesis property of ivars. You should rarely need @synthesize.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Methods">
+<h3 class="heading "><span>Methods</span></h3>
+<ul class=" "><li class=" "> <p>
+Methods should be named in camelcase, with the first character lowercase. Method names <strong class=" ">must never</strong> begin with an underscore.    </p>
+</li><li class=" "> <p>
+The leading method specifier (<tt class=" ">+</tt> or <tt class=" ">-</tt>) should not be followed by a space, and neither should the return type.    </p>
+</li><li class=" "> <p>
+Selector (and argument) names should not have a space after their <tt class=" ">:</tt> character, or the type.    </p>
+</li><li class=" "> <p>
+If method declarations, definitions, or calls are spread across multiple lines, their <tt class=" ">:</tt> characters should be aligned rather than spaced on tabstops.    </p>
+</li><li class=" "> <p>
+The opening brace of a method should be on its own line for implementations.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">+(</code><code class="keyword">void</code><code class="plain">)x:(</code><code class="keyword">int</code><code class="plain">)y</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+<div class="line"><code class="plain">-(</code><code class="keyword">void</code><code class="plain">)veryLongMethodName:(NSObject*)veryLongArgumentName</code></div>
+<div class="line"><code class="plain">                     arg2:(NSObject*)anotherArg</code></div>
+<div class="line"><code class="plain">                     arg3:(NSObject*)moreArg</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-init">
+<h4 class="heading "><span>init</span></h4>
+<p>
+Every class must have one, and only one, designated initializer that is identified as such in a comment. The following is an example of well-written designated initializer:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">// Designated initializer.</code></div>
+<div class="line"><code class="plain">-(instancetype)init</code></div>
+<div class="line"><code class="plain">{</code></div>
+<div class="line"><code class="plain">	self = [</code><code class="keyword">super</code><code class="plain"> init];</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (self) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// initialization code goes here...</code></div>
+<div class="line"><code class="plain">    }</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> self;</code></div>
+<div class="line"><code class="plain">}</code></div>
+</div>
+</div> <p>
+Note the single braces. You may wish to turn off the &quot;initializer not fully bracketed&quot; clang warning in Xcode as a result.    </p>
+</div>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Blocks">
+<h3 class="heading "><span>Blocks</span></h3>
+<ul class=" "><li class=" "> <p>
+Block variables should never be a raw type; they should always have a <tt class=" ">typedef</tt>associated with them and that name used as the variable type.    </p>
+<ul class=" "><li class=" "> <p>
+<strong class=" ">EXCEPTION:</strong> The <tt class=" ">void (^varname)(void)</tt> block type does not require a typedef, although there are plenty of existing convenience typedefs for this block type which should be used when appropriate.    </p>
+</li></ul></li><li class=" "> <p>
+Blocks should have their opening brace on the same line as their <tt class=" ">^</tt>, and their closing brace on its own line, indented with the surrounding scope.    </p>
+</li><li class=" "> <p>
+Blocks have their contents indented one tabstop from the surrounding scope.    </p>
+</li><li class=" "> <p>
+The <tt class=" ">void ^(void)</tt> block type should always be written as {{ ^{ ... } }}.    </p>
+</li><li class=" "> <p>
+<tt class=" ">__block</tt> storage specifier objects should be used with care. Remember that if a <tt class=" ">__block</tt> variable goes out of scope when a block tries to access it, there can be unpredictable and bad results.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">typedef </code><code class="keyword">int</code><code class="plain"> ^(intBlock)(</code><code class="keyword">int</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">intBlock foo = ^(</code><code class="keyword">int</code><code class="plain"> foo) {</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">return</code><code class="plain"> </code><code class="value">2</code><code class="plain">*foo;</code></div>
+<div class="line"><code class="plain">};</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Fastenumeration(forxiny)">
+<h3 class="heading "><span>Fast enumeration ( for x in y )</span></h3>
+<p>
+Prefer fast enumeration loops to other looping constructs where possible. Note that if <tt class=" ">y</tt> is a method call, the result of it should be pre-cached. Do not write fast enumeration loops which would modify <tt class=" ">y</tt> (whether an object or a method call) as a side-effect of the loop contents.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-Filenames">
+<h3 class="heading "><span>File names</span></h3>
+<p>
+The following file names are acceptable for Objective-C:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">.h</tt> (headers)    </p>
+</li><li class=" "> <p>
+<tt class=" ">.m</tt> (implementation files)    </p>
+</li><li class=" "> <p>
+<tt class=" ">.mm</tt> (Objective-C++ - use with care, see below)    </p>
+</li><li class=" "> <p>
+<tt class=" ">.pch</tt> (precompiled header)    </p>
+</li></ul> </div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-@implementationordering">
+<h3 class="heading "><span>@implementation  ordering</span></h3>
+<p>
+Methods should be ordered in <tt class=" ">@implementation</tt> in the following way:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">@synthesize</tt> directives    </p>
+</li><li class=" "> <p>
+Designated initializer(s), ending with <tt class=" ">init</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">#pragma mark Private</tt> - Only required for implementations with a private category    </p>
+</li><li class=" "> <p>
+Methods declared in private category    </p>
+</li><li class=" "> <p>
+<tt class=" ">#pragma mark Public</tt> - Only required for implementations with a private category    </p>
+</li><li class=" "> <p>
+Methods declared in <tt class=" ">@interface</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">#pragma mark Protocol @protocol-name</tt> - Only required for classes which implement a protocol    </p>
+</li><li class=" "> <p>
+Methods for <tt class=" ">@protocol</tt>, <tt class=" ">@required</tt> first, then <tt class=" ">@optional</tt> </p>
+</li></ul> <p>
+The protocol implementation sections may be repeated as necessary.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-nilandNULL">
+<h3 class="heading "><span>nil  and  NULL</span></h3>
+<ul class=" "><li class=" "> <p>
+Do not mix <tt class=" ">nil</tt> and <tt class=" ">NULL</tt>. <tt class=" ">NULL</tt> should only be used for C-style pointers, and <tt class=" ">nil</tt> for all Objective-C object (and <tt class=" ">id</tt>) types.    </p>
+</li><li class=" "> <p>
+It is illegal to use a statement such as {{ if (objcObject) { ... } }}. Instead directly compare to <tt class=" ">nil</tt>, <strong class=" ">only where required</strong>. Remember that it is actually faster to send a message to <tt class=" ">nil</tt> than to perform the <tt class=" ">cmp/jmp</tt> instructions from an <tt class=" ">if</tt> <strong class=" ">and</strong> make a method call. This is especially true on RISC architectures like ARM.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-BOOLtypes">
+<h3 class="heading "><span>BOOL  types</span></h3>
+<p>
+<tt class=" ">BOOL</tt> types should only be assigned to from <tt class=" ">YES</tt>, <tt class=" ">NO</tt>, or an explicit boolean operation. Do not mix <tt class=" ">BOOL</tt> types with C++ <tt class=" ">boolean</tt> or the C macros <tt class=" ">TRUE</tt> and <tt class=" ">FALSE</tt> - doing so may lead to subtle comparator errors for truth.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-ExceptionstotheCstandard">
+<h3 class="heading "><span>Exceptions to the C standard</span></h3>
+<p>
+There are a number of exceptions to the C standard, to make our Objective-C code more compatible with existing source and follow standard conventions. Any C code which is written within an Objective-C source file (<tt class=" ">.m</tt>) must also follow these conventions, for readability purposes.    </p>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-Comments">
+<h4 class="heading "><span>Comments</span></h4>
+<ul class=" "><li class=" "> <p>
+Classes, methods, and properties are to be documented as part of their <tt class=" ">@interface</tt>, not <tt class=" ">@implementation</tt>.    </p>
+</li><li class=" "> <p>
+Anything intended to be accessible through a public API of any kind should be tagged with comments suitable for appledoc generation; see <a class="external-link external-link" href="http://gentlebytes.com/appledoc/" target="_blank">appledoc</a> for format info. You may wish to <tt class=" ">brew install appledoc</tt> as well.    </p>
+</li></ul> </div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-Orderofdeclarations">
+<h4 class="heading "><span>Order of declarations</span></h4>
+<p>
+Rather than <tt class=" ">namespace-contents</tt>, the basic block for an Objective-C header is <tt class=" ">objc-contents</tt>:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">@interface</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">#pragma mark &quot;@interface-name Properties&quot;</tt> (or &quot;Properties&quot; for headers with one <tt class=" ">@interface</tt>)    </p>
+</li><li class=" "> <p>
+<tt class=" ">@property</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">#pragma mark &quot;@interface-name Methods&quot;</tt> (or &quot;Methods&quot; for headers with one <tt class=" ">@interface</tt>)    </p>
+</li><li class=" "> <p>
+Class methods    </p>
+</li><li class=" "> <p>
+Instance methods    </p>
+</li></ul> <p>
+The following is the order of declarations for an Objective-C or Objective-C++ header:    </p>
+<ul class=" "><li class=" "> <p>
+Copyright notice    </p>
+</li><li class=" "> <p>
+<tt class=" ">#import</tt> headers (system, 3rd party, project)    </p>
+</li><li class=" "> <p>
+<tt class=" ">#include</tt> headers (system, 3rd party, project)    </p>
+</li><li class=" "> <p>
+macros    </p>
+</li><li class=" "> <p>
+<tt class=" ">const</tt> variables    </p>
+</li><li class=" "> <p>
+<tt class=" ">enum</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">typedef</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">@protocol</tt> declarations    </p>
+</li><li class=" "> <p>
+C-style function declarations    </p>
+</li><li class=" "> <p>
+<tt class=" ">objc-contents</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">namespace-contents</tt> (for declared namespaces in Objective-C++ headers only)    </p>
+</li></ul> </div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-Braces">
+<h4 class="heading "><span>Braces</span></h4>
+<p>
+Rather than spacing a brace on a newline in C, in Objective-C there are some cases in which an opening brace is placed on the same line as the preceding statement, with a space before it:    </p>
+<ul class=" "><li class=" "> <p>
+Blocks (see above)    </p>
+</li><li class=" "> <p>
+Flow control (<tt class=" ">if</tt>/<tt class=" ">while</tt>/<tt class=" ">for</tt>/<tt class=" ">do...while</tt>/<tt class=" ">switch...case</tt>)    </p>
+</li></ul> </div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-Variables">
+<h4 class="heading "><span>Variables</span></h4>
+<p>
+All variables are named in camel-case and should not contain punctuation.    </p>
+</div>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-ExceptionstotheCstandard">
+<h3 class="heading "><span>Exceptions to the C++ standard</span></h3>
+<p>
+There are no exceptions to the C++ standard at this time.    </p>
+</div>
+<div class="section section-3 " id="30088343_Objective-CandObjective-CCodingStandards-OtherRules">
+<h3 class="heading "><span>Other Rules</span></h3>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-3rdpartylibraries">
+<h4 class="heading "><span>3rd party libraries</span></h4>
+<p>
+As with all other source, the style in 3rd party libraries should be consistent with the style there rather than any Appcelerator coding standards. This holds true even for extensions we write to them.    </p>
+</div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-Deprecatedclassesandmethods">
+<h4 class="heading "><span>Deprecated classes and methods</span></h4>
+<p>
+Avoid the usage of deprecated methods from standard frameworks where an alternative is available, unless it breaks backwards compatibility with a version of software that we support.    </p>
+</div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-@compatibility_alias">
+<h4 class="heading "><span>@compatibility_alias</span></h4>
+<p>
+Do not use the <tt class=" ">@compatibility_alias</tt> directive unless it is explicitly required due to a conflict between external libraries to a project, or multiple internal versions required by different 3rd party libraries.    </p>
+</div>
+<div class="section section-4 " id="30088343_Objective-CandObjective-CCodingStandards-pragmamark">
+<h4 class="heading "><span>pragma mark</span></h4>
+<p>
+Use <tt class=" ">#pragma mark</tt> liberally to annotate sections of your code where necessary, in addition to the rules spelled out above.    </p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

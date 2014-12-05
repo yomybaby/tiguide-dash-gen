@@ -1,0 +1,1543 @@
+<!-- single file version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/github.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/common.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="container">
+<div class="header"></div>
+<div id="29004921" class="content">
+<h1>tiapp.xml and timodule.xml Reference</h1>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-Introductions">
+<h2 class="heading "><span>Introductions</span></h2>
+<p>
+The <tt class=" ">tiapp.xml</tt> file and its close cousin the <tt class=" ">timodule.xml</tt> file are XML configuration files that the Titanium SDK uses to generate native resources and code. Many of the configuration that lives in <tt class=" ">tiapp.xml</tt> is cross-platform, but some is platform-specific as well. The <tt class=" ">timodule.xml</tt> file is meant for custom Titanium Modules, and generally <strong class=" "> <i class=" ">only</i> </strong>contains platform-specific configuration.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: tiapp.xml</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ti:app xmlns:ti=</code><code class="string">&quot;http://ti.appcelerator.org&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;id&gt;com.appcelerator.helloWorld&lt;/id&gt;</code></div>
+<div class="line"><code class="plain">    &lt;name&gt;helloWorld&lt;/name&gt;</code></div>
+<div class="line"><code class="plain">    &lt;version&gt;</code><code class="value">1.0</code><code class="plain">.</code><code class="value">1</code><code class="plain">&lt;/version&gt;</code></div>
+<div class="line"><code class="plain">    &lt;icon&gt;appicon.png&lt;/icon&gt;</code></div>
+<div class="line"><code class="plain">    &lt;fullscreen&gt;</code><code class="keyword">false</code><code class="plain">&lt;/fullscreen&gt;</code></div>
+<div class="line"><code class="plain">    &lt;navbar-hidden&gt;</code><code class="keyword">false</code><code class="plain">&lt;/navbar-hidden&gt;</code></div>
+<div class="line"><code class="plain">    &lt;analytics&gt;</code><code class="keyword">true</code><code class="plain">&lt;/analytics&gt;</code></div>
+<div class="line"><code class="plain">    &lt;guid&gt;GUID&lt;/guid&gt;</code></div>
+<div class="line"><code class="plain">	&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">        &lt;plist&gt;</code></div>
+<div class="line"><code class="plain">            &lt;dict&gt;</code></div>
+<div class="line"><code class="plain">		        &lt;key&gt;UISupportedInterfaceOrientations~iphone&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">                &lt;array&gt;</code></div>
+<div class="line"><code class="plain">			        &lt;string&gt;Ti.UI.PORTRAIT&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">		        &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">		        &lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">                &lt;array&gt;</code></div>
+<div class="line"><code class="plain">			        &lt;string&gt;Ti.UI.PORTRAIT&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">			        &lt;string&gt;Ti.UI.UPSIDE_PORTRAIT&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">			        &lt;string&gt;Ti.UI.LANDSCAPE_LEFT&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">			        &lt;string&gt;Ti.UI.LANDSCAPE_RIGHT&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">		        &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">            &lt;/dict&gt;</code></div>
+<div class="line"><code class="plain">        &lt;/plist&gt;</code></div>
+<div class="line"><code class="plain">	&lt;/ios&gt;</code></div>
+<div class="line"><code class="plain">	&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">        &lt;tool-api-level&gt;</code><code class="value">10</code><code class="plain">&lt;/tool-api-level&gt;</code></div>
+<div class="line"><code class="plain">        &lt;abi&gt;all&lt;/abi&gt;</code></div>
+<div class="line"><code class="plain">	&lt;/android&gt;</code></div>
+<div class="line"><code class="plain">    &lt;mobileweb&gt;</code></div>
+<div class="line"><code class="plain">        &lt;splash&gt;</code></div>
+<div class="line"><code class="plain">            &lt;enabled&gt;</code><code class="keyword">true</code><code class="plain">&lt;/enabled&gt;</code></div>
+<div class="line"><code class="plain">            &lt;inline-css-images&gt;</code><code class="keyword">true</code><code class="plain">&lt;/inline-css-images&gt;</code></div>
+<div class="line"><code class="plain">        &lt;/splash&gt;</code></div>
+<div class="line"><code class="plain">        &lt;theme&gt;</code><code class="keyword">default</code><code class="plain">&lt;/theme&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/mobileweb&gt;</code></div>
+<div class="line"><code class="plain">	&lt;modules/&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ti:app&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-TopLevelElements">
+<h2 class="heading "><span>Top Level Elements</span></h2>
+<p>
+These configuration elements live under the root <tt class=" ">&lt;ti:app&gt;</tt> tag of the <tt class=" ">tiapp.xml</tt>. Unless otherwise noted, the configuration value goes inside the tag&apos;s content, that is, <tt class=" ">&lt;element&gt;</tt> <tt class=" "> VALUE </tt> <tt class=" ">&lt;/element&gt;.</tt> </p>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-guid">
+<h3 class="heading "><span>guid</span></h3>
+<p>
+<strong class=" ">Required. </strong>A unique ID that associates this application for use in analytics and other Appcelerator Services.  This value is generated by Appcelerator.  <u class=" ">Do not modify this value unless you know what you are doing.</u> </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-id">
+<h3 class="heading "><span>id</span></h3>
+<p>
+<strong class=" ">Required. </strong>The application ID.    </p>
+<p>
+In Android, this ID is used to generate the package ID of the application, which must follow <a class="external-link external-link" href="http://download.oracle.com/javase/tutorial/java/package/namingpkgs.html" target="_blank">Java Package Naming Standards</a>.    </p>
+<p>
+In iOS, this ID must match the Bundle ID when generating an Explicit App ID in the <a class="external-link external-link" href="https://developer.apple.com/account/overview.action" target="_blank">Apple Developer: Certificates, Identifiers &amp; Profiles </a>  page.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;id&gt;com.bluthcompany.fakeblock&lt;/id&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-name">
+<h3 class="heading "><span>name</span></h3>
+<p>
+<strong class=" ">Required.</strong> The application name. This is generally what is shown under the application icon on the end-user&apos;s mobile device.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;name&gt;Fakeblock&lt;/name&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-analytics">
+<h3 class="heading "><span>analytics</span></h3>
+<p>
+Whether or not to automatically collect analytics for this application. Enabled by default.  See <a class="document-link " href="#!/guide/Ti_Analytics_Architecture" ti_analytics_architecture.html="Ti_Analytics_Architecture.html">Ti Analytics Architecture</a>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Enable Ti.Analytics</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;analytics&gt;</code><code class="keyword">true</code><code class="plain">&lt;/analytics&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-copyright">
+<h3 class="heading "><span>copyright</span></h3>
+<p>
+The copyright of this application.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-deployment-target">
+<h3 class="heading "><span>deployment-target</span></h3>
+<p>
+This element contains subelements of deployment targets used by Studio to determine which target options should be shown in the deployment menus.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;target device=&quot;DEVICE&quot;&gt;</tt>:  Specifies if the target device is supported by the project. Must be placed inside the <tt class=" ">&lt;deployment-targets&gt;</tt> element.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Specify the project only supports Android targets</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;deployment-targets&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;android&quot;</code><code class="plain">&gt;</code><code class="keyword">true</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;blackberry&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;ipad&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;iphone&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;mobileweb&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">    &lt;target device=</code><code class="string">&quot;tizen&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/target&gt;</code></div>
+<div class="line"><code class="plain">&lt;/deployment-targets&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-description">
+<h3 class="heading "><span>description</span></h3>
+<p>
+The description of this application.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;description&gt;Tap to rock out with </code><code class="keyword">this</code><code class="plain"> block.&lt;/description&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-fullscreen">
+<h3 class="heading "><span>fullscreen</span></h3>
+<p>
+Whether or not the application will start by taking up the entire screen.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-icon">
+<h3 class="heading "><span>icon</span></h3>
+<p>
+The application icon&apos;s filename. This file should be relative to the application&apos;s <tt class=" ">Resources</tt> directory, or alternatively, can also live under a platform-specific folder, such as <tt class=" ">Resources/iphone</tt> or <tt class=" ">Resources/android</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Default icon in ./Resources or ./Resource/<platform></platform></div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;icon&gt;appicon.png&lt;/icon&gt;&#xA0;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-modules">
+<h3 class="heading "><span>modules</span></h3>
+<p>
+This element includes subelements of modules to include with the project.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;module platform=&quot;PLATFORM&quot; version=&quot;MODULE_VERSION&quot;&gt;</tt>:  Defines a module to include with the project specified by the module&apos;s folder name or ZIP file minus the extension. The module should either be in the root level of the project (same level as the <tt class=" ">Resources</tt> folder) or in the <tt class=" ">&lt;PATH_TO_TITANIUM_SDK&gt;/modules</tt> folder. Must be placed inside the <tt class=" ">&lt;modules&gt;</tt> element.<br><br>Define the <tt class=" ">platform</tt> attribute to specify which platforms to include the module with.  Specify <tt class=" ">android</tt> for Android, <tt class=" ">blackberry</tt> for Blackberry, <tt class=" ">commonjs</tt> for all platforms, or <tt class=" ">iphone</tt> for iPhone and iPad.  Note that you can specify only one platform.  For a module that may be included on several platforms, repeat the same module entry, specifying a different platform for each entry.<br><br>Define the <tt class=" ">version</tt> attribute if you want to use a specific version of the module.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Include the ti.cloud module</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;modules&gt;</code></div>
+<div class="line"><code class="plain">    &lt;module platform=</code><code class="string">&quot;commonjs&quot;</code><code class="plain">&gt;ti.cloud&lt;/module&gt;</code></div>
+<div class="line"><code class="plain">&lt;/modules&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-navbar-hidden">
+<h3 class="heading "><span>navbar-hidden</span></h3>
+<p>
+Whether or not the navigation bar is hidden for this application.    </p>
+<p>
+As of Release 3.3.0, due to the support for the appcompat library on Android, setting this element has no effect for Android applications.  To hide the action bar, see <a class="document-link " href="#!/guide/Android_Action_Bar-section-36735509_AndroidActionBar-HidingtheActionBar" android_action_bar.html#36735509_androidactionbar-hidingtheactionbar="Android_Action_Bar.html#36735509_AndroidActionBar-HidingtheActionBar">Android Action Bar: Hiding the Action Bar</a>.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-plugins">
+<h3 class="heading "><span>plugins</span></h3>
+<p>
+This element includes subelements of plugins to include with the project.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;plugin version=&quot;PLUGIN_VERSION&quot;&gt;</tt>:  Defines a plugin to include with the project specified by the plugin&apos;s folder name. Place plugins in the <tt class=" ">plugins</tt> folder of the project (same level as the <tt class=" ">Resources</tt> folder). This element must be placed inside the <tt class=" ">&lt;plugins&gt;</tt> element.  The <tt class=" ">version</tt> attribute is optional.  Define it to include a specific version of the plugin.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Include the ti.cloud module</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;plugins&gt;</code></div>
+<div class="line"><code class="plain">    &lt;plugin version=</code><code class="string">&quot;1.0&quot;</code><code class="plain">&gt;ti.alloy&lt;/plugin&gt;</code></div>
+<div class="line"><code class="plain">&lt;/plugins&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-property">
+<h3 class="heading "><span>property</span></h3>
+<p>
+See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-app_properties" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-app_properties="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-app_properties">Application properties</a> below.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-publisher">
+<h3 class="heading "><span>publisher</span></h3>
+<p>
+The publisher of this application.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;publisher&gt;Bluth Company&lt;/publisher&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-sdk-version">
+<h3 class="heading "><span>sdk-version</span></h3>
+<p>
+Specifies the SDK to build against or use for CLI commands.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Use Titanium SDK 3.2.0 GA</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;sdk-version&gt;</code><code class="value">3.2</code><code class="plain">.</code><code class="value">0</code><code class="plain">.GA&lt;/sdk-version&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-url">
+<h3 class="heading "><span>url</span></h3>
+<p>
+The URL of this application.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;url&gt;http:</code><code class="comments">//www.bluthcompany.com/fakeblock&lt;/url&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-version">
+<h3 class="heading "><span>version</span></h3>
+<p>
+The application version.    </p>
+<p>
+<u class=" ">Since Release 3.3.0</u>, the version number is truncated to three dot-separated numbers.  For example, &apos;2.1&apos; remains as &apos;2.1&apos;, but &apos;2.1.0.1&apos; will be converted to &apos;2.1.0&apos;.    </p>
+<p>
+<u class=" ">Prior to Release 3.3.0</u>, for the iOS platform, the version number will be converted to three dot-separated numbers according to Apple&apos;s <a class="external-link external-link" href="https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#%2F%2Fapple_ref%2Fdoc%2Fuid%2F20001431-111349" target="_blank">CFBundleShortVersionString</a> and <a class="external-link external-link" href="https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#%2F%2Fapple_ref%2Fdoc%2Fuid%2F20001431-102364" target="_blank">CFBundleVersion</a> when creating a package.  For example, if you specify &apos;2.1&apos; or &apos;2.1.0.1&apos;, the version number will be converted to &apos;2.1.0&apos; for the final package.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;version&gt;</code><code class="value">3.1</code><code class="plain">.</code><code class="value">4</code><code class="plain">&lt;/version&gt;</code></div>
+</div>
+</div> <p>
+To skip the validation of the version number during the build process, using the Titanium CLI, set the <tt class=" ">ios.skipAppIdValidation</tt> key to <tt class=" ">true: </tt> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">ti config ios.skipAppIdValidation </code><code class="keyword">true</code></div>
+</div>
+</div> <p>
+For example, if you are creating an enterprise application that will not be submitted to the iTunes Store, you are not forced to comply with Apple&apos;s bundle version restriction.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-DeprecatedElements">
+<h3 class="heading "><span>Deprecated Elements</span></h3>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;persistent-wifi&gt;</tt>: See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIRequiresPersistentWiFi" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uirequirespersistentwifi="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIRequiresPersistentWiFi">UIRequiresPersistentWiFi</a>.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;prerendered-icon&gt;</tt>: See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIPrerenderedIcon" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uiprerenderedicon="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIPrerenderedIcon">UIPrerenderedIcon</a>.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;statusbar-style&gt;</tt>: See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarStyle" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uistatusbarstyle="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarStyle">UIStatusBarStyle</a>.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;statusbar-hidden&gt;</tt>: See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarHidden" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uistatusbarhidden="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarHidden">UIStatusBarHidden</a>.    </p>
+</li></ul> <p>
+<span id="29004921_tiapp.xmlandtimodule.xmlReference-app_properties"><a class="confluence-anchor-link" name="29004921_tiapp.xmlandtimodule.xmlReference-app_properties"></a></span>
+</p>
+</div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-ApplicationProperties">
+<h2 class="heading "><span>Application Properties</span></h2>
+<p>
+<tt class=" ">tiapp.xml</tt> also supports ad-hoc properties that can be used by the application with <a class="external-link external-link" href="#!/api/Titanium.App.Properties">Titanium.App.Properties</a>.  These properties must be placed inside the<tt class=" "> root &lt;ti:app&gt;  </tt>element.    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+As of Release 3.2.0, any properties defined inside the <tt class=" ">tiapp.xml</tt> are read-only. Previously, you could overwrite these property values.    </p>
+</div>
+<p>
+Properties generally follow the form:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;property name=</code><code class="string">&quot;name&quot;</code><code class="plain"> type=</code><code class="string">&quot;type&quot;</code><code class="plain">&gt;value&lt;/property&gt;</code></div>
+</div>
+</div><ul class=" "><li class=" "> <p>
+<tt class=" "> name </tt>is the property name    </p>
+</li><li class=" "> <p>
+<tt class=" "> type </tt>is the property value&apos;s type, valid values are: <tt class=" ">string</tt>, <tt class=" ">bool</tt>, <tt class=" ">int</tt>, <tt class=" ">double</tt> </p>
+</li><li class=" "> <p>
+<tt class=" "> value </tt>is the property&apos;s value    </p>
+</li></ul> <p>
+Properties are also used in specific cases by each platform, which is further explained in each platform section.    </p>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-ti.ui.defaultunit">
+<h3 class="heading "><span>ti.ui.defaultunit</span></h3>
+<p>
+The special property <tt class=" ">ti.ui.defaultunit</tt> can be used to set the default unit used for specifying sizes and positions.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;property name=</code><code class="string">&quot;ti.ui.defaultunit&quot;</code><code class="plain">&gt;system&lt;/property&gt;</code></div>
+</div>
+</div> <p>
+The default unit can be one of the following:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> system </tt>. Specifies system default unit.    </p>
+</li><li class=" "> <p>
+<tt class=" "> cm </tt>. Centimeters.    </p>
+</li><li class=" "> <p>
+<tt class=" "> dip </tt>or <tt class=" "> dp </tt>. Density-independent pixels (DIPs).    </p>
+</li><li class=" "> <p>
+<tt class=" "> in </tt>. Inches.    </p>
+</li><li class=" "> <p>
+<tt class=" "> mm </tt>. Millimeters.    </p>
+</li><li class=" "> <p>
+<tt class=" "> px </tt>. Pixels.    </p>
+</li></ul> <p>
+Setting the default unit to pixels may cause issues on iOS unless you detect and handle Retina displays in your code.    </p>
+<p>
+See <a class="external-link external-link" href="#!/api/Titanium.UI.View">Ti.UI.View</a> in the Titanium SDK API Reference for more information on units.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-Android-specificsection">
+<h2 class="heading "><span>Android-specific section</span></h2>
+<p>
+Under the top <tt class=" ">&lt;ti:app&gt;</tt> element, you may optionally have an <tt class=" ">&lt;android&gt;</tt> element that contains Android specific configuration. If the application requires any ad-hoc XML from AndroidManifest.xml, make sure to also add the android XML namespace, as shown in the example below.  The official <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/manifest-intro.html" target="_blank">Android Developers</a> website describes all the other elements that are supported, such as <tt class=" ">&lt;service&gt;</tt>, <tt class=" ">&lt;uses-permission&gt;</tt> and <tt class=" ">&lt;activity&gt;</tt> for instance, and these will be added using the same logic.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">  &lt;!-- Custom Titanium elements --&gt;</code></div>
+<div class="line"><code class="plain">  &lt;abi&gt;all&lt;/abi&gt;</code></div>
+<div class="line"><code class="plain">  &lt;activities&gt;</code></div>
+<div class="line"><code class="plain">    &lt;activity url=</code><code class="string">&quot;activity.js&quot;</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/activities&gt;</code></div>
+<div class="line"><code class="plain">  &lt;services&gt;</code></div>
+<div class="line"><code class="plain">    &lt;service url=</code><code class="string">&quot;service.js&quot;</code><code class="plain"> type=</code><code class="string">&quot;standard&quot;</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/services&gt;</code></div>
+<div class="line"><code class="plain">  &lt;!-- Android Manifest element --&gt;</code></div>
+<div class="line"><code class="plain">  &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">    &lt;uses-sdk android:minSdkVersion=</code><code class="string">&quot;10&quot;</code><code class="plain"> android:targetSdkVersion=</code><code class="string">&quot;14&quot;</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">    &lt;application&gt;</code></div>
+<div class="line"><code class="plain">        &lt;activity&gt;...&lt;/activity&gt;</code></div>
+<div class="line"><code class="plain">        &lt;service&gt;...&lt;/service&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/application&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <p>
+The above example includes all of the common sections to show the structure of the XML elements. All of these sections are optional, and are described below:    </p>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-abi">
+<h3 class="heading "><span>abi</span></h3>
+<p>
+Selects the target ABI architecture. Only used when building for the V8 runtime. Choose between &apos;armeabi&apos; for ARM-based devices that support at least ARMv5TE, &apos;armeabi-v7a&apos; for ARMv7-based devices or &apos;all&apos; for all supported devices. Targeting an ABI architecture will help reduce the application and APK size, but will support fewer devices. Available in Titanium SDK 2.1.3 and later. Currently defaults to &apos;all&apos;.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-activities">
+<h3 class="heading "><span>activities</span></h3>
+<p>
+Defines a list of custom JavaScript-based Android activities. This is a custom Titanium XML element and should not be confused with the Android Manifest <tt class=" ">activity</tt> element.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;activity url=&quot;activity.js&quot;/&gt;</tt>: Creates an activity with a URL that points to the JavaScript file (under <tt class=" ">Resources</tt>) that defines it.    </p>
+</li><li class=" "> <p>
+Ad-hoc elements: Inside the <tt class=" ">&lt;activity&gt;</tt> element, any ad-hoc element from an AndroidManifest.xml is supported. See the <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/activity-element.html" target="_blank">documentation for the activity element in AndroidManifest.xml</a>.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-manifest">
+<h3 class="heading "><span>manifest</span></h3>
+<p>
+Ad-hoc XML from <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/manifest-intro.html" target="_blank">AndroidManifest.xml</a>.  Some common elements to set are listed below:    </p>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-application">
+<h4 class="heading "><span>application</span></h4>
+<p>
+<span style="color: #222222;">
+This element contains subelements that declare each of the application&apos;s components and has attributes that can affect all the components    </span>
+. Must be placed inside the <tt class=" ">&lt;manifest&gt;</tt> element.  See the <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/application-element.html" target="_blank">documentation for the application element in AndroidManifest.xml</a>.    </p>
+</div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-uses-permission">
+<h4 class="heading "><span>uses-permission</span></h4>
+<p>
+Request a permission for the application to use.  Must be placed inside the <tt class=" ">&lt;manifest&gt;</tt> element. See the &quot;Setting calendar permissions&quot; example below and the <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/uses-permission-element.html" target="_blank">documentation for the uses-permission element in AndroidManifest.xml</a>.    </p>
+</div>
+<div class="section section-4 prettyprint" id="29004921_tiapp.xmlandtimodule.xmlReference-uses-sdk">
+<h4 class="heading prettyprint"><span>uses-sdk</span></h4>
+<p>
+Lets you express an application&apos;s compatibility with one or more versions of the Android platform, by means of an API Level integer.  Must be placed inside the <tt class=" ">&lt;manifest&gt;</tt> element. See the &quot;Set a target or minimum SDK level&quot; example below and the <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_blank">documentation for the uses-sdk element in AndroidManifest.xml</a>.    </p>
+</div>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-services">
+<h3 class="heading "><span>services</span></h3>
+<p>
+Defines a list of custom JavaScript-based Android services (long running background processes). This is a custom Titanium XML element and should not be confused with the Android Manifest <tt class=" ">service</tt> element.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;service url=&quot;service.js&quot; type=&quot;standard&quot;/&gt;</tt>: Creates a service with a URL that points to the JavaScript file (under <tt class=" ">Resources</tt>) that defines it. <tt class=" ">type</tt> is optional.    </p>
+</li><li class=" "> <p>
+Ad-hoc elements: Under the <tt class=" ">&lt;service&gt;</tt> tag, any ad-hoc element from an AndroidManifest.xml is supported. See the <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/service-element.html" target="_blank">documentation for the service element in AndroidManifest.xml</a>.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-tool-api-level">
+<h3 class="heading "><span>tool-api-level</span></h3>
+<p>
+<strong class=" ">Deprecated since Release 3.2.</strong> The version of the Android API that Titanium builds against. Currently defaults to the newest version of the Android SDK you have installed.  To set a target SDK version, see <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-SetatargetorminimumSDKlevel" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-setatargetorminimumsdklevel="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-SetatargetorminimumSDKlevel">Set a target or minimum SDK level</a>.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-Android-specificapplicationproperties">
+<h3 class="heading "><span>Android-specific application properties</span></h3>
+<p>
+Android also supports a number of application properties for various internal settings. (See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-app_properties" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-app_properties="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-app_properties">Application properties</a> above on how to define an application property.)    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Property Name    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Type    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Default Value    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.shake.factor    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+double    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+1.3    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Shake factor used for the &quot;shake&quot; event in the <a class="external-link external-link" href="#!/api/Titanium.Gesture">Titanium.Gesture module</a> </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.shake.quiet.milliseconds    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+500    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Number of &quot;quiet&quot; milliseconds before the &quot;shake&quot; event is fired    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.shake.active.milliseconds    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+1000    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Number of &quot;active&quot; milliseconds before the &quot;shake&quot; event is fired    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.google.map.api.key.development    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Deprecated. </strong>Google Maps v1 API Key for use in development.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.google.map.api.key.production    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Deprecated. </strong>Google Maps v1 API Key for use in production.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.httpclient.maxbuffersize    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+524288    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+The maximum buffer size (in bytes) before an HTTP response is written to a temporary file instead of memory (default is 512KB)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.threadstacksize    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+16384    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Deprecated since Release 3.0.0.</strong>  This setting is only useful with Rhino. The stack size (in bytes) to use when creating a Javascript thread (default: 16KB). Bump larger when encountering StackOverflow errors in very large Javascript files    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.compilejs    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Turns on or off JS compilation. By default, JS compilation is only on when distributing an application, but manually setting this to &quot;true&quot; will enable it for development as well.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.fastdev    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Enables or disables <a class="document-link " href="#!/guide/Fastdev_Reference_for_Android" fastdev_reference_for_android.html="Fastdev_Reference_for_Android.html">Fastdev</a>. By default, Fastdev is enabled in development mode, and disabled in device and production mode.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.debug    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+false    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Turn on detailed logging in the SDK    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.root.reappears.restart    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+false    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Restarts the application if the root task was destroyed by Android after a period of inactivity.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.runtime    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+v8    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Deprecated since Release 3.0.0.</strong> Titanium applications only support the V8 runtime since 3.0.0. &apos;v8&apos; or &apos;rhino&apos; (since 1.8.0)    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.useLegacyWindow    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+false    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Not supported since Release 3.3.0. Enables or disables the legacy window behavior that a heavyweight window is created if any of the following properties are defined on creation: <tt class=" ">fullscreen</tt>, <tt class=" ">navBarHidden</tt>, <tt class=" ">modal</tt>, or <tt class=" ">windowSoftInputMode</tt>. By default, the legacy behavior is disabled, which means all the windows are heavyweight. (since 3.2.0)    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Disable Fastdev</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;property name=</code><code class="string">&quot;ti.android.fastdev&quot;</code><code class="plain">&gt;</code><code class="keyword">false</code><code class="plain">&lt;/property&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-PropertiestoworkaroundAndroidbugs2373and5277">
+<h3 class="heading "><span>Properties to work around Android bugs 2373 and 5277</span></h3>
+<p>
+See <a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIMOB-4941" target="_blank">TIMOB-4941</a>, <a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIMOB-1559" target="_blank">TIMOB-1559</a> and <a class="external-link external-link" href="http://jira.appcelerator.org/browse/TIMOB-9285" target="_blank">TIMOB-9285</a> for information about the Titanium workaround to Google issues <a class="external-link external-link" href="http://code.google.com/p/android/issues/detail?id=2373" target="_blank">2373</a> and <a class="external-link external-link" href="http://code.google.com/p/android/issues/detail?id=5277" target="_blank">5277</a>. TIMOB-9285 in particular has a useful <a class="external-link external-link" href="https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304" target="_blank">explanation</a> of the issue and of <tt class=" ">ti.android.bug2373.finishfalseroot</tt>, the newest of the properties listed below.    </p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Property Name    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Type    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Default Value    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.finishfalseroot    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+true (since Release 3.2.0)    </p>
+<p>
+false (prior to Release 3.2.0)    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+(New since Titanium SDK 2.1.2.) Setting to true will avoid showing any messages to the user and will force any subsequent, anomalous instantiations of the application&apos;s launch Activity to finish and disappear without disturbing the user. This is <a class="external-link external-link" href="https://jira.appcelerator.org/browse/TIMOB-9285?focusedCommentId=210304&amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-210304" target="_blank">explained in greater detail</a> in JIRA issue TIMOB-9285. This property should be used by itself, without any of the other &quot;bug2373&quot; properties. It is the least intrusive of these properties and should give the best user experience.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.disableDetection    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+false    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+setting to true will completely disable the workaround    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.title    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+String    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Restart Required    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+title of dialog    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.message    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+String    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+An application restart is required    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+message used in dialog. if <i class=" ">skipAlert</i> is true the message is shown in a Toast if message length is &gt; 0    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.buttonText    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+String    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Continue    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+button text on alert dialog    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.restartDelay    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+500    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+number of milliseconds to wait before starting the new copy of the app with the correct Intent settings.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.finishDelay    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+int    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+0    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+number of milliseconds to wait before finishing (exiting) the current application.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ti.android.bug2373.skipAlert    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+bool    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+false    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+if true, the dialog box will not be shown, but the workaround will still be applied if <i class=" ">disableDetection</i> is false.    </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-CommonRequirements">
+<h3 class="heading "><span>Common Requirements</span></h3>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-SetatargetorminimumSDKlevel">
+<h4 class="heading "><span>Set a target or minimum SDK level</span></h4>
+<p>
+</p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+Starting with Release 3.3.0, due to the addition of the appcompat library, the <tt class=" ">android:targetSDKVersion</tt> attribute must be set to at least 14 or higher. If not, the build will fail with a &quot;Failed to package application&quot; error.    </p>
+</div>
+<p>
+To indicate that your application supports a certain SDK level, add the <tt class=" ">&lt;uses-sdk&gt;</tt> element with the <tt class=" ">android:minSdkVersion</tt> and/or <tt class=" ">android:targetSdkVersion</tt> attributes.  It may be necessary to set these attributes to enable certain Android features, such as the action bar or theme.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">        &lt;uses-sdk android:minSdkVersion=</code><code class="string">&quot;10&quot;</code><code class="plain"> android:targetSdkVersion=</code><code class="string">&quot;14&quot;</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <p>
+In the previous example, the following settings indicate that the application can run on Android 2.3.x, but was targeted and tested for Android 4.0.x.    </p>
+</div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-Configuringscreendensities">
+<h4 class="heading "><span>Configuring screen densities</span></h4>
+<p>
+To indicate that your application supports any screen densities, which is a common use-case, add the <tt class=" ">&lt;supports-screens&gt;</tt> element and set the screen size attributes to true:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">        &lt;supports-screens</code></div>
+<div class="line"><code class="plain">            android:smallScreens=</code><code class="string">&quot;true&quot;</code></div>
+<div class="line"><code class="plain">            android:normalScreens=</code><code class="string">&quot;true&quot;</code></div>
+<div class="line"><code class="plain">            android:largeScreens=</code><code class="string">&quot;true&quot;</code></div>
+<div class="line"><code class="plain">            android:xlargeScreens=</code><code class="string">&quot;true&quot;</code></div>
+<div class="line"><code class="plain">        /&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <div class="confbox admonition admonition-warning aui-message problem shadowed information-macro">
+<p>
+Do not set the <tt class=" ">android:anyDensity</tt> attribute to false. Google does not recommend <a class="external-link external-link" href="http://developer.android.com/guide/topics/manifest/supports-screens-element.html#any" target="_blank">changing the default value</a>. Setting this attribute to false may cause undesired behavior.    </p>
+</div>
+<p>
+</p>
+</div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-Enablingthedebuggerbydefault">
+<h4 class="heading "><span>Enabling the debugger by default</span></h4>
+<p>
+To make the app <tt class=" ">debuggable</tt> by default, set the <tt class=" ">&lt;application&gt;</tt> attribute to <tt class=" ">true</tt> (it&apos;s false in our default manifest template).<br>This setting is required to attach the Java debugger to a running application. It is <strong class=" ">not</strong> required for debugging the application&apos;s JavaScript in Studio, so setting <tt class=" ">debuggable</tt> to <tt class=" ">true</tt> may be primarily interesting to developers working on native Android modules or debugging issues in the Titanium native libraries.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">        &lt;application android:debuggable=</code><code class="string">&quot;true&quot;</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-Settingcalendarpermissions">
+<h4 class="heading "><span>Setting calendar permissions</span></h4>
+<p>
+To allow the application to access the user&apos;s calendar data, add the <tt class=" ">uses-permission</tt> element and set the <tt class=" ">android:name</tt> attribute to either <tt class=" ">android.permission.READ_CALENDAR</tt> for read access or <tt class=" ">android.permission.WRITE_CALENDAR</tt> for write access.    </p>
+<p>
+For example, the following configuration will allow both read and write access:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">        &lt;uses-permission android:name=</code><code class="string">&quot;android.permission.READ_CALENDAR&quot;</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">        &lt;uses-permission android:name=</code><code class="string">&quot;android.permission.WRITE_CALENDAR&quot;</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-Settinginstalllocationpreferences">
+<h4 class="heading "><span>Setting install location preferences</span></h4>
+<p>
+Your Android apps are installed by default to the device&apos;s internal storage, but Titanium apps can be installed to the SD card using the following configuration:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">   &lt;manifest android:installLocation=</code><code class="string">&quot;preferExternal&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">      &lt;uses-sdk android:minSdkVersion=</code><code class="string">&quot;7&quot;</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">   &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <p>
+For the <tt class=" ">android:installLocation</tt> property, choose one of these values:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> android:installLocation=&quot;preferExternal&quot;</tt> -- specifies that you prefer your app to install to the SD card, but if one isn&apos;t present the app can be installed to internal storage.    </p>
+</li><li class=" "> <p>
+<tt class=" "> android:installLocation=&quot;auto</tt>&quot; &#x2013; specifies that the phone&apos;s configuration will determine the installation location. Generally, your app will be installed to internal storage if sufficient space is available. In that case, users could still move your app by opening <strong class=" ">Settings &gt; Applications &gt; Manage applications</strong>, tapping your app, and tapping Move to SD card.    </p>
+</li><li class=" "> <p>
+<tt class=" ">android:installLocation=&quot;internalOnly</tt>&quot; &#x2013; which specifies that your app cannot be installed to the SD card. See the <a class="external-link external-link" href="http://developer.android.com/guide/appendix/install-location.html#ShouldNot" target="_blank">Android docs</a> for the various reasons why you might choose this option.    </p>
+</li></ul> <p>
+Finally, you need to add the &lt;uses-sdk&gt; tag within the &lt;manifest&gt; node. This tag specifies that your app requires Google&apos;s version 7 or newer APIs &#x2014; in other words, the phone must be running Android 2.1 Update 1 or newer. That pretty much covers all the newer phones, but will exclude some older devices. On those phones, your app will install to the internal storage.    </p>
+</div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-RequestingalargeheapfromDalvik">
+<h4 class="heading "><span>Requesting a large heap from Dalvik</span></h4>
+<p>
+To request a large heap size on Android 3.x and later, set the <tt class=" ">android:largeHeap</tt> property of the <tt class=" ">&lt;application&gt;</tt> attribute to <tt class=" ">true</tt>. Requires API level 11 or higher.  Note that you are not guaranteed a fixed increase in available memory, because some devices are constrained by their total available memory.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">    &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">        &lt;application android:largeHeap=</code><code class="string">&quot;true&quot;</code><code class="plain">/&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-BlackBerry-specificsection">
+<h2 class="heading "><span>BlackBerry-specific section</span></h2>
+<p>
+Under the top <tt class=" ">&lt;ti:app&gt;</tt> element, you may optionally have a <tt class=" ">&lt;blackberry&gt;</tt> element that contains BlackBerry-specific options to configure application permissions, the orientation mode and build ID:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;blackberry&gt;</code></div>
+<div class="line"><code class="plain">    &lt;build-id&gt;</code><code class="value">1</code><code class="plain">&lt;/build-id&gt;</code></div>
+<div class="line"><code class="plain">    &lt;orientation&gt;landscape&lt;/orientation&gt;</code></div>
+<div class="line"><code class="plain">    &lt;permission&gt;</code></div>
+<div class="line"><code class="plain">        &lt;!-- ... --&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/permission&gt;</code></div>
+<div class="line"><code class="plain">&lt;/blackberry&gt;</code></div>
+</div>
+</div> <div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-build-id">
+<h3 class="heading "><span>build-id</span></h3>
+<p>
+Sets the build identifier    <span style="color: #404040;">
+, which is an integer value between 0 and 65535.  Needs to be incremented each time the package is built to be installed on a device.    </span>
+</p>
+<p>
+<span style="color: #404040;">
+Example:    </span>
+</p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;build-id&gt;</code><code class="value">1</code><code class="plain">&lt;/build-id&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-orientation">
+<h3 class="heading "><span>orientation</span></h3>
+<p>
+Select which orientation mode the application supports: <strong class=" ">auto</strong>, <strong class=" ">portrait</strong> or <strong class=" ">landscape</strong>.    </p>
+<p>
+Example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Set auto-orientation mode</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;orientation&gt;auto&lt;/orientation&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-permissions">
+<h3 class="heading "><span>permissions</span></h3>
+<p>
+Specifies the device permissions the application needs to access.  For a complete list of application permissions, refer to <a class="external-link external-link" href="http://developer.blackberry.com/native/documentation/core/com.qnx.doc.native_sdk.devguide/topic/c_appfund_accessing_restricted_functionality.html#availablepermissions" target="_blank">BlackBerry Developer: App permissions</a><a class="external-link external-link" href="http://developer.blackberry.com/native/documentation/bb10/com.qnx.doc.native_sdk.devguide/com.qnx.doc.native_sdk.devguide/topic/c_appfund_accessing_restricted_functionality.html" target="_blank">.</a> </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Access device&apos;s location and internet connection</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;permissions&gt;</code></div>
+<div class="line"><code class="plain">    &lt;permission&gt;access_internet&lt;/permission&gt;</code></div>
+<div class="line"><code class="plain">    &lt;permission&gt;access_location_services&lt;/permission&gt;</code></div>
+<div class="line"><code class="plain">&lt;/permissions&gt;</code></div>
+</div>
+</div> </div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-iOS-specificsection">
+<h2 class="heading "><span>iOS-specific section</span></h2>
+<p>
+Under the top <tt class=" ">&lt;ti:app&gt;</tt> element, you may optionally have iOS-specific elements. Starting in Titanium SDK 2.1, a new <tt class=" ">&lt;ios&gt;</tt> element is supported. This is intended to replace the <tt class=" ">&lt;iphone&gt;</tt> section, which is now deprecated.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">    &lt;min-sdk-ver&gt;</code><code class="value">4.5</code><code class="plain">&lt;/min-sdk-ver&gt;</code></div>
+<div class="line"><code class="plain">    &lt;plist&gt;</code></div>
+<div class="line"><code class="plain">        &lt;dict&gt;</code></div>
+<div class="line"><code class="plain">            &lt;!-- ... --&gt;</code></div>
+<div class="line"><code class="plain">        &lt;/dict&gt;</code></div>
+<div class="line"><code class="plain">    &lt;/plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> <div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-min-ios-ver">
+<h3 class="heading "><span>min-ios-ver</span></h3>
+<p>
+Specifies the minimum iOS version supported by this application.    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+Prior to Titanium SDK 2.1.3, applications were always built for both ARMv6 architecture (used by iPhone 3G and earlier devices) and ARMv7 architecture (used by iPhone 3GS, iPod touch 3rd generation, and newer devices).    </p>
+<p>
+Starting in Titanium SDK 2.1.3, if <tt class=" ">min-ios-ver</tt> is 4.3 or higher, the application is not built for the ARMv6 architecture, which may result in smaller application sizes. If <tt class=" ">min-ios-ver</tt> is not set, or is set lower than 4.3, the application is built for both ARMv6 and ARMv7 architecture, as before.    </p>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Set 4.3 as the minimum iOS version</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">    &lt;min-ios-ver&gt;</code><code class="value">4.3</code><code class="plain">&lt;/min-ios-ver&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-min-sdk-ver">
+<h3 class="heading "><span>min-sdk-ver</span></h3>
+<p>
+Specifies the minimum SDK (Xcode) version supported by this application.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Set Xcode 4.3 as the minimum SDK version</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">    &lt;min-sdk-ver&gt;</code><code class="value">4.3</code><code class="plain">&lt;/min-sdk-ver&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-plist">
+<h3 class="heading "><span>plist</span></h3>
+<p>
+The <tt class=" ">&lt;ios&gt;</tt> section allows you to define settings to add to the generated <tt class=" ">Info.plist</tt> file. These values take the form of key/value pairs, defined using the same syntax as the <tt class=" ">Info.plist</tt> file.    </p>
+<p>
+You can include a custom <tt class=" ">Info.plist</tt> file in the top-level directory of your Titanium project, but these value are overwritten by the settings in the<strong class=" "> &lt;plist&gt;</strong> section of the tiapp.xml file.    </p>
+<p>
+For a detailed description of all <tt class=" ">Info.plist</tt> keys, see the <a class="external-link external-link" href="http://developer.apple.com/library/ios/#documentation%2Fgeneral%2FReference%2FInfoPlistKeyReference%2FArticles%2FiPhoneOSKeys.html" target="_blank">iOS Info.plist Key Reference</a> on the iOS Developer Center.    </p>
+<p>
+You can specify device-specific configurations by appending <tt class=" ">~ipad</tt>, <tt class=" ">~iphone</tt> or <tt class=" ">~ipod</tt> to the key name, just as in the Info.plist file. For example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;</code></div>
+</div>
+</div> <p>
+Not all keys are supported at this time. See <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UnsupportedInfo.plistKeys" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-unsupportedinfo.plistkeys="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UnsupportedInfo.plistKeys">Unsupported Info.plist Keys</a> for a list of keys that may not be overridden in the <tt class=" ">tiapp.xml</tt> file.    </p>
+<p>
+Some notable keys are listed in the following sections.    </p>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UISupportedInterfaceOrientations">
+<h4 class="heading "><span>UISupportedInterfaceOrientations</span></h4>
+<p>
+Specifies which interface orientations this application supports.    </p>
+<p>
+Replaces <tt class=" ">&lt;orientations&gt;</tt>.    </p>
+<p>
+For device-specific configurations, use:    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" ">UISupportedInterfaceOrientations~ipad</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">UISupportedInterfaceOrientations~iphone</tt> </p>
+</li><li class=" "> <p>
+<tt class=" ">UISupportedInterfaceOrientations~ipod</tt> </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Limits iPhone orientation to portait and no limits for iPad</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">&lt;plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;dict&gt;</code></div>
+<div class="line"><code class="plain">  &lt;key&gt;UISupportedInterfaceOrientations~iphone&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">  &lt;array&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">  &lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">  &lt;array&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">&lt;/dict&gt;</code></div>
+<div class="line"><code class="plain">&lt;/plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIBackgroundModes">
+<h4 class="heading "><span>UIBackgroundModes</span></h4>
+<p>
+A list of background modes this app supports. For a <a class="external-link external-link" href="#!/api/Titanium.App.iOS.BackgroundService">BackgroundService</a> to run for more than a limited period of time, the application must declare one or more of these background modes.    </p>
+<p>
+Replaces <tt class=" ">&lt;backgroundModes&gt;</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Enables all background services</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">&lt;plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;dict&gt;</code></div>
+<div class="line"><code class="plain">  &lt;key&gt;UIBackgroundModes&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">  &lt;array&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;audio&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;location&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;voip&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;newsstand-content&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;external-accessory&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;bluetooth-central&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;bluetooth-peripheral&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">&lt;/dict&gt;</code></div>
+<div class="line"><code class="plain">&lt;/plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIRequiredDeviceCapabilities">
+<h4 class="heading "><span>UIRequiredDeviceCapabilities</span></h4>
+<p>
+A list of features this app requires.    </p>
+<p>
+Replaces <tt class=" ">&lt;requires&gt;</tt>.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Require all device capabilities</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;ios&gt;</code></div>
+<div class="line"><code class="plain">&lt;plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;dict&gt;</code></div>
+<div class="line"><code class="plain">  &lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;</code></div>
+<div class="line"><code class="plain">  &lt;array&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;telephony&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;wifi&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;sms&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;still-camera&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;auto-focus-camera&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;front-facing-camera&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;camera-flash&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;video-camera&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;accelerometer&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;gyroscope&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;location-services&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;gps&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;magnetometer&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;gamekit&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;microphone&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;opengles-</code><code class="value">1</code><code class="plain">&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;opengles-</code><code class="value">2</code><code class="plain">&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;armv6&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;armv7&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;peer-peer&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">    &lt;string&gt;bluetooth-le&lt;/string&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/array&gt;</code></div>
+<div class="line"><code class="plain">&lt;/dict&gt;</code></div>
+<div class="line"><code class="plain">&lt;/plist&gt;</code></div>
+<div class="line"><code class="plain">&lt;/ios&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIRequiresPersistentWiFi">
+<h4 class="heading "><span>UIRequiresPersistentWiFi</span></h4>
+<p>
+Specifies whether this app requires a Wi-Fi connection.    </p>
+<p>
+Replaces the top-level <tt class=" ">&lt;persistent-wifi&gt;</tt> element.    </p>
+<p>
+Example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;key&gt;UIRequiresPersistentWiFi&lt;/key&gt;&lt;</code><code class="keyword">true</code><code class="plain">/&gt;</code></div>
+</div>
+</div> <p>
+Also, the following iOS-only top-level elements will be deprecated:    </p>
+</div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIPrerenderedIcon">
+<h4 class="heading "><span>UIPrerenderedIcon</span></h4>
+<p>
+Specifies whether the app&#x2019;s icon already includes a shine effect.    </p>
+<p>
+Replaces the top-level <tt class=" ">&lt;prerendered-icon&gt;</tt> element.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;key&gt;UIPrerenderedIcon&lt;/key&gt;&lt;</code><code class="keyword">true</code><code class="plain">/&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarHidden">
+<h4 class="heading "><span>UIStatusBarHidden</span></h4>
+<p>
+Specifies whether the status bar is initially hidden when the app launches.    </p>
+<p>
+Replaces the top-level <tt class=" ">&lt;statusbar-hidden&gt;</tt> element.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Hide the status bar</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;key&gt;UIStatusBarHidden&lt;/key&gt;&lt;</code><code class="keyword">true</code><code class="plain">/&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UIStatusBarStyle">
+<h4 class="heading "><span>UIStatusBarStyle</span></h4>
+<p>
+Specifies the style of the status bar as the app launches.    </p>
+<p>
+Replaces the top-level <tt class=" ">&lt;statusbar-style&gt;</tt> element.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Use the tranluscent style</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;key&gt;UIStatusBarStyle&lt;/key&gt;&lt;string&gt;UIStatusBarStyleBlackTranslucent&lt;/string&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-4 " id="29004921_tiapp.xmlandtimodule.xmlReference-UnsupportedInfo.plistKeys">
+<h4 class="heading "><span>Unsupported Info.plist Keys</span></h4>
+<p>
+The following <tt class=" ">Info.plist</tt> properties are ignored in the <tt class=" "> &lt;plist&gt; </tt>section. The values for these properties are automatically generated by Titanium and may not be overridden in the <tt class=" ">tiapp.xml</tt> file or custom <tt class=" ">Info.plist</tt> file.    </p>
+<ul class=" "><li class=" "> <p>
+CFBundleDisplayName. The name in the generated file always reflects the value of the &lt;name&gt; element    </p>
+</li><li class=" "> <p>
+CFBundleExecutable    </p>
+</li><li class=" "> <p>
+CFBundleIconFile    </p>
+</li><li class=" "> <p>
+CFBundleIconFiles. Automatically includes all application icon files from project directory.    </p>
+</li><li class=" "> <p>
+CFBundleIdentifier    </p>
+</li><li class=" "> <p>
+CFBundleInfoDictionaryVersion    </p>
+</li><li class=" "> <p>
+CFBundleName    </p>
+</li><li class=" "> <p>
+CFBundlePackageType    </p>
+</li><li class=" "> <p>
+CFBundleSignature    </p>
+</li><li class=" "> <p>
+CFBundleVersion    </p>
+</li><li class=" "> <p>
+CFBundleShortVersionString    </p>
+</li></ul> </div>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-LegacyiPhonesection">
+<h3 class="heading "><span>Legacy iPhone section</span></h3>
+<p>
+Prior to release 2.1, iOS-specific settings were contained in an <tt class=" "> &lt;iphone&gt; </tt>element. These settings are deprecated and should be replaced with the corresponding iOS settings listed in the <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-iOSspecificsection" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-iosspecificsection="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-iOSspecificsection">iOS specific section</a>.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;orientations device=&quot;device&quot;&gt;</tt>: Restricts the device to these orientations when the application is running. The value of &quot;device&quot; can be &quot;iphone&quot;, or &quot;ipad&quot;. <strong class=" ">Deprecated</strong> in Release 2.1, use <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UISupportedInterfaceOrientations" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uisupportedinterfaceorientations="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UISupportedInterfaceOrientations">UISupportedInterfaceOrientations</a> instead.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;orientation&gt;</tt>: An orientation for this <tt class=" ">&lt;orientations&gt;</tt> list, valid values are: <tt class=" ">Ti.UI.PORTRAIT</tt>, <tt class=" ">Ti.UI.UPSIDE_PORTRAIT</tt>, <tt class=" ">Ti.UI.LANDSCAPE_LEFT</tt>, <tt class=" ">Ti.UI.LANDSCAPE_RIGHT</tt>.    </p>
+</li></ul></li><li class=" "> <p>
+<tt class=" "> &lt;backgroundModes&gt;</tt>: A list of background modes this app supports. <strong class=" ">Deprecated</strong> in Release 2.1, use <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIBackgroundModes" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uibackgroundmodes="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIBackgroundModes">UIBackgroundModes</a> instead.<br>For a <a class="external-link external-link" href="#!/api/Titanium.App.iOS.BackgroundService">BackgroundService</a> to run for more than a limited period of time, the application must include the <tt class=" "> &lt;backgroundModes&gt; </tt>element in <tt class=" ">tiapp.xml</tt>.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;mode&gt;</tt>: A background mode, valid values are: <tt class=" ">audio</tt>, <tt class=" ">location</tt>, and <tt class=" ">voip</tt>.    </p>
+</li></ul></li><li class=" "> <p>
+<tt class=" "> &lt;requires&gt;</tt>: A list of features this app requires. <strong class=" ">Deprecated</strong> in Release 2.1, use <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-UIRequiredDeviceCapabilities" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-uirequireddevicecapabilities="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-UIRequiredDeviceCapabilities">UIRequiredDeviceCapabilities</a>instead.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;feature&gt;</tt>: A feature that this app requires, valid values are: <tt class=" ">telephony</tt>, <tt class=" ">wifi</tt>, <tt class=" ">sms</tt>, <tt class=" ">still-camera</tt>, <tt class=" ">auto-focus-camera</tt>, <tt class=" ">front-facing-camera</tt>, <tt class=" ">camera-flash</tt>, <tt class=" ">video-camera</tt>, <tt class=" ">accelerometer</tt>, <tt class=" ">gyroscope</tt>, <tt class=" ">location-services</tt>, <tt class=" ">gps</tt>, <tt class=" ">magnetometer</tt>, <tt class=" ">gamekit</tt>, <tt class=" ">microphone</tt>, <tt class=" ">opengles-1</tt>, <tt class=" ">opengles-2</tt>, <tt class=" ">armv6</tt>, <tt class=" ">armv7</tt>, <tt class=" ">peer-peer</tt> </p>
+</li></ul></li></ul> </div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-Mobile-Web-specificsection">
+<h2 class="heading "><span>Mobile-Web-specific section</span></h2>
+<p>
+Under the top <tt class=" ">&lt;ti:app&gt;</tt> element, you may optionally have a <tt class=" ">&lt;mobileweb&gt;</tt> element that contains a Mobile-Web-specific configuration.    </p>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-analytics.1">
+<h3 class="heading "><span>analytics</span></h3>
+<p>
+Define analytics-related settings. Only one setting is currently supported.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;use-xhr&gt;</tt>: Defaults to <tt class=" ">false</tt>. When value is <tt class=" ">false</tt>, analytics data is sent using an iframe. When value is <tt class=" ">true</tt>, analytics data is sent using XMLHttpRequest (XHR). The default iframe method is the most robust method, though it can interfere with the history of WebViews. XHR doesn&apos;t interfere with WebViews, but only works on newer browsers that support Cross-Origin Resource Sharing (CORS).    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-disable_error_screen">
+<h3 class="heading "><span>disable_error_screen</span></h3>
+<p>
+If <tt class=" ">true</tt>, the error screen is disabled and errors are logged to the browser&apos;s debug console. If the error screen is enabled, the error message may or may not be displayed in the debug console depending on the web browser. Setting this to <tt class=" ">true</tt> may provide more detailed information that the message printed to the error screen. Note that this setting only applies when running in development mode. In production mode, the error screen is always disabled.    </p>
+</div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-filesystem">
+<h3 class="heading "><span>filesystem</span></h3>
+<p>
+File system-related settings.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;backend&gt;</tt>: Selects a filesystem implementation. <tt class=" ">Ti/_/Filesystem/Local</tt> is the only value currently supported and stores data in the web browser&apos;s local storage.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;registry&gt;</tt>: Set to <tt class=" ">lazy</tt> to load filesystem registry information as needed. This is the default. If you are using the filesystem, set this value to <tt class=" ">preload</tt> to improve response time at the expense of somewhat larger initial download.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-map">
+<h3 class="heading "><span>map</span></h3>
+<p>
+Map-related settings.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;apikey&gt;</tt>: This value is <i class=" ">optional</i> for Mobile Web.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;backend&gt;</tt>: <tt class=" ">Ti/_/Map/Google</tt> is the only value currently supported.    </p>
+</li></ul> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-precache">
+<h3 class="heading "><span>precache</span></h3>
+<p>
+Identifies resources to precache. This increases the initial download time for the application, but ensures quicker access to the identified resources. Each entry type can be repeated. For example, to precache 10 images, include an <tt class=" ">&lt;image&gt;</tt>element for each image.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;image&gt;</tt>: Identifies an image resource to precache. Specify a path relative to the Resources directory. Images are base64-encoded into data URI&apos;s.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;include&gt;</tt>: Identifies an Ti.include()&apos;d JavaScript file to precache. Specify a path relative to the Resources directory.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;locale&gt;</tt>: Identifies a set of locale resources to precache. Specify a language code, for example, &quot;en&quot; for English.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;require&gt;</tt>: Identifies a CommonJS module included in your local source tree to precache. Specify a module identifier. Not required for Titanium Plus modules.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Cache some resources</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;precache&gt;</code></div>
+<div class="line"><code class="plain">    &lt;image&gt;images/background.png&lt;/image&gt;</code></div>
+<div class="line"><code class="plain">    &lt;include&gt;libs/foo.js&lt;/include&gt;</code></div>
+<div class="line"><code class="plain">    &lt;locale&gt;es&lt;/locale&gt;</code></div>
+<div class="line"><code class="plain">    &lt;require&gt;modules/foobar.js&lt;/require&gt;</code></div>
+<div class="line"><code class="plain">&lt;/precache&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-splash">
+<h3 class="heading "><span>splash</span></h3>
+<p>
+Controls display of the splash screen.    </p>
+<ul class=" "><li class=" "> <p>
+<tt class=" "> &lt;enabled&gt;</tt>: Determines whether the splash screen is displayed. Defaults to <tt class=" ">true</tt>.    </p>
+</li><li class=" "> <p>
+<tt class=" "> &lt;inline-css-images&gt;</tt>: If <tt class=" ">true</tt>, splash screen images are included in the initial download, which allows the splash screen to be loaded more quickly, at the expense of a somewhat larger initial download.    </p>
+</li></ul><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Example: Enable the splash screen but do no preload it</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;splash&gt;</code></div>
+<div class="line"><code class="plain">    &lt;enabled&gt;</code><code class="keyword">true</code><code class="plain">&lt;/enabled&gt;</code></div>
+<div class="line"><code class="plain">    &lt;inline-css-images&gt;</code><code class="keyword">false</code><code class="plain">&lt;/inline-css-images&gt;</code></div>
+<div class="line"><code class="plain">&lt;/splash&gt;</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-theme">
+<h3 class="heading "><span>theme</span></h3>
+<p>
+Currently, only <tt class=" ">default</tt> is supported. Do not change this value.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-Cloud">
+<h2 class="heading "><span>Cloud</span></h2>
+<p>
+Appcelerator Cloud Services (ACS) uses the following <a class="document-link " href="#!/guide/tiapp.xml_and_timodule.xml_Reference-section-29004921_tiapp.xmlandtimodule.xmlReference-app_properties" tiapp.xml_and_timodule.xml_reference.html#29004921_tiapp.xmlandtimodule.xmlreference-app_properties="tiapp.xml_and_timodule.xml_Reference.html#29004921_tiapp.xmlandtimodule.xmlReference-app_properties">Application properties</a> to configure a Titanium project to use ACS.      <span style="color: #484848;">
+If a deployment-specific setting is provided (production or development) then that value will be used for the current deployment environment.  To specify a deployment-specific settings add the suffix <tt class=" ">-development</tt> or <tt class=" ">-production</tt> to the property name, for example, <tt class=" ">acs-api-key-development</tt> and <tt class=" ">acs-api-key-productions</tt> are the deployment-specific settings for <tt class=" ">acs-api-key</tt>.    </span>
+</p>
+<div class="tablewrap">
+<table class="confluenceTable">
+<thead class=" "> <tr>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Property Name    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Type    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Default Value    </p>
+</td>
+<td class="confluenceTh" rowspan="1" colspan="1">
+<p>
+Description    </p>
+</td>
+</tr>
+</thead><tfoot class=" "></tfoot><tbody class=" "> <tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p class="prettyprint">
+acs-api-key    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ACS API key. Generated when enabling the project for Cloud services.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<span style="color: #c0c0c0;">
+acs-authbase-url    </span>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p class="p1">
+<a class="external-link external-link" href="https://secure-identity.cloud.appcelerator.com" target="_blank">https://secure-identity.cloud.appcelerator.com</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">OAuth authentication is no longer supported in the ti.cloud module.<br><br></strong>ACS Authentication URL.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+acs-base-url    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p class="p1">
+<a class="external-link external-link" href="https://api.cloud.appcelerator.com" target="_blank">https://api.cloud.appcelerator.com</a> </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+ACS API URL.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+acs-grouped-notification-message    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+Specifies the message to display for grouped notifications, for example, &quot;You have $number$ unread messages.&quot; The <tt class=" ">$number$</tt> variable represents the number of unread messages. This property is also supported in the <tt class=" ">strings.xml</tt> file under the <tt class=" ">i18n</tt> folder for internationalized versions.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<span style="color: #c0c0c0;">
+acs-oauth-key    </span>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">OAuth authentication is no longer supported</strong><strong class=" "> in the ti.cloud module</strong>.<br><br>ACS OAuth key. Generated when enabling the project for Cloud services.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<span style="color: #c0c0c0;">
+acs-oauth-secret    </span>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+N/A    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">OAuth authentication is no longer supported</strong><strong class=" "> in the ti.cloud module</strong>.<br><br>ACS OAuth secret. Generated when enabling the project for Cloud services.    </p>
+</td>
+</tr>
+<tr>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p class="prettyprint">
+<span style="color: #c0c0c0;">
+acs-push-type    </span>
+</p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+string    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+gcm    </p>
+</td>
+<td class="confluenceTd" rowspan="1" colspan="1">
+<p>
+<strong class=" ">Deprecated since Release 3.2.0. The ti.cloudpush module now only supports GCM.</strong> </p>
+<p>
+Selects the push notification type for Android devices, either <tt class=" ">gcm</tt> or <tt class=" ">mqtt.</tt> </p>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+<div class="section section-2 " id="29004921_tiapp.xmlandtimodule.xmlReference-Modules">
+<h2 class="heading "><span>Modules</span></h2>
+<p>
+See the Module Developer Guides for <a class="document-link " href="#!/guide/Android_Module_Development_Guide" android_module_development_guide.html="Android_Module_Development_Guide.html">Android</a> and <a class="document-link " href="#!/guide/iOS_Module_Development_Guide" ios_module_development_guide.html="iOS_Module_Development_Guide.html">iOS</a>.    </p>
+<div class="section section-3 " id="29004921_tiapp.xmlandtimodule.xmlReference-timodule.xml">
+<h3 class="heading "><span>timodule.xml</span></h3>
+<p>
+A timodule.xml follows the same structure as a tiapp.xml, but most of the metadata for a module project lives in the module&apos;s <tt class=" ">manifest</tt> file. Right now, the <tt class=" ">timodule.xml</tt> is only used in Android, and it supports all of the tags listed in the Android section above. Any custom metadata your Android module defines in it&apos;s <tt class=" ">timodule.xml</tt> <tt class=" ">&lt;android&gt;</tt> section will automatically be merged with a Titanium application that installs your module.    </p>
+<p>
+In some cases, metadata defined in the <tt class=" ">timodule.xml</tt> file depends on application-specific metadata from the <tt class=" ">tiapp.xml</tt> file. For example, if the module defines a custom permission, or a custom intent filter, you may need to include the application&apos;s package name in the identifier.    </p>
+<p>
+To support this use case, the <tt class=" ">timodule.xml</tt> file allows token substitution, so you can specify variable values that will be replaced with application-specific values at build time. For example:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">timodule.xml</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;android xmlns:android=</code><code class="string">&quot;http://schemas.android.com/apk/res/android&quot;</code><code class="plain">&gt;</code></div>
+<div class="line"><code class="plain">  &lt;manifest&gt;</code></div>
+<div class="line"><code class="plain">    &lt;permission android:name=</code><code class="string">&quot;${tiapp.properties[&apos;id&apos;]}.permission.MY_NEW_PERMISSION&quot;</code></div>
+<div class="line"><code class="plain">		android:protectionLevel=</code><code class="string">&quot;signature&quot;</code><code class="plain"> /&gt;</code></div>
+<div class="line"><code class="plain">  &lt;/manifest&gt;</code></div>
+<div class="line"><code class="plain">&lt;/android&gt;</code></div>
+</div>
+</div> <p>
+Note the token <tt class=" ">${tiapp.properties[&apos;id&apos;]</tt>}. In this token, <tt class=" ">tiapp.properties</tt> refers to the collection of top-level properties defined in the<br><tt class=" ">tiapp.xml</tt> file. To access a property in this collection, such as <tt class=" ">&lt;id&gt;</tt>, <tt class=" ">&lt;name&gt;</tt>, <tt class=" ">&lt;version&gt;</tt>, or <tt class=" ">&lt;publisher</tt>&gt;, use square brackets with the property name in quotes inside, as shown in the example.    </p>
+<p>
+If you include this module in an application with the App ID <tt class=" ">com.example.app</tt>, the <tt class=" ">AndroidManifest.xml</tt> file is generated with the following permission element:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">&lt;permission android:name=</code><code class="string">&quot;com.example.app.permission.MY_NEW_PERMISSION&quot;</code></div>
+<div class="line"><code class="plain">		android:protectionLevel=</code><code class="string">&quot;signature&quot;</code><code class="plain"> /&gt;</code></div>
+</div>
+</div> </div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

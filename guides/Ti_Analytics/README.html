@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ti Analytics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Scroll EclipseHelp Exporter" name="generator" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" media="print" />
+</head>
+<body>
+<div class="container">
+<div class="header"></div>
+<div id="29004826" class="content"><a id="editButton" href="https://wiki.appcelerator.org/pages/editpage.action?pageId=29004826"><span>Edit</span></a>
+<h1>Ti Analytics</h1>
+<div class="section section-2 " id="29004826_TiAnalytics-Contents">
+<h2 class="heading "><span>Contents</span></h2>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Overview" Ti_Analytics.html#29004826_TiAnalytics-Overview="Ti_Analytics.html#29004826_TiAnalytics-Overview">Overview</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Terminology" Ti_Analytics.html#29004826_TiAnalytics-Terminology="Ti_Analytics.html#29004826_TiAnalytics-Terminology">Terminology</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Analytics" Ti_Analytics.html#29004826_TiAnalytics-Analytics="Ti_Analytics.html#29004826_TiAnalytics-Analytics">Analytics</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Events" Ti_Analytics.html#29004826_TiAnalytics-Events="Ti_Analytics.html#29004826_TiAnalytics-Events">Events</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-FeatureEvent" Ti_Analytics.html#29004826_TiAnalytics-FeatureEvent="Ti_Analytics.html#29004826_TiAnalytics-FeatureEvent">Feature Event</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-NavigationEvent" Ti_Analytics.html#29004826_TiAnalytics-NavigationEvent="Ti_Analytics.html#29004826_TiAnalytics-NavigationEvent">Navigation Event</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Setup" Ti_Analytics.html#29004826_TiAnalytics-Setup="Ti_Analytics.html#29004826_TiAnalytics-Setup">Setup</a> </p>
+<ul class="toc-indentation "><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-CodeSample" Ti_Analytics.html#29004826_TiAnalytics-CodeSample="Ti_Analytics.html#29004826_TiAnalytics-CodeSample">Code Sample</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-BestUse-FeatureEvents" Ti_Analytics.html#29004826_TiAnalytics-BestUse-FeatureEvents="Ti_Analytics.html#29004826_TiAnalytics-BestUse-FeatureEvents">Best Use - Feature Events</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-BestUse-NavEvents" Ti_Analytics.html#29004826_TiAnalytics-BestUse-NavEvents="Ti_Analytics.html#29004826_TiAnalytics-BestUse-NavEvents">Best Use - Nav Events</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Packaging" Ti_Analytics.html#29004826_TiAnalytics-Packaging="Ti_Analytics.html#29004826_TiAnalytics-Packaging">Packaging</a> </p>
+</li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-Running" Ti_Analytics.html#29004826_TiAnalytics-Running="Ti_Analytics.html#29004826_TiAnalytics-Running">Running</a> </p>
+</li></ul></li><li class=" "> <p>
+<a class="document-link " href="#!/guide/Ti_Analytics-section-29004826_TiAnalytics-AnalyticsUI" Ti_Analytics.html#29004826_TiAnalytics-AnalyticsUI="Ti_Analytics.html#29004826_TiAnalytics-AnalyticsUI">Analytics UI</a> </p>
+</li></ul> </div>
+<div class="section section-2 " id="29004826_TiAnalytics-Overview">
+<h2 class="heading "><span>Overview</span></h2>
+<p>
+The following is a walk-through that covers setup and retrieval of analytics data.    </p>
+</div>
+<div class="section section-2 " id="29004826_TiAnalytics-Terminology">
+<h2 class="heading "><span>Terminology</span></h2>
+<div class="section section-3 " id="29004826_TiAnalytics-Analytics">
+<h3 class="heading "><span>Analytics</span></h3>
+<p>
+Analytics refers to data about the way an application is used.  Analytics is collected by Appcelerator for the Titanium developer of the app. Some analytics data can be viewed using the Analytics UI. Other analytics data is only available to users that sign up for the optional raw data export service. Raw data export provides for a daily download of raw analytics data.    </p>
+</div>
+<div class="section section-3 " id="29004826_TiAnalytics-Events">
+<h3 class="heading "><span>Events</span></h3>
+<p>
+These are operational milestones in the application.  Some events are standard, such as those that mark the beginning and end of a session.  Others may be custom events which have a meaning specific to a single application.    </p>
+</div>
+<div class="section section-3 " id="29004826_TiAnalytics-FeatureEvent">
+<h3 class="heading "><span>Feature Event</span></h3>
+<p>
+A <i class=" ">feature event</i> is a custom event that has been defined by the developer of a given application.  A feature event should represent an action, such as 'new item', 'launch video', etc.  All feature events should follow a naming convention <i class=" ">group</i>.<i class=" ">event</i>.<i class=" ">sub-event</i> with <i class=" ">group</i>.<i class=" ">event</i> being the parent event, under which sub-events are grouped in the Analytics UI.  For example, a parent event <strong class=" "><i class=" ">tweet</i></strong><strong class=" ">.</strong><strong class=" "><i class=" ">new</i></strong> may have sub-events <strong class=" "><i class=" ">tweet</i></strong><strong class=" ">.</strong><strong class=" "><i class=" ">new</i></strong><strong class=" ">.</strong><strong class=" "><i class=" ">cancel</i></strong> and <strong class=" "><i class=" ">tweet</i></strong><strong class=" ">.</strong><strong class=" "><i class=" ">new</i></strong><strong class=" ">.</strong><strong class=" "><i class=" ">post</i></strong> .    </p>
+<p>
+Use the <a class="external-link external-link" href="#!/api/Titanium.Analytics-method-featureEvent">Titanium.Analytics.featureEvent</a> method to generate a feature event.    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+</p>
+<p>
+An arbitrary data object can be added to each feature event, however this data is not accessible through the Analytics UI, only through raw data export.    </p>
+</div>
+</div>
+<div class="section section-3 " id="29004826_TiAnalytics-NavigationEvent">
+<h3 class="heading "><span>Navigation Event</span></h3>
+<p>
+A <i class=" ">navigation event</i> is a custom event that is used by the application to track movement from one area of the UI to another.    </p>
+<div class="confbox admonition admonition-note aui-message warning shadowed information-macro">
+<p>
+</p>
+<p>
+Navigation events are not currently available through the Analytics UI, only through raw data export.    </p>
+</div>
+<p>
+Use the <a class="external-link external-link" href="#!/api/Titanium.Analytics-method-navEvent">Titanium.Analytics.navEvent</a> method to generate a navigation event.    </p>
+</div>
+</div>
+<div class="section section-2 " id="29004826_TiAnalytics-Setup">
+<h2 class="heading "><span>Setup</span></h2>
+<ul class=" "><li class=" "> <p>
+Create a new Mobile Application using the account that you want to use to see your analytics data.    </p>
+<ul class=" "><li class=" "> <p>
+An app is tied to the account that created it.  Analytics for the app is accessible from that account's <a class="external-link external-link" href="https://my.appcelerator.com/apps" target="_blank">my.appcelerator.com/apps</a> page.    </p>
+</li><li class=" "> <p>
+To verify that an app was create by the correct account    </p>
+<ul class=" "><li class=" "> <p>
+Open up tiapp.xml and look for the app &quot;guid&quot;    </p>
+<img src="images/img.skitch.com/20110622-82rx8hkf6jtkhibxqeyj4i2qub.jpg" alt="images/img.skitch.com/20110622-82rx8hkf6jtkhibxqeyj4i2qub.jpg" class="confluence-embedded-image confluence-external-resource" />
+</li><li class=" "> <p>
+Log into <a class="external-link external-link" href="https://my.appcelerator.com/apps" target="_blank">my.appcelerator.com/apps</a>, search your apps for the &quot;App GUID&quot; that you found in the tiapp.xml. You can see the App GUID by clicking &quot;View Details&quot; for your app.    </p>
+<img src="images/img.skitch.com/20110622-fe1ugw2rng8gj5xjef9736u8ah.jpg" alt="images/img.skitch.com/20110622-fe1ugw2rng8gj5xjef9736u8ah.jpg" class="confluence-embedded-image confluence-external-resource" />
+</li></ul></li></ul></li><li class=" "> <p>
+By default analytics will be enabled. To verify, make sure that tiapp.xml has this line &lt;analytics&gt;true&lt;/analytics&gt;    </p>
+</li><li class=" "> <p>
+Track a custom action in your application using <strong class=" "><a class="external-link external-link" href="#!/api/Titanium.Analytics-method-featureEvent">Titanium.Analytics.featureEvent(<i class=" ">NAME</i>,[<i class=" ">DATA</i>])</a></strong>.    </p>
+</li></ul> <div class="section section-3 " id="29004826_TiAnalytics-CodeSample">
+<h3 class="heading "><span>Code Sample</span></h3>
+<p>
+Here is an example of modifying the Tweetanium app to send feature events.<br />in DrawerView.js:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="comments">//add logic to manage the state of the drawer</code></div>
+<div class="line"><code class="plain">		Ti.App.addEventListener(</code><code class="string">'app:show.drawer'</code><code class="plain">, function(e) {</code></div>
+<div class="line"><code class="plain">			drawerView.visible = </code><code class="keyword">true</code><code class="plain">;</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">//determine which view to show in the drawer</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (e.showing === </code><code class="string">'createAccount'</code><code class="plain">) {</code></div>
+<div class="line"><code class="plain">				stack.fireEvent(</code><code class="string">'changeIndex'</code><code class="plain">,{idx:</code><code class="value">0</code><code class="plain">});</code></div>
+<div class="line"><code class="plain">			}</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">else</code><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (e.showing === </code><code class="string">'tweetDetails'</code><code class="plain">) {</code></div>
+<div class="line"><code class="plain">				Titanium.Analytics.featureEvent(</code><code class="string">'tweet.details'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">				stack.fireEvent(</code><code class="string">'changeIndex'</code><code class="plain">,{idx:</code><code class="value">1</code><code class="plain">});</code></div>
+<div class="line"><code class="plain">			}</code></div>
+<div class="line"><code class="plain"> </code><code class="keyword">else</code><code class="plain"> </code><code class="keyword">if</code><code class="plain"> (e.showing === </code><code class="string">'accountDetails'</code><code class="plain">) {</code></div>
+<div class="line"><code class="plain">				stack.fireEvent(</code><code class="string">'changeIndex'</code><code class="plain">,{idx:</code><code class="value">2</code><code class="plain">});</code></div>
+<div class="line"><code class="plain">			}</code></div>
+<div class="line"><code class="plain">			drawer.animate({</code></div>
+<div class="line"><code class="plain">				duration:$$.animationDuration,</code></div>
+<div class="line"><code class="plain">				left:</code><code class="value">10</code></div>
+<div class="line"><code class="plain">			}, function() {</code></div>
+<div class="line"><code class="plain">				Ti.App.fireEvent(</code><code class="string">'app:drawer.opened'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">			});</code></div>
+<div class="line"><code class="plain">		});</code></div>
+</div>
+</div> <p>
+in ComposeWindow.js:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">cancelButton.addEventListener(</code><code class="string">'click'</code><code class="plain">, function() {</code></div>
+<div class="line"><code class="plain">			Titanium.Analytics.featureEvent(</code><code class="string">'tweet.new.cancel'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">			win.close();</code></div>
+<div class="line"><code class="plain">		});</code></div>
+<div class="line"><code class="plain">		tweetButton.addEventListener(</code><code class="string">'click'</code><code class="plain">, function() {</code></div>
+<div class="line"><code class="plain">			Titanium.Analytics.featureEvent(</code><code class="string">'tweet.new.post'</code><code class="plain">,{message:tweetField.value});</code></div>
+<div class="line"><code class="plain">			Ti.App.fireEvent(</code><code class="string">'app:show.loader'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">			tt.app.currentAccount.updateStatus({</code></div>
+<div class="line"><code class="plain">				status:tweetField.value,</code></div>
+<div class="line"><code class="plain">				success: function(jsonResponse) {</code></div>
+<div class="line"><code class="plain"> </code><code class="comments">// Ti.API.info(jsonResponse);</code></div>
+<div class="line"><code class="plain">					alert(</code><code class="string">'Tweet posted!'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">					Ti.App.fireEvent(</code><code class="string">'app:hide.loader'</code><code class="plain">);</code></div>
+<div class="line"><code class="plain">					win.close();</code></div>
+<div class="line"><code class="plain">				}</code></div>
+<div class="line"><code class="plain">			});</code></div>
+<div class="line"><code class="plain">		});</code></div>
+</div>
+</div> <p>
+As explained above, <strong class=" ">tweet.new.post</strong> and <strong class=" ">tweet.new.cancel</strong> will be grouped together under <strong class=" ">tweet.new</strong>, while statistics for <strong class=" ">tweet.details</strong> will be in a separate group (of the same name).    </p>
+<p>
+In the example, the tweet.new.post feature event has an object as its data payload.  This payload does not have any bearing on the Analytics UI, but in the near future we will provide a mechanism to retrieve this data for post-processing by the developer.    </p>
+</div>
+<div class="section section-3 " id="29004826_TiAnalytics-BestUse-FeatureEvents">
+<h3 class="heading "><span>Best Use - Feature Events</span></h3>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Bad</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Analytics.featureEvent(</code><code class="string">'Select Item THIS IS THE DESCRIPTION OF THE EVENT -12345678910'</code><code class="plain">);</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Good</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Analytics.featureEvent(</code><code class="string">'select.item'</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">	{</code></div>
+<div class="line"><code class="plain">		id: </code><code class="string">'12345678910'</code><code class="plain">,</code></div>
+<div class="line"><code class="plain">		desc: </code><code class="string">'THIS IS THE DESCRIPTION OF THE EVENT'</code></div>
+<div class="line"><code class="plain">	}</code></div>
+<div class="line"><code class="plain">);</code></div>
+</div>
+</div> <p>
+<strong class=" ">Alternatively</strong>:    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Less Bad</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Analytics.featureEvent(</code><code class="string">'select.item.12345678910'</code><code class="plain">);</code></div>
+</div>
+</div> <p>
+Which is appropriate in cases where you want to see a sub-event for each item.  Be aware that this currently has very bad performance characteristics in the UI when you create many sub-events.  We're working on making this better.    </p>
+</div>
+<div class="section section-3 " id="29004826_TiAnalytics-BestUse-NavEvents">
+<h3 class="heading "><span>Best Use - Nav Events</span></h3>
+<p>
+<strong class=" ">Do not</strong> use feature events to track movement between navigational elements of your application.  Instead, use a nav event to collect such analytics.    </p>
+<div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Very Bad</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Analytics.featureEvent(</code><code class="string">'Home -&gt; Edit Tweet'</code><code class="plain">);</code></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="confbox programlisting scroll-unprocessed">
+<div class="title">Good</div>
+<div class="defaultnew syntaxhighlighter">
+<div class="line"><code class="plain">Titanium.Analytics.navEvent(</code><code class="string">'Home'</code><code class="plain">, </code><code class="string">'Edit Tweet'</code><code class="plain">);</code></div>
+</div>
+</div> </div>
+<div class="section section-3 " id="29004826_TiAnalytics-Packaging">
+<h3 class="heading "><span>Packaging</span></h3>
+<ul class=" "><li class=" "> <p>
+In order for your app's analytics data to show up you need to package your app for distribution.    </p>
+<ul class=" "><li class=" "> <p>
+This means that you will need to click &quot;Distribute - App Store&quot; or &quot;Distribute - Android&quot;.    </p>
+<img src="images/img.skitch.com/20110622-n7symqer3mp4yrdxxw6r9aeuug.jpg" alt="images/img.skitch.com/20110622-n7symqer3mp4yrdxxw6r9aeuug.jpg" class="confluence-embedded-image confluence-external-resource" />
+</li><li class=" "> <p>
+The type of distribution &quot;ad-hoc&quot; or &quot;App Store/Market&quot; does not matter.    </p>
+</li></ul></li></ul> </div>
+<div class="section section-3 " id="29004826_TiAnalytics-Running">
+<h3 class="heading "><span>Running</span></h3>
+<ul class=" "><li class=" "> <p>
+Install your app on a device, launch it, close it, and do something that will feature an event.    </p>
+</li></ul> </div>
+</div>
+<div class="section section-2 " id="29004826_TiAnalytics-AnalyticsUI">
+<h2 class="heading "><span>Analytics UI</span></h2>
+<p>
+Apps that are in production (that is, they have been packaged and installed on devices 'in the wild') have their analytics data accessible via the Analytics UI.    </p>
+<ul class=" "><li class=" "> <p>
+Go to <a class="external-link external-link" href="https://my.appcelerator.com/apps" target="_blank">https://my.appcelerator.com/apps</a> and click on the &quot;Analytics&quot; button for the app.  A short cut URL uses the application's GUID:    </p>
+<div class="confbox programlisting preformatted panel">
+<div class="content">
+<pre><code>http://analytics.appcelerator.net/#app=GUID</code></pre>
+</div>
+</div>
+</li><li class=" "> <p>
+Analytics data from the previous day becomes available in the Analytics UI sometime in the early morning of U.S. Pacific time. (Analytics data for a given day is processed the next day sometime after midnight U.S. Pacific TIme.)    </p>
+</li><li class=" "> <p>
+Feature events for your app will be visible in the <strong class=" ">Events</strong> section.    </p>
+</li><li class=" "> <p>
+In the near future, a section displaying nav events will be added.    </p>
+</li></ul> <p>
+<img src="images/img.skitch.com/20111103-chneuad65q6ysy9swcg41ecjh8.jpg" alt="images/img.skitch.com/20111103-chneuad65q6ysy9swcg41ecjh8.jpg" class="confluence-embedded-image confluence-external-resource" />
+</p>
+<p>
+This image shows an example of drilling down to view sub-event statistics.    </p>
+</div>
+</div>
+<div class="footer">
+            Created with <a href="http://k15t.com/display/web/Scroll-Wiki-EclipseHelp-Exporter-for-Confluence" target="_blank">Scroll EclipseHelp Exporter for Confluence</a>.
+        </div>
+</div>
+</body>
+</html>
